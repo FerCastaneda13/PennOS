@@ -1,0 +1,122 @@
+\hypertarget{kernel_8h}{}\doxysection{src/kernel/kernel.h File Reference}
+\label{kernel_8h}\index{src/kernel/kernel.h@{src/kernel/kernel.h}}
+
+
+Header file for kernel-\/level functions related to process management.  
+
+
+{\ttfamily \#include $<$ucontext.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}PCB.\+h\char`\"{}}\newline
+Include dependency graph for kernel.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structPCB}{PCB}} $\ast$ \mbox{\hyperlink{kernel_8h_aae5c1eec5a8e85c2f9ecd1df60ebd005}{k\+\_\+process\+\_\+create}} (\mbox{\hyperlink{structPCB}{PCB}} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Creates a new child thread and associated \mbox{\hyperlink{structPCB}{PCB}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kernel_8h_a3d9fc06630c2d6c0a671159e1761da37}{k\+\_\+process\+\_\+kill}} (\mbox{\hyperlink{structPCB}{PCB}} $\ast$process, int \mbox{\hyperlink{structsignal}{signal}})
+\begin{DoxyCompactList}\small\item\em Kills the process referenced by {\ttfamily process} with the specified {\ttfamily signal}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kernel_8h_a078e3681581c83f75664cbdc29af2c26}{k\+\_\+process\+\_\+cleanup}} (\mbox{\hyperlink{structPCB}{PCB}} $\ast$process)
+\begin{DoxyCompactList}\small\item\em Cleans up resources of a terminated/finished thread. \end{DoxyCompactList}\item 
+ucontext\+\_\+t $\ast$ \mbox{\hyperlink{kernel_8h_a5235c5fe53f56acc6e48b88506f30194}{cleanup\+\_\+context}} (\mbox{\hyperlink{structPCB}{PCB}} $\ast$process)
+\begin{DoxyCompactList}\small\item\em Retrieves the cleanup context for a process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kernel_8h_a4783d602558d3cf20b163b59dcabecd6}{set\+Stack}} (stack\+\_\+t $\ast$stack)
+\begin{DoxyCompactList}\small\item\em Sets the stack for a process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for kernel-\/level functions related to process management. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{kernel_8h_a5235c5fe53f56acc6e48b88506f30194}\label{kernel_8h_a5235c5fe53f56acc6e48b88506f30194}} 
+\index{kernel.h@{kernel.h}!cleanup\_context@{cleanup\_context}}
+\index{cleanup\_context@{cleanup\_context}!kernel.h@{kernel.h}}
+\doxysubsubsection{\texorpdfstring{cleanup\_context()}{cleanup\_context()}}
+{\footnotesize\ttfamily ucontext\+\_\+t$\ast$ cleanup\+\_\+context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPCB}{PCB}} $\ast$}]{process }\end{DoxyParamCaption})}
+
+
+
+Retrieves the cleanup context for a process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process} & Pointer to the \mbox{\hyperlink{structPCB}{PCB}} of the process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the cleanup context. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kernel_8h_a078e3681581c83f75664cbdc29af2c26}\label{kernel_8h_a078e3681581c83f75664cbdc29af2c26}} 
+\index{kernel.h@{kernel.h}!k\_process\_cleanup@{k\_process\_cleanup}}
+\index{k\_process\_cleanup@{k\_process\_cleanup}!kernel.h@{kernel.h}}
+\doxysubsubsection{\texorpdfstring{k\_process\_cleanup()}{k\_process\_cleanup()}}
+{\footnotesize\ttfamily void k\+\_\+process\+\_\+cleanup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPCB}{PCB}} $\ast$}]{process }\end{DoxyParamCaption})}
+
+
+
+Cleans up resources of a terminated/finished thread. 
+
+This function is called when a terminated/finished thread\textquotesingle{}s resources need to be cleaned up. Cleanup may include freeing memory, setting the status of the child, etc.
+
+
+\begin{DoxyParams}{Parameters}
+{\em process} & Pointer to the \mbox{\hyperlink{structPCB}{PCB}} of the terminated thread.\\
+\hline
+\end{DoxyParams}
+Cleans up resources of a terminated/finished thread. \mbox{\Hypertarget{kernel_8h_aae5c1eec5a8e85c2f9ecd1df60ebd005}\label{kernel_8h_aae5c1eec5a8e85c2f9ecd1df60ebd005}} 
+\index{kernel.h@{kernel.h}!k\_process\_create@{k\_process\_create}}
+\index{k\_process\_create@{k\_process\_create}!kernel.h@{kernel.h}}
+\doxysubsubsection{\texorpdfstring{k\_process\_create()}{k\_process\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPCB}{PCB}}$\ast$ k\+\_\+process\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPCB}{PCB}} $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+Creates a new child thread and associated \mbox{\hyperlink{structPCB}{PCB}}. 
+
+The new thread retains many properties of the parent. The function returns a reference to the new \mbox{\hyperlink{structPCB}{PCB}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the parent \mbox{\hyperlink{structPCB}{PCB}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the newly created child \mbox{\hyperlink{structPCB}{PCB}}.
+\end{DoxyReturn}
+Creates a new child thread and associated \mbox{\hyperlink{structPCB}{PCB}}. \mbox{\Hypertarget{kernel_8h_a3d9fc06630c2d6c0a671159e1761da37}\label{kernel_8h_a3d9fc06630c2d6c0a671159e1761da37}} 
+\index{kernel.h@{kernel.h}!k\_process\_kill@{k\_process\_kill}}
+\index{k\_process\_kill@{k\_process\_kill}!kernel.h@{kernel.h}}
+\doxysubsubsection{\texorpdfstring{k\_process\_kill()}{k\_process\_kill()}}
+{\footnotesize\ttfamily void k\+\_\+process\+\_\+kill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPCB}{PCB}} $\ast$}]{process,  }\item[{int}]{signal }\end{DoxyParamCaption})}
+
+
+
+Kills the process referenced by {\ttfamily process} with the specified {\ttfamily signal}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process} & Pointer to the \mbox{\hyperlink{structPCB}{PCB}} of the process to be terminated. \\
+\hline
+{\em signal} & The signal used to terminate the process.\\
+\hline
+\end{DoxyParams}
+Kills the process referenced by {\ttfamily process} with the specified {\ttfamily signal}. \mbox{\Hypertarget{kernel_8h_a4783d602558d3cf20b163b59dcabecd6}\label{kernel_8h_a4783d602558d3cf20b163b59dcabecd6}} 
+\index{kernel.h@{kernel.h}!setStack@{setStack}}
+\index{setStack@{setStack}!kernel.h@{kernel.h}}
+\doxysubsubsection{\texorpdfstring{setStack()}{setStack()}}
+{\footnotesize\ttfamily void set\+Stack (\begin{DoxyParamCaption}\item[{stack\+\_\+t $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+Sets the stack for a process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stack} & Pointer to the stack structure.\\
+\hline
+\end{DoxyParams}
+Sets the stack for a process. 

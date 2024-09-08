@@ -1,0 +1,64 @@
+\hypertarget{file__descriptor_8h}{}\doxysection{src/\+FAT/file\+\_\+descriptor.h File Reference}
+\label{file__descriptor_8h}\index{src/FAT/file\_descriptor.h@{src/FAT/file\_descriptor.h}}
+
+
+Header file for a struct containing a file information and the creation of it.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for file\+\_\+descriptor.\+h\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfile__descriptor}{file\+\_\+descriptor}}
+\begin{DoxyCompactList}\small\item\em Creates an struct that contains information from a file inside a filesytem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{file__descriptor_8h_add948a42c68809187b9bf145c36dcedb}\label{file__descriptor_8h_add948a42c68809187b9bf145c36dcedb}} 
+typedef struct \mbox{\hyperlink{structfile__descriptor}{file\+\_\+descriptor}} \mbox{\hyperlink{file__descriptor_8h_add948a42c68809187b9bf145c36dcedb}{file\+\_\+descriptor}}
+\begin{DoxyCompactList}\small\item\em Creates an struct that contains information from a file inside a filesytem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfile__descriptor}{file\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{file__descriptor_8h_aea707a494697a44938053066e204f042}{fd\+\_\+create}} (int fd, int start\+\_\+block, int offset, int perm, char $\ast$name, int file\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{structfile__descriptor}{file\+\_\+descriptor}} struct with the necessary information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for a struct containing a file information and the creation of it. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{file__descriptor_8h_aea707a494697a44938053066e204f042}\label{file__descriptor_8h_aea707a494697a44938053066e204f042}} 
+\index{file\_descriptor.h@{file\_descriptor.h}!fd\_create@{fd\_create}}
+\index{fd\_create@{fd\_create}!file\_descriptor.h@{file\_descriptor.h}}
+\doxysubsubsection{\texorpdfstring{fd\_create()}{fd\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfile__descriptor}{file\+\_\+descriptor}}$\ast$ fd\+\_\+create (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{start\+\_\+block,  }\item[{int}]{offset,  }\item[{int}]{perm,  }\item[{char $\ast$}]{name,  }\item[{int}]{file\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{structfile__descriptor}{file\+\_\+descriptor}} struct with the necessary information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{structfile__descriptor}{file\+\_\+descriptor}}} & int of an open file \\
+\hline
+{\em start\+\_\+block} & int of a file inside a filesystem \\
+\hline
+{\em offset} & int for the current location of the information in a file inside the filesystem \\
+\hline
+{\em permissions} & int describing the current permission of the file \\
+\hline
+{\em file\+\_\+name} & char pointer to the name of the file \\
+\hline
+{\em file\+\_\+size} & int containing the size of the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structfile__descriptor}{file\+\_\+descriptor}} pointer on success with the information that was inputted and NULL on error 
+\end{DoxyReturn}

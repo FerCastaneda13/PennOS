@@ -1,0 +1,1 @@
+In this assignment you will implement PennOS, your own UNIX-like operating system. PennOS is designed around subsystems that model those of standard UNIX. This will include programming a basic priority scheduler, FAT file system, and user shell interactions.

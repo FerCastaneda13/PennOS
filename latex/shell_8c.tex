@@ -1,0 +1,51 @@
+\hypertarget{shell_8c}{}\doxysection{src/shell/shell.c File Reference}
+\label{shell_8c}\index{src/shell/shell.c@{src/shell/shell.c}}
+
+
+C file for the Penn\+OS shell, containing functions for the shell.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}shell.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}shell-\/parser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}parser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../kernel/user.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../kernel/scheduler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/logger.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/errno.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+FAT/system-\/calls.\+h\char`\"{}}\newline
+Include dependency graph for shell.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{shell_8c_a011c9e441795331f65088f6d076259eb}\label{shell_8c_a011c9e441795331f65088f6d076259eb}} 
+int {\bfseries process\+Lines} (char $\ast$buffer, long length)
+\item 
+\mbox{\Hypertarget{shell_8c_afe3d2a9120ca8033246357ebb23ca79a}\label{shell_8c_afe3d2a9120ca8033246357ebb23ca79a}} 
+int \mbox{\hyperlink{shell_8c_afe3d2a9120ca8033246357ebb23ca79a}{execute\+\_\+script}} (char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Spawns processes by reading a script file line by line and executing each line as a command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell_8c_a940d9b9c5d7bdaa30d53076f1939acf4}{shell\+\_\+loop}} ()
+\begin{DoxyCompactList}\small\item\em Runs the shell loop that spawns commands and waits for them if the command is in the foreground. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C file for the Penn\+OS shell, containing functions for the shell. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{shell_8c_a940d9b9c5d7bdaa30d53076f1939acf4}\label{shell_8c_a940d9b9c5d7bdaa30d53076f1939acf4}} 
+\index{shell.c@{shell.c}!shell\_loop@{shell\_loop}}
+\index{shell\_loop@{shell\_loop}!shell.c@{shell.c}}
+\doxysubsubsection{\texorpdfstring{shell\_loop()}{shell\_loop()}}
+{\footnotesize\ttfamily void shell\+\_\+loop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Runs the shell loop that spawns commands and waits for them if the command is in the foreground. 
+
+Runs the shell loop. 

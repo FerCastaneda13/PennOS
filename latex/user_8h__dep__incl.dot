@@ -1,0 +1,13 @@
+digraph "src/kernel/user.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/kernel/user.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Header file for user-level functions and system calls."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="src/kernel/user.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$user_8c.html",tooltip="C file for user-level functions and system calls."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="src/shell/shell-commands.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$shell-commands_8c.html",tooltip="This file implements all shell commands and built-in functions for the PennOS project...."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="src/shell/shell.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$shell_8c.html",tooltip="C file for the PennOS shell, containing functions for the shell."];
+}

@@ -1,0 +1,95 @@
+\hypertarget{hash_8c}{}\doxysection{src/util/hash.c File Reference}
+\label{hash_8c}\index{src/util/hash.c@{src/util/hash.c}}
+
+
+Implementation of hash table functions for command processing.  
+
+
+{\ttfamily \#include \char`\"{}hash.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../shell/shell-\/parser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/errno.\+h\char`\"{}}\newline
+Include dependency graph for hash.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{hash_8c_a000dca28f2d41ec2970993d9985dd3f8}{hash}} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Hash function for command strings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hash_8c_a77f3c2b0648d71561bb056ca6569c672}{insert}} (char $\ast$command, int function\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Inserts a command into the hash table. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{hash_8c_a5afe2893ea9459f712720b70439877ec}{lookup}} (char $\ast$command)
+\begin{DoxyCompactList}\small\item\em Looks up a command in the hash table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{hash_8c_a3314cd43586d32a90c2c64b1946ac938}\label{hash_8c_a3314cd43586d32a90c2c64b1946ac938}} 
+\mbox{\hyperlink{structHashNode}{Hash\+Node}} $\ast$ \mbox{\hyperlink{hash_8c_a3314cd43586d32a90c2c64b1946ac938}{hash\+Table}} \mbox{[}\mbox{\hyperlink{hash_8h_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Global hash table array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of hash table functions for command processing. 
+
+This file contains the implementations of the functions defined in \mbox{\hyperlink{hash_8h}{hash.\+h}}. It includes the creation and manipulation of a hash table used for storing and retrieving command-\/related data efficiently. The functions provide capabilities to hash strings, insert commands into the hash table, and look up commands based on their string representation. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hash_8c_a000dca28f2d41ec2970993d9985dd3f8}\label{hash_8c_a000dca28f2d41ec2970993d9985dd3f8}} 
+\index{hash.c@{hash.c}!hash@{hash}}
+\index{hash@{hash}!hash.c@{hash.c}}
+\doxysubsubsection{\texorpdfstring{hash()}{hash()}}
+{\footnotesize\ttfamily unsigned int hash (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Hash function for command strings. 
+
+Computes the hash value for a given command string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The command string to hash. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed hash value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hash_8c_a77f3c2b0648d71561bb056ca6569c672}\label{hash_8c_a77f3c2b0648d71561bb056ca6569c672}} 
+\index{hash.c@{hash.c}!insert@{insert}}
+\index{insert@{insert}!hash.c@{hash.c}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}\item[{char $\ast$}]{command,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Inserts a command into the hash table. 
+
+Adds a new command and its associated function to the hash table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command string. \\
+\hline
+{\em index} & The index in the hash table. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash_8c_a5afe2893ea9459f712720b70439877ec}\label{hash_8c_a5afe2893ea9459f712720b70439877ec}} 
+\index{hash.c@{hash.c}!lookup@{lookup}}
+\index{lookup@{lookup}!hash.c@{hash.c}}
+\doxysubsubsection{\texorpdfstring{lookup()}{lookup()}}
+{\footnotesize\ttfamily int lookup (\begin{DoxyParamCaption}\item[{char $\ast$}]{command }\end{DoxyParamCaption})}
+
+
+
+Looks up a command in the hash table. 
+
+Searches for a command in the hash table and returns its index if found.
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command string to look up. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of the command in the hash table or -\/1 if not found. 
+\end{DoxyReturn}

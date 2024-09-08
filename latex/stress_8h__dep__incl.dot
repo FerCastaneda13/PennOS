@@ -1,0 +1,9 @@
+digraph "src/shell/stress.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/shell/stress.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Header file for stress test commands, including hang, nohang, and recur."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="src/shell/shell-parser.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$shell-parser_8c.html",tooltip="Implements the parsing and execution of shell commands for the PennOS project. This file contains the..."];
+}

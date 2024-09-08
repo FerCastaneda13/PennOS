@@ -1,0 +1,2655 @@
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  14]	CREATE		2	0	echo test123 
+[  14]	BLOCKED		1	-1	shell
+[  15]	SCHEDULE	2	0	echo test123 
+[  15]	ZOMBIE		2	0	echo test123 
+[  15]	UNBLOCKED	1	-1	shell
+[  15]	SCHEDULE	1	-1	shell
+[  15]	WAITED		2	0	echo test123 
+[  15]	CREATE		3	0	echo test2123 
+[  15]	BLOCKED		1	-1	shell
+[  16]	SCHEDULE	3	0	echo test2123 
+[  16]	ZOMBIE		3	0	echo test2123 
+[  16]	UNBLOCKED	1	-1	shell
+[  16]	SCHEDULE	1	-1	shell
+[  16]	WAITED		3	0	echo test2123 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  11]	SCHEDULE	2	0	echo hi 
+[  11]	ZOMBIE		2	0	echo hi 
+[  11]	SCHEDULE	1	-1	shell
+[  11]	CREATE		2	0	echo hi 
+[  11]	BLOCKED		1	-1	shell
+[ 227]	SIGNALED	2	0	echo hi 
+[ 227]	ZOMBIE		2	0	echo hi 
+[ 227]	UNBLOCKED	1	-1	shell
+[ 227]	SCHEDULE	1	-1	shell
+[ 227]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   9]	CREATE		2	0	echo hi 
+[   9]	BLOCKED		1	-1	shell
+[  10]	SCHEDULE	2	0	echo hi 
+[  10]	ZOMBIE		2	0	echo hi 
+[  10]	UNBLOCKED	1	-1	shell
+[  10]	SCHEDULE	1	-1	shell
+[  10]	WAITED		2	0	echo hi 
+[  35]	CREATE		3	0	sleep 1 
+[  35]	BLOCKED		1	-1	shell
+[  36]	SCHEDULE	3	0	sleep 1 
+[  36]	BLOCKED		3	0	sleep 1 
+[  46]	UNBLOCKED	3	0	sleep 1 
+[  46]	ZOMBIE		3	0	sleep 1 
+[  46]	UNBLOCKED	1	-1	shell
+[  46]	WAITED		3	0	sleep 1 
+[ 164]	CREATE		4	0	child_0 
+[ 164]	CREATE		5	0	child_1 
+[ 164]	CREATE		6	0	child_2 
+[ 164]	CREATE		7	0	child_3 
+[ 164]	CREATE		8	0	child_4 
+[ 164]	CREATE		9	0	child_5 
+[ 165]	SCHEDULE	4	0	child_0 
+[ 165]	ZOMBIE		4	0	child_0 
+[ 165]	SCHEDULE	1	-1	shell
+[ 165]	CREATE		10	0	child_6 
+[ 165]	CREATE		11	0	child_7 
+[ 165]	CREATE		12	0	child_8 
+[ 165]	CREATE		13	0	child_9 
+[ 165]	WAITED		4	0	child_0 
+[ 165]	BLOCKED		1	-1	shell
+[ 166]	SCHEDULE	5	0	child_1 
+[ 166]	ZOMBIE		5	0	child_1 
+[ 166]	UNBLOCKED	1	-1	shell
+[ 166]	SCHEDULE	1	-1	shell
+[ 166]	WAITED		5	0	child_1 
+[ 166]	BLOCKED		1	-1	shell
+[ 167]	SCHEDULE	6	0	child_2 
+[ 167]	ZOMBIE		6	0	child_2 
+[ 167]	UNBLOCKED	1	-1	shell
+[ 167]	SCHEDULE	1	-1	shell
+[ 167]	WAITED		6	0	child_2 
+[ 167]	BLOCKED		1	-1	shell
+[ 168]	SCHEDULE	7	0	child_3 
+[ 168]	ZOMBIE		7	0	child_3 
+[ 168]	UNBLOCKED	1	-1	shell
+[ 168]	SCHEDULE	1	-1	shell
+[ 168]	WAITED		7	0	child_3 
+[ 168]	BLOCKED		1	-1	shell
+[ 169]	SCHEDULE	8	0	child_4 
+[ 169]	ZOMBIE		8	0	child_4 
+[ 169]	UNBLOCKED	1	-1	shell
+[ 169]	SCHEDULE	1	-1	shell
+[ 169]	WAITED		8	0	child_4 
+[ 169]	BLOCKED		1	-1	shell
+[ 170]	SCHEDULE	9	0	child_5 
+[ 170]	ZOMBIE		9	0	child_5 
+[ 170]	UNBLOCKED	1	-1	shell
+[ 170]	SCHEDULE	1	-1	shell
+[ 170]	WAITED		9	0	child_5 
+[ 170]	BLOCKED		1	-1	shell
+[ 171]	SCHEDULE	10	0	child_6 
+[ 171]	ZOMBIE		10	0	child_6 
+[ 171]	UNBLOCKED	1	-1	shell
+[ 171]	SCHEDULE	1	-1	shell
+[ 171]	WAITED		10	0	child_6 
+[ 171]	BLOCKED		1	-1	shell
+[ 172]	SCHEDULE	11	0	child_7 
+[ 172]	ZOMBIE		11	0	child_7 
+[ 172]	UNBLOCKED	1	-1	shell
+[ 172]	SCHEDULE	1	-1	shell
+[ 172]	WAITED		11	0	child_7 
+[ 172]	BLOCKED		1	-1	shell
+[ 173]	SCHEDULE	12	0	child_8 
+[ 173]	ZOMBIE		12	0	child_8 
+[ 173]	UNBLOCKED	1	-1	shell
+[ 173]	SCHEDULE	1	-1	shell
+[ 173]	WAITED		12	0	child_8 
+[ 173]	BLOCKED		1	-1	shell
+[ 174]	SCHEDULE	13	0	child_9 
+[ 174]	ZOMBIE		13	0	child_9 
+[ 174]	UNBLOCKED	1	-1	shell
+[ 174]	SCHEDULE	1	-1	shell
+[ 174]	WAITED		13	0	child_9 
+NO MORE WAITABLE CHILDREN, BREAKING OUT OF LOOP
+ALL CHILDREN REAPED
+STATE OF SHELL: RUNNING
+[ 199]	CREATE		14	0	child_0 
+[ 199]	CREATE		15	0	child_1 
+[ 199]	CREATE		16	0	child_2 
+[ 199]	CREATE		17	0	child_3 
+[ 199]	CREATE		18	0	child_4 
+[ 199]	CREATE		19	0	child_5 
+[ 199]	CREATE		20	0	child_6 
+[ 199]	CREATE		21	0	child_7 
+[ 199]	CREATE		22	0	child_8 
+[ 199]	CREATE		23	0	child_9 
+[ 200]	SCHEDULE	14	0	child_0 
+[ 200]	ZOMBIE		14	0	child_0 
+[ 200]	SCHEDULE	1	-1	shell
+[ 200]	WAITED		14	0	child_0 
+[ 201]	SCHEDULE	15	0	child_1 
+[ 201]	ZOMBIE		15	0	child_1 
+[ 201]	SCHEDULE	1	-1	shell
+[ 201]	WAITED		15	0	child_1 
+[ 202]	SCHEDULE	16	0	child_2 
+[ 202]	ZOMBIE		16	0	child_2 
+[ 202]	SCHEDULE	1	-1	shell
+[ 202]	WAITED		16	0	child_2 
+[ 203]	SCHEDULE	17	0	child_3 
+[ 203]	ZOMBIE		17	0	child_3 
+[ 203]	SCHEDULE	1	-1	shell
+[ 203]	WAITED		17	0	child_3 
+[ 204]	SCHEDULE	18	0	child_4 
+[ 204]	ZOMBIE		18	0	child_4 
+[ 204]	SCHEDULE	1	-1	shell
+[ 204]	WAITED		18	0	child_4 
+[ 208]	SCHEDULE	19	0	child_5 
+[ 208]	ZOMBIE		19	0	child_5 
+[ 208]	SCHEDULE	1	-1	shell
+[ 208]	WAITED		19	0	child_5 
+[ 209]	SCHEDULE	20	0	child_6 
+[ 209]	ZOMBIE		20	0	child_6 
+[ 209]	SCHEDULE	1	-1	shell
+[ 209]	WAITED		20	0	child_6 
+[ 210]	SCHEDULE	21	0	child_7 
+[ 210]	ZOMBIE		21	0	child_7 
+[ 210]	SCHEDULE	1	-1	shell
+[ 210]	WAITED		21	0	child_7 
+[ 211]	SCHEDULE	22	0	child_8 
+[ 211]	ZOMBIE		22	0	child_8 
+[ 211]	SCHEDULE	1	-1	shell
+[ 211]	WAITED		22	0	child_8 
+[ 212]	SCHEDULE	23	0	child_9 
+[ 212]	ZOMBIE		23	0	child_9 
+[ 212]	SCHEDULE	1	-1	shell
+[ 212]	WAITED		23	0	child_9 
+NO MORE WAITABLE CHILDREN, BREAKING OUT OF LOOP
+ALL CHILDREN REAPED
+STATE OF SHELL: RUNNING
+[ 234]	CREATE		24	0	Gen_A 
+[ 235]	SCHEDULE	24	0	Gen_A 
+[ 235]	CREATE		25	0	Gen_B 
+[ 235]	BLOCKED		24	0	Gen_A 
+[ 236]	SCHEDULE	1	-1	shell
+[ 236]	BLOCKED		1	-1	shell
+[ 237]	SCHEDULE	25	0	Gen_B 
+[ 237]	CREATE		26	0	Gen_C 
+[ 237]	BLOCKED		25	0	Gen_B 
+[ 238]	SCHEDULE	26	0	Gen_C 
+[ 238]	CREATE		27	0	Gen_D 
+[ 238]	BLOCKED		26	0	Gen_C 
+[ 239]	SCHEDULE	27	0	Gen_D 
+[ 239]	CREATE		28	0	Gen_E 
+[ 239]	BLOCKED		27	0	Gen_D 
+[ 240]	SCHEDULE	28	0	Gen_E 
+[ 240]	CREATE		29	0	Gen_F 
+[ 240]	BLOCKED		28	0	Gen_E 
+[ 241]	SCHEDULE	29	0	Gen_F 
+[ 241]	CREATE		30	0	Gen_G 
+[ 241]	BLOCKED		29	0	Gen_F 
+[ 242]	SCHEDULE	30	0	Gen_G 
+[ 242]	CREATE		31	0	Gen_H 
+[ 242]	BLOCKED		30	0	Gen_G 
+[ 243]	SCHEDULE	31	0	Gen_H 
+[ 243]	CREATE		32	0	Gen_I 
+[ 243]	BLOCKED		31	0	Gen_H 
+[ 244]	SCHEDULE	32	0	Gen_I 
+[ 244]	CREATE		33	0	Gen_J 
+[ 244]	BLOCKED		32	0	Gen_I 
+[ 245]	SCHEDULE	33	0	Gen_J 
+[ 245]	CREATE		34	0	Gen_K 
+[ 245]	BLOCKED		33	0	Gen_J 
+[ 246]	SCHEDULE	34	0	Gen_K 
+[ 246]	CREATE		35	0	Gen_L 
+[ 246]	BLOCKED		34	0	Gen_K 
+[ 247]	SCHEDULE	35	0	Gen_L 
+[ 247]	CREATE		36	0	Gen_M 
+[ 247]	BLOCKED		35	0	Gen_L 
+[ 248]	SCHEDULE	36	0	Gen_M 
+[ 248]	CREATE		37	0	Gen_N 
+[ 248]	BLOCKED		36	0	Gen_M 
+[ 249]	SCHEDULE	37	0	Gen_N 
+[ 249]	CREATE		38	0	Gen_O 
+[ 249]	BLOCKED		37	0	Gen_N 
+[ 250]	SCHEDULE	38	0	Gen_O 
+[ 250]	CREATE		39	0	Gen_P 
+[ 250]	BLOCKED		38	0	Gen_O 
+[ 251]	SCHEDULE	39	0	Gen_P 
+[ 251]	CREATE		40	0	Gen_Q 
+[ 251]	BLOCKED		39	0	Gen_P 
+[ 252]	SCHEDULE	40	0	Gen_Q 
+[ 252]	CREATE		41	0	Gen_R 
+[ 252]	BLOCKED		40	0	Gen_Q 
+[ 253]	SCHEDULE	41	0	Gen_R 
+[ 253]	CREATE		42	0	Gen_S 
+[ 253]	BLOCKED		41	0	Gen_R 
+[ 254]	SCHEDULE	42	0	Gen_S 
+[ 254]	CREATE		43	0	Gen_T 
+[ 254]	BLOCKED		42	0	Gen_S 
+[ 255]	SCHEDULE	43	0	Gen_T 
+[ 255]	CREATE		44	0	Gen_U 
+[ 255]	BLOCKED		43	0	Gen_T 
+[ 256]	SCHEDULE	44	0	Gen_U 
+[ 256]	CREATE		45	0	Gen_V 
+[ 256]	BLOCKED		44	0	Gen_U 
+[ 257]	SCHEDULE	45	0	Gen_V 
+[ 257]	CREATE		46	0	Gen_W 
+[ 257]	BLOCKED		45	0	Gen_V 
+[ 258]	SCHEDULE	46	0	Gen_W 
+[ 258]	CREATE		47	0	Gen_X 
+[ 258]	BLOCKED		46	0	Gen_W 
+[ 259]	SCHEDULE	47	0	Gen_X 
+[ 259]	CREATE		48	0	Gen_Y 
+[ 259]	BLOCKED		47	0	Gen_X 
+[ 260]	SCHEDULE	48	0	Gen_Y 
+[ 260]	CREATE		49	0	Gen_Z 
+[ 260]	BLOCKED		48	0	Gen_Y 
+[ 261]	SCHEDULE	49	0	Gen_Z 
+[ 261]	ZOMBIE		49	0	Gen_Z 
+[ 261]	UNBLOCKED	48	0	Gen_Y 
+[ 261]	SCHEDULE	48	0	Gen_Y 
+[ 261]	WAITED		49	0	Gen_Z 
+[ 261]	ZOMBIE		48	0	Gen_Y 
+[ 261]	UNBLOCKED	47	0	Gen_X 
+[ 261]	SCHEDULE	47	0	Gen_X 
+[ 261]	WAITED		48	0	Gen_Y 
+[ 261]	ZOMBIE		47	0	Gen_X 
+[ 261]	UNBLOCKED	46	0	Gen_W 
+[ 261]	SCHEDULE	46	0	Gen_W 
+[ 261]	WAITED		47	0	Gen_X 
+[ 261]	ZOMBIE		46	0	Gen_W 
+[ 261]	UNBLOCKED	45	0	Gen_V 
+[ 261]	SCHEDULE	45	0	Gen_V 
+[ 261]	WAITED		46	0	Gen_W 
+[ 261]	ZOMBIE		45	0	Gen_V 
+[ 261]	UNBLOCKED	44	0	Gen_U 
+[ 261]	SCHEDULE	44	0	Gen_U 
+[ 261]	WAITED		45	0	Gen_V 
+[ 261]	ZOMBIE		44	0	Gen_U 
+[ 261]	UNBLOCKED	43	0	Gen_T 
+[ 261]	SCHEDULE	43	0	Gen_T 
+[ 261]	WAITED		44	0	Gen_U 
+[ 261]	ZOMBIE		43	0	Gen_T 
+[ 261]	UNBLOCKED	42	0	Gen_S 
+[ 261]	SCHEDULE	42	0	Gen_S 
+[ 261]	WAITED		43	0	Gen_T 
+[ 261]	ZOMBIE		42	0	Gen_S 
+[ 261]	UNBLOCKED	41	0	Gen_R 
+[ 261]	SCHEDULE	41	0	Gen_R 
+[ 261]	WAITED		42	0	Gen_S 
+[ 261]	ZOMBIE		41	0	Gen_R 
+[ 261]	UNBLOCKED	40	0	Gen_Q 
+[ 261]	SCHEDULE	40	0	Gen_Q 
+[ 261]	WAITED		41	0	Gen_R 
+[ 261]	ZOMBIE		40	0	Gen_Q 
+[ 261]	UNBLOCKED	39	0	Gen_P 
+[ 261]	SCHEDULE	39	0	Gen_P 
+[ 261]	WAITED		40	0	Gen_Q 
+[ 261]	ZOMBIE		39	0	Gen_P 
+[ 261]	UNBLOCKED	38	0	Gen_O 
+[ 261]	SCHEDULE	38	0	Gen_O 
+[ 261]	WAITED		39	0	Gen_P 
+[ 261]	ZOMBIE		38	0	Gen_O 
+[ 261]	UNBLOCKED	37	0	Gen_N 
+[ 261]	SCHEDULE	37	0	Gen_N 
+[ 261]	WAITED		38	0	Gen_O 
+[ 261]	ZOMBIE		37	0	Gen_N 
+[ 261]	UNBLOCKED	36	0	Gen_M 
+[ 261]	SCHEDULE	36	0	Gen_M 
+[ 261]	WAITED		37	0	Gen_N 
+[ 261]	ZOMBIE		36	0	Gen_M 
+[ 261]	UNBLOCKED	35	0	Gen_L 
+[ 261]	SCHEDULE	35	0	Gen_L 
+[ 261]	WAITED		36	0	Gen_M 
+[ 261]	ZOMBIE		35	0	Gen_L 
+[ 261]	UNBLOCKED	34	0	Gen_K 
+[ 261]	SCHEDULE	34	0	Gen_K 
+[ 261]	WAITED		35	0	Gen_L 
+[ 261]	ZOMBIE		34	0	Gen_K 
+[ 261]	UNBLOCKED	33	0	Gen_J 
+[ 261]	SCHEDULE	33	0	Gen_J 
+[ 261]	WAITED		34	0	Gen_K 
+[ 261]	ZOMBIE		33	0	Gen_J 
+[ 261]	UNBLOCKED	32	0	Gen_I 
+[ 261]	SCHEDULE	32	0	Gen_I 
+[ 261]	WAITED		33	0	Gen_J 
+[ 261]	ZOMBIE		32	0	Gen_I 
+[ 261]	UNBLOCKED	31	0	Gen_H 
+[ 261]	SCHEDULE	31	0	Gen_H 
+[ 261]	WAITED		32	0	Gen_I 
+[ 261]	ZOMBIE		31	0	Gen_H 
+[ 261]	UNBLOCKED	30	0	Gen_G 
+[ 261]	SCHEDULE	30	0	Gen_G 
+[ 261]	WAITED		31	0	Gen_H 
+[ 261]	ZOMBIE		30	0	Gen_G 
+[ 261]	UNBLOCKED	29	0	Gen_F 
+[ 261]	SCHEDULE	29	0	Gen_F 
+[ 261]	WAITED		30	0	Gen_G 
+[ 261]	ZOMBIE		29	0	Gen_F 
+[ 261]	UNBLOCKED	28	0	Gen_E 
+[ 261]	SCHEDULE	28	0	Gen_E 
+[ 261]	WAITED		29	0	Gen_F 
+[ 261]	ZOMBIE		28	0	Gen_E 
+[ 261]	UNBLOCKED	27	0	Gen_D 
+[ 261]	SCHEDULE	27	0	Gen_D 
+[ 261]	WAITED		28	0	Gen_E 
+[ 261]	ZOMBIE		27	0	Gen_D 
+[ 261]	UNBLOCKED	26	0	Gen_C 
+[ 261]	SCHEDULE	26	0	Gen_C 
+[ 261]	WAITED		27	0	Gen_D 
+[ 261]	ZOMBIE		26	0	Gen_C 
+[ 261]	UNBLOCKED	25	0	Gen_B 
+[ 261]	SCHEDULE	25	0	Gen_B 
+[ 261]	WAITED		26	0	Gen_C 
+[ 261]	ZOMBIE		25	0	Gen_B 
+[ 261]	UNBLOCKED	24	0	Gen_A 
+[ 261]	SCHEDULE	24	0	Gen_A 
+[ 261]	WAITED		25	0	Gen_B 
+[ 261]	ZOMBIE		24	0	Gen_A 
+[ 261]	UNBLOCKED	1	-1	shell
+[ 261]	SCHEDULE	1	-1	shell
+[ 261]	WAITED		24	0	Gen_A 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  14]	CREATE		2	0	echo hi 
+[  14]	BLOCKED		1	-1	shell
+[  15]	SCHEDULE	2	0	echo hi 
+[  15]	ZOMBIE		2	0	echo hi 
+[  15]	UNBLOCKED	1	-1	shell
+[  15]	SCHEDULE	1	-1	shell
+[  15]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   9]	CREATE		2	0	echo hi 
+[   9]	BLOCKED		1	-1	shell
+[  10]	SCHEDULE	2	0	echo hi 
+[  10]	ZOMBIE		2	0	echo hi 
+[  10]	UNBLOCKED	1	-1	shell
+[  10]	SCHEDULE	1	-1	shell
+[  10]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[10819]	CREATE		2	0	echo hi 
+[10819]	BLOCKED		1	-1	shell
+[10820]	SCHEDULE	2	0	echo hi 
+[10820]	ZOMBIE		2	0	echo hi 
+[10820]	UNBLOCKED	1	-1	shell
+[10820]	SCHEDULE	1	-1	shell
+[10820]	WAITED		2	0	echo hi 
+[17469]	CREATE		3	0	echo hello hey 
+[17469]	BLOCKED		1	-1	shell
+[17470]	SCHEDULE	3	0	echo hello hey 
+[17470]	ZOMBIE		3	0	echo hello hey 
+[17470]	UNBLOCKED	1	-1	shell
+[17470]	SCHEDULE	1	-1	shell
+[17470]	WAITED		3	0	echo hello hey 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  24]	CREATE		2	0	echo hi 
+[  24]	BLOCKED		1	-1	shell
+[  25]	SCHEDULE	2	0	echo hi 
+[  25]	ZOMBIE		2	0	echo hi 
+[  25]	UNBLOCKED	1	-1	shell
+[  25]	SCHEDULE	1	-1	shell
+[  25]	WAITED		2	0	echo hi 
+[  65]	CREATE		3	0	echo hey 
+[  65]	BLOCKED		1	-1	shell
+[  66]	SCHEDULE	3	0	echo hey 
+[  66]	ZOMBIE		3	0	echo hey 
+[  66]	UNBLOCKED	1	-1	shell
+[  66]	SCHEDULE	1	-1	shell
+[  66]	WAITED		3	0	echo hey 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  26]	CREATE		2	0	ls newfs 
+[  26]	BLOCKED		1	-1	shell
+[  27]	SCHEDULE	2	0	ls newfs 
+[  27]	ZOMBIE		2	0	ls newfs 
+[  27]	UNBLOCKED	1	-1	shell
+[  27]	SCHEDULE	1	-1	shell
+[  27]	WAITED		2	0	ls newfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  78]	SCHEDULE	2	0	touch new_file 
+[  78]	ZOMBIE		2	0	touch new_file 
+[  78]	SCHEDULE	1	-1	shell
+[  78]	CREATE		2	0	touch new_file 
+[  78]	BLOCKED		1	-1	shell
+[ 563]	SIGNALED	2	0	touch new_file 
+[ 563]	ZOMBIE		2	0	touch new_file 
+[ 563]	UNBLOCKED	1	-1	shell
+[ 563]	SCHEDULE	1	-1	shell
+[ 563]	WAITED		2	0	touch new_file 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  21]	CREATE		2	0	touch new_file 
+[  21]	BLOCKED		1	-1	shell
+[  22]	SCHEDULE	2	0	touch new_file 
+[  22]	ZOMBIE		2	0	touch new_file 
+[  22]	UNBLOCKED	1	-1	shell
+[  22]	SCHEDULE	1	-1	shell
+[  22]	WAITED		2	0	touch new_file 
+[  86]	CREATE		3	0	touch new2 
+[  86]	BLOCKED		1	-1	shell
+[  87]	SCHEDULE	3	0	touch new2 
+[  87]	ZOMBIE		3	0	touch new2 
+[  87]	UNBLOCKED	1	-1	shell
+[  87]	SCHEDULE	1	-1	shell
+[  87]	WAITED		3	0	touch new2 
+[ 176]	CREATE		4	0	ls newfs 
+[ 176]	BLOCKED		1	-1	shell
+[ 177]	SCHEDULE	4	0	ls newfs 
+[ 177]	ZOMBIE		4	0	ls newfs 
+[ 177]	UNBLOCKED	1	-1	shell
+[ 177]	SCHEDULE	1	-1	shell
+[ 177]	WAITED		4	0	ls newfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[ 185]	CREATE		2	0	ls newfs 
+[ 185]	BLOCKED		1	-1	shell
+[ 186]	SCHEDULE	2	0	ls newfs 
+[ 186]	ZOMBIE		2	0	ls newfs 
+[ 186]	UNBLOCKED	1	-1	shell
+[ 186]	SCHEDULE	1	-1	shell
+[ 186]	WAITED		2	0	ls newfs 
+[ 446]	CREATE		3	0	echo hello 
+[ 446]	BLOCKED		1	-1	shell
+[ 447]	SCHEDULE	3	0	echo hello 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  72]	CREATE		2	0	echo hello 
+[  72]	BLOCKED		1	-1	shell
+[  73]	SCHEDULE	2	0	echo hello 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  29]	CREATE		2	0	echo hello 
+[  29]	BLOCKED		1	-1	shell
+[  30]	SCHEDULE	2	0	echo hello 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  36]	CREATE		2	0	echo hello 
+[  36]	BLOCKED		1	-1	shell
+[  37]	SCHEDULE	2	0	echo hello 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  31]	CREATE		2	0	echo hello 
+[  31]	BLOCKED		1	-1	shell
+[  32]	SCHEDULE	2	0	echo hello 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  20]	CREATE		2	0	echo hello 
+[  20]	BLOCKED		1	-1	shell
+[  21]	SCHEDULE	2	0	echo hello 
+[  21]	ZOMBIE		2	0	echo hello 
+[  21]	UNBLOCKED	1	-1	shell
+[  21]	SCHEDULE	1	-1	shell
+[  21]	WAITED		2	0	echo hello 
+[ 119]	CREATE		3	0	echo hi 
+[ 119]	BLOCKED		1	-1	shell
+[ 120]	SCHEDULE	3	0	echo hi 
+[ 120]	ZOMBIE		3	0	echo hi 
+[ 120]	UNBLOCKED	1	-1	shell
+[ 120]	SCHEDULE	1	-1	shell
+[ 120]	WAITED		3	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  65]	CREATE		2	0	touch new_test 
+[  65]	BLOCKED		1	-1	shell
+[  66]	SCHEDULE	2	0	touch new_test 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  91]	CREATE		2	0	touch jon 
+[  92]	SCHEDULE	2	0	touch jon 
+[  92]	ZOMBIE		2	0	touch jon 
+[  92]	UNBLOCKED	1	-1	shell
+[  92]	SCHEDULE	1	-1	shell
+[  91]	BLOCKED		1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  43]	CREATE		2	0	touch jonathan 
+[  43]	BLOCKED		1	-1	shell
+[  44]	SCHEDULE	2	0	touch jonathan 
+[  44]	ZOMBIE		2	0	touch jonathan 
+[  44]	UNBLOCKED	1	-1	shell
+[  44]	SCHEDULE	1	-1	shell
+[  44]	WAITED		2	0	touch jonathan 
+[  83]	CREATE		3	0	ls newfs 
+[  83]	BLOCKED		1	-1	shell
+[  84]	SCHEDULE	3	0	ls newfs 
+[  84]	ZOMBIE		3	0	ls newfs 
+[  84]	UNBLOCKED	1	-1	shell
+[  84]	SCHEDULE	1	-1	shell
+[  84]	WAITED		3	0	ls newfs 
+[ 148]	CREATE		4	0	echo hello 
+[ 148]	BLOCKED		1	-1	shell
+[ 149]	SCHEDULE	4	0	echo hello 
+[ 149]	ZOMBIE		4	0	echo hello 
+[ 149]	UNBLOCKED	1	-1	shell
+[ 149]	SCHEDULE	1	-1	shell
+[ 149]	WAITED		4	0	echo hello 
+[ 252]	CREATE		5	0	ls newfs 
+[ 252]	BLOCKED		1	-1	shell
+[ 253]	SCHEDULE	5	0	ls newfs 
+[ 253]	ZOMBIE		5	0	ls newfs 
+[ 253]	UNBLOCKED	1	-1	shell
+[ 253]	SCHEDULE	1	-1	shell
+[ 253]	WAITED		5	0	ls newfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  53]	CREATE		2	0	touch jonny 
+[  53]	BLOCKED		1	-1	shell
+[  54]	SCHEDULE	2	0	touch jonny 
+[  54]	ZOMBIE		2	0	touch jonny 
+[  54]	UNBLOCKED	1	-1	shell
+[  54]	SCHEDULE	1	-1	shell
+[  54]	WAITED		2	0	touch jonny 
+[ 143]	CREATE		3	0	echo hi 
+[ 143]	BLOCKED		1	-1	shell
+[ 144]	SCHEDULE	3	0	echo hi 
+[ 144]	ZOMBIE		3	0	echo hi 
+[ 144]	UNBLOCKED	1	-1	shell
+[ 144]	SCHEDULE	1	-1	shell
+[ 144]	WAITED		3	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  80]	CREATE		2	0	touch abc 
+[  80]	BLOCKED		1	-1	shell
+[  81]	SCHEDULE	2	0	touch abc 
+[  81]	ZOMBIE		2	0	touch abc 
+[  81]	UNBLOCKED	1	-1	shell
+[  81]	SCHEDULE	1	-1	shell
+[  81]	WAITED		2	0	touch abc 
+[ 131]	CREATE		3	0	echo hi 
+[ 131]	BLOCKED		1	-1	shell
+[ 132]	SCHEDULE	3	0	echo hi 
+[ 132]	ZOMBIE		3	0	echo hi 
+[ 132]	UNBLOCKED	1	-1	shell
+[ 132]	SCHEDULE	1	-1	shell
+[ 132]	WAITED		3	0	echo hi 
+[ 182]	CREATE		4	0	ls newfs 
+[ 182]	BLOCKED		1	-1	shell
+[ 183]	SCHEDULE	4	0	ls newfs 
+[ 183]	ZOMBIE		4	0	ls newfs 
+[ 183]	UNBLOCKED	1	-1	shell
+[ 183]	SCHEDULE	1	-1	shell
+[ 183]	WAITED		4	0	ls newfs 
+[ 601]	CREATE		5	0	touch abc 
+[ 601]	BLOCKED		1	-1	shell
+[ 602]	SCHEDULE	5	0	touch abc 
+[ 602]	ZOMBIE		5	0	touch abc 
+[ 602]	UNBLOCKED	1	-1	shell
+[ 602]	SCHEDULE	1	-1	shell
+[ 602]	WAITED		5	0	touch abc 
+[1438]	CREATE		6	0	cat abc 
+[1438]	BLOCKED		1	-1	shell
+[1439]	SCHEDULE	6	0	cat abc 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  14]	CREATE		2	0	cat 
+[  14]	BLOCKED		1	-1	shell
+[  15]	SCHEDULE	2	0	cat 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   7]	CREATE		2	0	cat 
+[   7]	BLOCKED		1	-1	shell
+[   8]	SCHEDULE	2	0	cat 
+[  22]	ZOMBIE		2	0	cat 
+[  22]	UNBLOCKED	1	-1	shell
+[  22]	SCHEDULE	1	-1	shell
+[  22]	WAITED		2	0	cat 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   9]	CREATE		2	0	cat 
+[   9]	BLOCKED		1	-1	shell
+[  10]	SCHEDULE	2	0	cat 
+[1083]	ZOMBIE		2	0	cat 
+[1083]	UNBLOCKED	1	-1	shell
+[1083]	SCHEDULE	1	-1	shell
+[1083]	WAITED		2	0	cat 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   7]	CREATE		2	0	cat 
+[   7]	BLOCKED		1	-1	shell
+[   8]	SCHEDULE	2	0	cat 
+[ 312]	ZOMBIE		2	0	cat 
+[ 313]	UNBLOCKED	1	-1	shell
+[ 313]	SCHEDULE	1	-1	shell
+[ 313]	WAITED		2	0	cat 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   5]	CREATE		2	0	cat 
+[   6]	SCHEDULE	2	0	cat 
+[   7]	SCHEDULE	1	-1	shell
+[   7]	BLOCKED		1	-1	shell
+[   8]	SCHEDULE	2	0	cat 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  35]	CREATE		2	0	echo 
+[  35]	BLOCKED		1	-1	shell
+[  36]	SCHEDULE	2	0	echo 
+[  36]	ZOMBIE		2	0	echo 
+[  36]	UNBLOCKED	1	-1	shell
+[  36]	SCHEDULE	1	-1	shell
+[  36]	WAITED		2	0	echo 
+[ 155]	CREATE		3	0	ls newfs 
+[ 155]	BLOCKED		1	-1	shell
+[ 156]	SCHEDULE	3	0	ls newfs 
+[ 156]	ZOMBIE		3	0	ls newfs 
+[ 156]	UNBLOCKED	1	-1	shell
+[ 156]	SCHEDULE	1	-1	shell
+[ 156]	WAITED		3	0	ls newfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  63]	CREATE		2	0	echo 
+[  63]	BLOCKED		1	-1	shell
+[  64]	SCHEDULE	2	0	echo 
+[  64]	ZOMBIE		2	0	echo 
+[  64]	UNBLOCKED	1	-1	shell
+[  64]	SCHEDULE	1	-1	shell
+[  64]	WAITED		2	0	echo 
+[ 183]	SCHEDULE	3	0	echo hi 
+[ 183]	ZOMBIE		3	0	echo hi 
+[ 183]	SCHEDULE	1	-1	shell
+[ 183]	CREATE		3	0	echo hi 
+[ 183]	BLOCKED		1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  21]	CREATE		2	0	echo hi 
+[  21]	BLOCKED		1	-1	shell
+[  22]	SCHEDULE	2	0	echo hi 
+[  22]	ZOMBIE		2	0	echo hi 
+[  22]	UNBLOCKED	1	-1	shell
+[  22]	SCHEDULE	1	-1	shell
+[  22]	WAITED		2	0	echo hi 
+[  49]	CREATE		3	0	ls newfs 
+[  49]	BLOCKED		1	-1	shell
+[  50]	SCHEDULE	3	0	ls newfs 
+[  50]	ZOMBIE		3	0	ls newfs 
+[  50]	UNBLOCKED	1	-1	shell
+[  50]	SCHEDULE	1	-1	shell
+[  50]	WAITED		3	0	ls newfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  19]	CREATE		2	0	echo hi 
+[  19]	BLOCKED		1	-1	shell
+[  20]	SCHEDULE	2	0	echo hi 
+[  20]	ZOMBIE		2	0	echo hi 
+[  20]	UNBLOCKED	1	-1	shell
+[  20]	SCHEDULE	1	-1	shell
+[  20]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  17]	CREATE		2	0	echo hi 
+[  17]	BLOCKED		1	-1	shell
+[  18]	SCHEDULE	2	0	echo hi 
+[  18]	ZOMBIE		2	0	echo hi 
+[  18]	UNBLOCKED	1	-1	shell
+[  18]	SCHEDULE	1	-1	shell
+[  18]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  16]	CREATE		2	0	echo hi 
+[  16]	BLOCKED		1	-1	shell
+[  17]	SCHEDULE	2	0	echo hi 
+[  17]	ZOMBIE		2	0	echo hi 
+[  17]	UNBLOCKED	1	-1	shell
+[  17]	SCHEDULE	1	-1	shell
+[  17]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  73]	CREATE		2	0	echo hi 
+[  73]	BLOCKED		1	-1	shell
+[  74]	SCHEDULE	2	0	echo hi 
+[  74]	ZOMBIE		2	0	echo hi 
+[  74]	UNBLOCKED	1	-1	shell
+[  74]	SCHEDULE	1	-1	shell
+[  74]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  30]	CREATE		2	0	echo hi 
+[  30]	BLOCKED		1	-1	shell
+[  31]	SCHEDULE	2	0	echo hi 
+[  31]	ZOMBIE		2	0	echo hi 
+[  31]	UNBLOCKED	1	-1	shell
+[  31]	SCHEDULE	1	-1	shell
+[  31]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  19]	CREATE		2	0	echo hi 
+[  19]	BLOCKED		1	-1	shell
+[  20]	SCHEDULE	2	0	echo hi 
+[  20]	ZOMBIE		2	0	echo hi 
+[  20]	UNBLOCKED	1	-1	shell
+[  20]	SCHEDULE	1	-1	shell
+[  20]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  29]	CREATE		2	0	echo hi 
+[  29]	BLOCKED		1	-1	shell
+[  30]	SCHEDULE	2	0	echo hi 
+[  30]	ZOMBIE		2	0	echo hi 
+[  30]	UNBLOCKED	1	-1	shell
+[  30]	SCHEDULE	1	-1	shell
+[  30]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  13]	CREATE		2	0	echo hi 
+[  13]	BLOCKED		1	-1	shell
+[  14]	SCHEDULE	2	0	echo hi 
+[  14]	ZOMBIE		2	0	echo hi 
+[  14]	UNBLOCKED	1	-1	shell
+[  14]	SCHEDULE	1	-1	shell
+[  14]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  17]	CREATE		2	0	echo hi 
+[  17]	BLOCKED		1	-1	shell
+[  18]	SCHEDULE	2	0	echo hi 
+[  18]	ZOMBIE		2	0	echo hi 
+[  18]	UNBLOCKED	1	-1	shell
+[  18]	SCHEDULE	1	-1	shell
+[  18]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  27]	CREATE		2	0	touch abc 
+[  27]	BLOCKED		1	-1	shell
+[  28]	SCHEDULE	2	0	touch abc 
+[  28]	ZOMBIE		2	0	touch abc 
+[  28]	UNBLOCKED	1	-1	shell
+[  28]	SCHEDULE	1	-1	shell
+[  28]	WAITED		2	0	touch abc 
+[  71]	CREATE		3	0	ls abc 
+[  71]	BLOCKED		1	-1	shell
+[  72]	SCHEDULE	3	0	ls abc 
+[  72]	ZOMBIE		3	0	ls abc 
+[  72]	UNBLOCKED	1	-1	shell
+[  72]	SCHEDULE	1	-1	shell
+[  72]	WAITED		3	0	ls abc 
+[ 156]	CREATE		4	0	ls testfs 
+[ 156]	BLOCKED		1	-1	shell
+[ 157]	SCHEDULE	4	0	ls testfs 
+[ 157]	ZOMBIE		4	0	ls testfs 
+[ 157]	UNBLOCKED	1	-1	shell
+[ 157]	SCHEDULE	1	-1	shell
+[ 157]	WAITED		4	0	ls testfs 
+[ 226]	CREATE		5	0	echo hi 
+[ 226]	BLOCKED		1	-1	shell
+[ 227]	SCHEDULE	5	0	echo hi 
+[ 227]	ZOMBIE		5	0	echo hi 
+[ 227]	UNBLOCKED	1	-1	shell
+[ 227]	SCHEDULE	1	-1	shell
+[ 227]	WAITED		5	0	echo hi 
+[ 351]	CREATE		6	0	ls abc 
+[ 351]	BLOCKED		1	-1	shell
+[ 352]	SCHEDULE	6	0	ls abc 
+[ 352]	ZOMBIE		6	0	ls abc 
+[ 352]	UNBLOCKED	1	-1	shell
+[ 352]	SCHEDULE	1	-1	shell
+[ 352]	WAITED		6	0	ls abc 
+[ 375]	CREATE		7	0	ls testfs 
+[ 375]	BLOCKED		1	-1	shell
+[ 376]	SCHEDULE	7	0	ls testfs 
+[ 376]	ZOMBIE		7	0	ls testfs 
+[ 376]	UNBLOCKED	1	-1	shell
+[ 376]	SCHEDULE	1	-1	shell
+[ 376]	WAITED		7	0	ls testfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  34]	CREATE		2	0	ls testfs 
+[  34]	BLOCKED		1	-1	shell
+[  35]	SCHEDULE	2	0	ls testfs 
+[  35]	ZOMBIE		2	0	ls testfs 
+[  35]	UNBLOCKED	1	-1	shell
+[  35]	SCHEDULE	1	-1	shell
+[  35]	WAITED		2	0	ls testfs 
+[  62]	CREATE		3	0	echo hi 
+[  62]	BLOCKED		1	-1	shell
+[  63]	SCHEDULE	3	0	echo hi 
+[  63]	ZOMBIE		3	0	echo hi 
+[  63]	UNBLOCKED	1	-1	shell
+[  63]	SCHEDULE	1	-1	shell
+[  63]	WAITED		3	0	echo hi 
+[ 492]	CREATE		4	0	ls testfs 
+[ 492]	BLOCKED		1	-1	shell
+[ 493]	SCHEDULE	4	0	ls testfs 
+[ 493]	ZOMBIE		4	0	ls testfs 
+[ 493]	UNBLOCKED	1	-1	shell
+[ 493]	SCHEDULE	1	-1	shell
+[ 493]	WAITED		4	0	ls testfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  27]	CREATE		2	0	ls testfs 
+[  27]	BLOCKED		1	-1	shell
+[  28]	SCHEDULE	2	0	ls testfs 
+[  28]	ZOMBIE		2	0	ls testfs 
+[  28]	UNBLOCKED	1	-1	shell
+[  28]	SCHEDULE	1	-1	shell
+[  28]	WAITED		2	0	ls testfs 
+[  60]	CREATE		3	0	echo hi 
+[  60]	BLOCKED		1	-1	shell
+[  61]	SCHEDULE	3	0	echo hi 
+[  61]	ZOMBIE		3	0	echo hi 
+[  61]	UNBLOCKED	1	-1	shell
+[  61]	SCHEDULE	1	-1	shell
+[  61]	WAITED		3	0	echo hi 
+[1033]	CREATE		4	0	ls testfs 
+[1033]	BLOCKED		1	-1	shell
+[1034]	SCHEDULE	4	0	ls testfs 
+[1034]	ZOMBIE		4	0	ls testfs 
+[1034]	UNBLOCKED	1	-1	shell
+[1034]	SCHEDULE	1	-1	shell
+[1034]	WAITED		4	0	ls testfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[ 137]	CREATE		2	0	touch 123 
+[ 137]	BLOCKED		1	-1	shell
+[ 138]	SCHEDULE	2	0	touch 123 
+[ 138]	ZOMBIE		2	0	touch 123 
+[ 138]	UNBLOCKED	1	-1	shell
+[ 138]	SCHEDULE	1	-1	shell
+[ 138]	WAITED		2	0	touch 123 
+[ 373]	CREATE		3	0	mv 123 new_name 
+[ 373]	BLOCKED		1	-1	shell
+[ 374]	SCHEDULE	3	0	mv 123 new_name 
+[ 374]	ZOMBIE		3	0	mv 123 new_name 
+[ 374]	UNBLOCKED	1	-1	shell
+[ 374]	SCHEDULE	1	-1	shell
+[ 374]	WAITED		3	0	mv 123 new_name 
+[1097]	CREATE		4	0	touch new_name 
+[1097]	BLOCKED		1	-1	shell
+[1098]	SCHEDULE	4	0	touch new_name 
+[1098]	ZOMBIE		4	0	touch new_name 
+[1098]	UNBLOCKED	1	-1	shell
+[1098]	SCHEDULE	1	-1	shell
+[1098]	WAITED		4	0	touch new_name 
+[1139]	CREATE		5	0	mv 123 new_name 
+[1139]	BLOCKED		1	-1	shell
+[1140]	SCHEDULE	5	0	mv 123 new_name 
+[1140]	ZOMBIE		5	0	mv 123 new_name 
+[1140]	UNBLOCKED	1	-1	shell
+[1140]	SCHEDULE	1	-1	shell
+[1140]	WAITED		5	0	mv 123 new_name 
+[1757]	CREATE		6	0	mv 123 new_name 
+[1757]	BLOCKED		1	-1	shell
+[1758]	SCHEDULE	6	0	mv 123 new_name 
+[1758]	ZOMBIE		6	0	mv 123 new_name 
+[1758]	UNBLOCKED	1	-1	shell
+[1758]	SCHEDULE	1	-1	shell
+[1758]	WAITED		6	0	mv 123 new_name 
+[1875]	CREATE		7	0	touch aaa 
+[1875]	BLOCKED		1	-1	shell
+[1876]	SCHEDULE	7	0	touch aaa 
+[1876]	ZOMBIE		7	0	touch aaa 
+[1876]	UNBLOCKED	1	-1	shell
+[1876]	SCHEDULE	1	-1	shell
+[1876]	WAITED		7	0	touch aaa 
+[1964]	CREATE		8	0	mv aaa new_aaa 
+[1964]	BLOCKED		1	-1	shell
+[1965]	SCHEDULE	8	0	mv aaa new_aaa 
+[1965]	ZOMBIE		8	0	mv aaa new_aaa 
+[1965]	UNBLOCKED	1	-1	shell
+[1965]	SCHEDULE	1	-1	shell
+[1965]	WAITED		8	0	mv aaa new_aaa 
+[2021]	CREATE		9	0	ls testfs 
+[2021]	BLOCKED		1	-1	shell
+[2022]	SCHEDULE	9	0	ls testfs 
+[2022]	ZOMBIE		9	0	ls testfs 
+[2022]	UNBLOCKED	1	-1	shell
+[2022]	SCHEDULE	1	-1	shell
+[2022]	WAITED		9	0	ls testfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  43]	CREATE		2	0	ls testfs 
+[  43]	BLOCKED		1	-1	shell
+[  44]	SCHEDULE	2	0	ls testfs 
+[  44]	ZOMBIE		2	0	ls testfs 
+[  44]	UNBLOCKED	1	-1	shell
+[  44]	SCHEDULE	1	-1	shell
+[  44]	WAITED		2	0	ls testfs 
+[  87]	CREATE		3	0	mv new_aaa aaa 
+[  87]	BLOCKED		1	-1	shell
+[  88]	SCHEDULE	3	0	mv new_aaa aaa 
+[  88]	ZOMBIE		3	0	mv new_aaa aaa 
+[  88]	UNBLOCKED	1	-1	shell
+[  88]	SCHEDULE	1	-1	shell
+[  88]	WAITED		3	0	mv new_aaa aaa 
+[ 113]	CREATE		4	0	ls testfs 
+[ 113]	BLOCKED		1	-1	shell
+[ 114]	SCHEDULE	4	0	ls testfs 
+[ 114]	ZOMBIE		4	0	ls testfs 
+[ 114]	UNBLOCKED	1	-1	shell
+[ 114]	SCHEDULE	1	-1	shell
+[ 114]	WAITED		4	0	ls testfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  72]	CREATE		2	0	touch abc 
+[  72]	BLOCKED		1	-1	shell
+[  73]	SCHEDULE	2	0	touch abc 
+[  73]	ZOMBIE		2	0	touch abc 
+[  73]	UNBLOCKED	1	-1	shell
+[  73]	SCHEDULE	1	-1	shell
+[  73]	WAITED		2	0	touch abc 
+[ 130]	CREATE		3	0	ls testfs 
+[ 130]	BLOCKED		1	-1	shell
+[ 131]	SCHEDULE	3	0	ls testfs 
+[ 131]	ZOMBIE		3	0	ls testfs 
+[ 131]	UNBLOCKED	1	-1	shell
+[ 131]	SCHEDULE	1	-1	shell
+[ 131]	WAITED		3	0	ls testfs 
+[ 196]	CREATE		4	0	mv abc new_abc 
+[ 196]	BLOCKED		1	-1	shell
+[ 197]	SCHEDULE	4	0	mv abc new_abc 
+[ 197]	ZOMBIE		4	0	mv abc new_abc 
+[ 197]	UNBLOCKED	1	-1	shell
+[ 197]	SCHEDULE	1	-1	shell
+[ 197]	WAITED		4	0	mv abc new_abc 
+[ 224]	CREATE		5	0	ls testfs 
+[ 224]	BLOCKED		1	-1	shell
+[ 225]	SCHEDULE	5	0	ls testfs 
+[ 225]	ZOMBIE		5	0	ls testfs 
+[ 225]	UNBLOCKED	1	-1	shell
+[ 225]	SCHEDULE	1	-1	shell
+[ 225]	WAITED		5	0	ls testfs 
+[ 508]	CREATE		6	0	echo hi 
+[ 508]	BLOCKED		1	-1	shell
+[ 509]	SCHEDULE	6	0	echo hi 
+[ 509]	ZOMBIE		6	0	echo hi 
+[ 509]	UNBLOCKED	1	-1	shell
+[ 509]	SCHEDULE	1	-1	shell
+[ 509]	WAITED		6	0	echo hi 
+[ 687]	CREATE		7	0	ls testfs 
+[ 687]	BLOCKED		1	-1	shell
+[ 688]	SCHEDULE	7	0	ls testfs 
+[ 688]	ZOMBIE		7	0	ls testfs 
+[ 688]	UNBLOCKED	1	-1	shell
+[ 688]	SCHEDULE	1	-1	shell
+[ 688]	WAITED		7	0	ls testfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  25]	CREATE		2	0	ls testfs 
+[  25]	BLOCKED		1	-1	shell
+[  26]	SCHEDULE	2	0	ls testfs 
+[  26]	ZOMBIE		2	0	ls testfs 
+[  26]	UNBLOCKED	1	-1	shell
+[  26]	SCHEDULE	1	-1	shell
+[  26]	WAITED		2	0	ls testfs 
+[  93]	CREATE		3	0	rm new_abc 
+[  93]	BLOCKED		1	-1	shell
+[  94]	SCHEDULE	3	0	rm new_abc 
+[  94]	ZOMBIE		3	0	rm new_abc 
+[  94]	UNBLOCKED	1	-1	shell
+[  94]	SCHEDULE	1	-1	shell
+[  94]	WAITED		3	0	rm new_abc 
+[ 116]	CREATE		4	0	ls tesfs 
+[ 116]	BLOCKED		1	-1	shell
+[ 117]	SCHEDULE	4	0	ls tesfs 
+[ 117]	ZOMBIE		4	0	ls tesfs 
+[ 117]	UNBLOCKED	1	-1	shell
+[ 117]	SCHEDULE	1	-1	shell
+[ 117]	WAITED		4	0	ls tesfs 
+[ 170]	CREATE		5	0	ls testfs 
+[ 170]	BLOCKED		1	-1	shell
+[ 171]	SCHEDULE	5	0	ls testfs 
+[ 171]	ZOMBIE		5	0	ls testfs 
+[ 171]	UNBLOCKED	1	-1	shell
+[ 171]	SCHEDULE	1	-1	shell
+[ 171]	WAITED		5	0	ls testfs 
+[ 295]	CREATE		6	0	touch new_abc 
+[ 295]	BLOCKED		1	-1	shell
+[ 296]	SCHEDULE	6	0	touch new_abc 
+[ 296]	ZOMBIE		6	0	touch new_abc 
+[ 296]	UNBLOCKED	1	-1	shell
+[ 296]	SCHEDULE	1	-1	shell
+[ 296]	WAITED		6	0	touch new_abc 
+[ 394]	CREATE		7	0	touch new_touched 
+[ 394]	BLOCKED		1	-1	shell
+[ 395]	SCHEDULE	7	0	touch new_touched 
+[ 395]	ZOMBIE		7	0	touch new_touched 
+[ 395]	UNBLOCKED	1	-1	shell
+[ 395]	SCHEDULE	1	-1	shell
+[ 395]	WAITED		7	0	touch new_touched 
+[ 506]	CREATE		8	0	ls testfs 
+[ 506]	BLOCKED		1	-1	shell
+[ 507]	SCHEDULE	8	0	ls testfs 
+[ 507]	ZOMBIE		8	0	ls testfs 
+[ 507]	UNBLOCKED	1	-1	shell
+[ 507]	SCHEDULE	1	-1	shell
+[ 507]	WAITED		8	0	ls testfs 
+[ 556]	CREATE		9	0	rm new_touched 
+[ 556]	BLOCKED		1	-1	shell
+[ 557]	SCHEDULE	9	0	rm new_touched 
+[ 557]	ZOMBIE		9	0	rm new_touched 
+[ 557]	UNBLOCKED	1	-1	shell
+[ 557]	SCHEDULE	1	-1	shell
+[ 557]	WAITED		9	0	rm new_touched 
+[ 596]	CREATE		10	0	ls testfs 
+[ 596]	BLOCKED		1	-1	shell
+[ 597]	SCHEDULE	10	0	ls testfs 
+[ 597]	ZOMBIE		10	0	ls testfs 
+[ 597]	UNBLOCKED	1	-1	shell
+[ 597]	SCHEDULE	1	-1	shell
+[ 597]	WAITED		10	0	ls testfs 
+[1095]	CREATE		11	0	rm testfs 
+[1095]	BLOCKED		1	-1	shell
+[1096]	SCHEDULE	11	0	rm testfs 
+[1096]	ZOMBIE		11	0	rm testfs 
+[1096]	UNBLOCKED	1	-1	shell
+[1096]	SCHEDULE	1	-1	shell
+[1096]	WAITED		11	0	rm testfs 
+[1123]	CREATE		12	0	ls testfs 
+[1123]	BLOCKED		1	-1	shell
+[1124]	SCHEDULE	12	0	ls testfs 
+[1124]	ZOMBIE		12	0	ls testfs 
+[1124]	UNBLOCKED	1	-1	shell
+[1124]	SCHEDULE	1	-1	shell
+[1124]	WAITED		12	0	ls testfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  31]	CREATE		2	0	ls testfs 
+[  31]	BLOCKED		1	-1	shell
+[  32]	SCHEDULE	2	0	ls testfs 
+[  32]	ZOMBIE		2	0	ls testfs 
+[  32]	UNBLOCKED	1	-1	shell
+[  32]	SCHEDULE	1	-1	shell
+[  32]	WAITED		2	0	ls testfs 
+[  87]	CREATE		3	0	touch abc 
+[  87]	BLOCKED		1	-1	shell
+[  88]	SCHEDULE	3	0	touch abc 
+[  88]	ZOMBIE		3	0	touch abc 
+[  88]	UNBLOCKED	1	-1	shell
+[  88]	SCHEDULE	1	-1	shell
+[  88]	WAITED		3	0	touch abc 
+[ 121]	CREATE		4	0	ls testfs 
+[ 121]	BLOCKED		1	-1	shell
+[ 122]	SCHEDULE	4	0	ls testfs 
+[ 122]	ZOMBIE		4	0	ls testfs 
+[ 122]	UNBLOCKED	1	-1	shell
+[ 122]	SCHEDULE	1	-1	shell
+[ 122]	WAITED		4	0	ls testfs 
+[ 176]	CREATE		5	0	rm abc 
+[ 176]	BLOCKED		1	-1	shell
+[ 177]	SCHEDULE	5	0	rm abc 
+[ 177]	ZOMBIE		5	0	rm abc 
+[ 177]	UNBLOCKED	1	-1	shell
+[ 177]	SCHEDULE	1	-1	shell
+[ 177]	WAITED		5	0	rm abc 
+[ 195]	CREATE		6	0	ls testfs 
+[ 195]	BLOCKED		1	-1	shell
+[ 196]	SCHEDULE	6	0	ls testfs 
+[ 196]	ZOMBIE		6	0	ls testfs 
+[ 196]	UNBLOCKED	1	-1	shell
+[ 196]	SCHEDULE	1	-1	shell
+[ 196]	WAITED		6	0	ls testfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  58]	CREATE		2	0	touch abc 
+[  59]	SCHEDULE	2	0	touch abc 
+[  59]	ZOMBIE		2	0	touch abc 
+[  59]	UNBLOCKED	1	-1	shell
+[  59]	SCHEDULE	1	-1	shell
+[  58]	BLOCKED		1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  29]	CREATE		2	0	ls testfs 
+[  29]	BLOCKED		1	-1	shell
+[  30]	SCHEDULE	2	0	ls testfs 
+[  30]	ZOMBIE		2	0	ls testfs 
+[  30]	UNBLOCKED	1	-1	shell
+[  30]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  39]	CREATE		2	0	ls testfs 
+[  39]	BLOCKED		1	-1	shell
+[  40]	SCHEDULE	2	0	ls testfs 
+[  40]	ZOMBIE		2	0	ls testfs 
+[  40]	UNBLOCKED	1	-1	shell
+[  40]	SCHEDULE	1	-1	shell
+[  40]	WAITED		2	0	ls testfs 
+[  82]	CREATE		3	0	rm abc 
+[  82]	BLOCKED		1	-1	shell
+[  83]	SCHEDULE	3	0	rm abc 
+[  83]	ZOMBIE		3	0	rm abc 
+[  83]	UNBLOCKED	1	-1	shell
+[  83]	SCHEDULE	1	-1	shell
+[  83]	WAITED		3	0	rm abc 
+[ 101]	CREATE		4	0	ls testfs 
+[ 101]	BLOCKED		1	-1	shell
+[ 102]	SCHEDULE	4	0	ls testfs 
+[ 102]	ZOMBIE		4	0	ls testfs 
+[ 102]	UNBLOCKED	1	-1	shell
+[ 102]	SCHEDULE	1	-1	shell
+[ 102]	WAITED		4	0	ls testfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  13]	CREATE		2	0	ls testfs 
+[  13]	BLOCKED		1	-1	shell
+[  14]	SCHEDULE	2	0	ls testfs 
+[  14]	ZOMBIE		2	0	ls testfs 
+[  14]	UNBLOCKED	1	-1	shell
+[  14]	SCHEDULE	1	-1	shell
+[  14]	WAITED		2	0	ls testfs 
+[  75]	CREATE		3	0	touch abc 
+[  75]	BLOCKED		1	-1	shell
+[  76]	SCHEDULE	3	0	touch abc 
+[  76]	ZOMBIE		3	0	touch abc 
+[  76]	UNBLOCKED	1	-1	shell
+[  76]	SCHEDULE	1	-1	shell
+[  76]	WAITED		3	0	touch abc 
+[  97]	CREATE		4	0	ls testfs 
+[  97]	BLOCKED		1	-1	shell
+[  98]	SCHEDULE	4	0	ls testfs 
+[  98]	ZOMBIE		4	0	ls testfs 
+[  98]	UNBLOCKED	1	-1	shell
+[  98]	SCHEDULE	1	-1	shell
+[  98]	WAITED		4	0	ls testfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  21]	CREATE		2	0	ls testfs 
+[  21]	BLOCKED		1	-1	shell
+[  22]	SCHEDULE	2	0	ls testfs 
+[  22]	ZOMBIE		2	0	ls testfs 
+[  22]	UNBLOCKED	1	-1	shell
+[  22]	SCHEDULE	1	-1	shell
+[  22]	WAITED		2	0	ls testfs 
+[ 994]	CREATE		3	0	chmod +x abc 
+[ 994]	BLOCKED		1	-1	shell
+[ 995]	SCHEDULE	3	0	chmod +x abc 
+[ 995]	ZOMBIE		3	0	chmod +x abc 
+[ 995]	UNBLOCKED	1	-1	shell
+[ 995]	SCHEDULE	1	-1	shell
+[ 995]	WAITED		3	0	chmod +x abc 
+[1046]	CREATE		4	0	ls testfs 
+[1046]	BLOCKED		1	-1	shell
+[1047]	SCHEDULE	4	0	ls testfs 
+[1047]	ZOMBIE		4	0	ls testfs 
+[1047]	UNBLOCKED	1	-1	shell
+[1047]	SCHEDULE	1	-1	shell
+[1047]	WAITED		4	0	ls testfs 
+[1132]	CREATE		5	0	chmod -w abc 
+[1132]	BLOCKED		1	-1	shell
+[1133]	SCHEDULE	5	0	chmod -w abc 
+[1133]	ZOMBIE		5	0	chmod -w abc 
+[1133]	UNBLOCKED	1	-1	shell
+[1133]	SCHEDULE	1	-1	shell
+[1133]	WAITED		5	0	chmod -w abc 
+[1159]	CREATE		6	0	ls testfs 
+[1159]	BLOCKED		1	-1	shell
+[1160]	SCHEDULE	6	0	ls testfs 
+[1160]	ZOMBIE		6	0	ls testfs 
+[1160]	UNBLOCKED	1	-1	shell
+[1160]	SCHEDULE	1	-1	shell
+[1160]	WAITED		6	0	ls testfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  29]	CREATE		2	0	ls testfs 
+[  29]	BLOCKED		1	-1	shell
+[  30]	SCHEDULE	2	0	ls testfs 
+[  30]	ZOMBIE		2	0	ls testfs 
+[  30]	UNBLOCKED	1	-1	shell
+[  30]	SCHEDULE	1	-1	shell
+[  30]	WAITED		2	0	ls testfs 
+[  79]	CREATE		3	0	touch abc 
+[  79]	BLOCKED		1	-1	shell
+[  80]	SCHEDULE	3	0	touch abc 
+[  80]	ZOMBIE		3	0	touch abc 
+[  80]	UNBLOCKED	1	-1	shell
+[  80]	SCHEDULE	1	-1	shell
+[  80]	WAITED		3	0	touch abc 
+[ 104]	CREATE		4	0	ls testfs 
+[ 104]	BLOCKED		1	-1	shell
+[ 105]	SCHEDULE	4	0	ls testfs 
+[ 105]	ZOMBIE		4	0	ls testfs 
+[ 105]	UNBLOCKED	1	-1	shell
+[ 105]	SCHEDULE	1	-1	shell
+[ 105]	WAITED		4	0	ls testfs 
+[ 174]	CREATE		5	0	chmod +x abc 
+[ 174]	BLOCKED		1	-1	shell
+[ 175]	SCHEDULE	5	0	chmod +x abc 
+[ 175]	ZOMBIE		5	0	chmod +x abc 
+[ 175]	UNBLOCKED	1	-1	shell
+[ 175]	SCHEDULE	1	-1	shell
+[ 175]	WAITED		5	0	chmod +x abc 
+[ 203]	CREATE		6	0	ls testfs 
+[ 203]	BLOCKED		1	-1	shell
+[ 204]	SCHEDULE	6	0	ls testfs 
+[ 204]	ZOMBIE		6	0	ls testfs 
+[ 204]	UNBLOCKED	1	-1	shell
+[ 204]	SCHEDULE	1	-1	shell
+[ 204]	WAITED		6	0	ls testfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  42]	SCHEDULE	2	0	ls testfs 
+[  42]	ZOMBIE		2	0	ls testfs 
+[  42]	SCHEDULE	1	-1	shell
+[  42]	CREATE		2	0	ls testfs 
+[  42]	BLOCKED		1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[1659]	CREATE		2	0	sleep 1 
+[1659]	BLOCKED		1	-1	shell
+[1660]	SCHEDULE	2	0	sleep 1 
+[1660]	BLOCKED		2	0	sleep 1 
+[1670]	UNBLOCKED	2	0	sleep 1 
+[1670]	ZOMBIE		2	0	sleep 1 
+[1670]	UNBLOCKED	1	-1	shell
+[1670]	WAITED		2	0	sleep 1 
+[1690]	CREATE		3	0	echo hi 
+[1690]	BLOCKED		1	-1	shell
+[1691]	SCHEDULE	3	0	echo hi 
+[1691]	ZOMBIE		3	0	echo hi 
+[1691]	UNBLOCKED	1	-1	shell
+[1691]	SCHEDULE	1	-1	shell
+[1691]	WAITED		3	0	echo hi 
+[1893]	CREATE		4	0	ls testfs 
+[1893]	BLOCKED		1	-1	shell
+[1894]	SCHEDULE	4	0	ls testfs 
+[1894]	ZOMBIE		4	0	ls testfs 
+[1894]	UNBLOCKED	1	-1	shell
+[1894]	SCHEDULE	1	-1	shell
+[1894]	WAITED		4	0	ls testfs 
+[2075]	CREATE		5	0	echo hello 
+[2075]	BLOCKED		1	-1	shell
+[2076]	SCHEDULE	5	0	echo hello 
+[2076]	ZOMBIE		5	0	echo hello 
+[2076]	UNBLOCKED	1	-1	shell
+[2076]	SCHEDULE	1	-1	shell
+[2076]	WAITED		5	0	echo hello 
+[2268]	CREATE		6	0	ls testfs 
+[2268]	BLOCKED		1	-1	shell
+[2269]	SCHEDULE	6	0	ls testfs 
+[2269]	ZOMBIE		6	0	ls testfs 
+[2269]	UNBLOCKED	1	-1	shell
+[2269]	SCHEDULE	1	-1	shell
+[2269]	WAITED		6	0	ls testfs 
+[6697]	CREATE		7	0	busy 
+[6697]	BLOCKED		1	-1	shell
+[6698]	SCHEDULE	7	0	busy 
+[7162]	SIGNALED	7	0	busy 
+[7162]	ZOMBIE		7	0	busy 
+[7162]	UNBLOCKED	1	-1	shell
+[7162]	SCHEDULE	1	-1	shell
+[7162]	WAITED		7	0	busy 
+[7734]	CREATE		8	0	sleep 100 
+[7734]	BLOCKED		1	-1	shell
+[7735]	SCHEDULE	8	0	sleep 100 
+[7735]	BLOCKED		8	0	sleep 100 
+[8087]	SIGNALED	8	0	sleep 100 
+[8087]	ZOMBIE		8	0	sleep 100 
+[8087]	UNBLOCKED	1	-1	shell
+[8087]	SCHEDULE	1	-1	shell
+[8087]	WAITED		8	0	sleep 100 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  13]	CREATE		2	0	busy 
+[  13]	BLOCKED		1	-1	shell
+[  14]	SCHEDULE	2	0	busy 
+[ 526]	SIGNALED	2	0	busy 
+[ 526]	ZOMBIE		2	0	busy 
+[ 526]	UNBLOCKED	1	-1	shell
+[ 526]	SCHEDULE	1	-1	shell
+[ 526]	WAITED		2	0	busy 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  19]	CREATE		2	0	busy 
+[  19]	BLOCKED		1	-1	shell
+[  20]	SCHEDULE	2	0	busy 
+[ 283]	SIGNALED	2	0	busy 
+[ 283]	ZOMBIE		2	0	busy 
+[ 283]	UNBLOCKED	1	-1	shell
+[ 283]	SCHEDULE	1	-1	shell
+[ 283]	WAITED		2	0	busy 
+[1320]	CREATE		3	0	busy 
+[1320]	SCHEDULE	3	0	busy 
+[1321]	SCHEDULE	1	-1	shell
+[1322]	SCHEDULE	3	0	busy 
+[1323]	SCHEDULE	1	-1	shell
+[1324]	SCHEDULE	3	0	busy 
+[1325]	SCHEDULE	1	-1	shell
+[1329]	SCHEDULE	3	0	busy 
+[1330]	SCHEDULE	1	-1	shell
+[1331]	SCHEDULE	3	0	busy 
+[1332]	SCHEDULE	1	-1	shell
+[1333]	SCHEDULE	3	0	busy 
+[1334]	SCHEDULE	1	-1	shell
+[1335]	SCHEDULE	3	0	busy 
+[1336]	SCHEDULE	1	-1	shell
+[1337]	SCHEDULE	3	0	busy 
+[1338]	SCHEDULE	1	-1	shell
+[1339]	SCHEDULE	3	0	busy 
+[1340]	SCHEDULE	1	-1	shell
+[1344]	SCHEDULE	3	0	busy 
+[1345]	SCHEDULE	1	-1	shell
+[1346]	SCHEDULE	3	0	busy 
+[1347]	SCHEDULE	1	-1	shell
+[1348]	SCHEDULE	3	0	busy 
+[1349]	SCHEDULE	1	-1	shell
+[1350]	SCHEDULE	3	0	busy 
+[1351]	SCHEDULE	1	-1	shell
+[1352]	SCHEDULE	3	0	busy 
+[1353]	SCHEDULE	1	-1	shell
+[1354]	SCHEDULE	3	0	busy 
+[1355]	SCHEDULE	1	-1	shell
+[1359]	SCHEDULE	3	0	busy 
+[1360]	SCHEDULE	1	-1	shell
+[1361]	SCHEDULE	3	0	busy 
+[1362]	SCHEDULE	1	-1	shell
+[1363]	SCHEDULE	3	0	busy 
+[1364]	SCHEDULE	1	-1	shell
+[1365]	SCHEDULE	3	0	busy 
+[1366]	SCHEDULE	1	-1	shell
+[1367]	SCHEDULE	3	0	busy 
+[1368]	SCHEDULE	1	-1	shell
+[1369]	SCHEDULE	3	0	busy 
+[1370]	SCHEDULE	1	-1	shell
+[1374]	SCHEDULE	3	0	busy 
+[1375]	SCHEDULE	1	-1	shell
+[1376]	SCHEDULE	3	0	busy 
+[1377]	SCHEDULE	1	-1	shell
+[1378]	SCHEDULE	3	0	busy 
+[1379]	SCHEDULE	1	-1	shell
+[1380]	SCHEDULE	3	0	busy 
+[1381]	SCHEDULE	1	-1	shell
+[1382]	SCHEDULE	3	0	busy 
+[1383]	SCHEDULE	1	-1	shell
+[1384]	SCHEDULE	3	0	busy 
+[1385]	SCHEDULE	1	-1	shell
+[1389]	SCHEDULE	3	0	busy 
+[1390]	SCHEDULE	1	-1	shell
+[1391]	SCHEDULE	3	0	busy 
+[1392]	SCHEDULE	1	-1	shell
+[1393]	SCHEDULE	3	0	busy 
+[1394]	SCHEDULE	1	-1	shell
+[1395]	SCHEDULE	3	0	busy 
+[1396]	SCHEDULE	1	-1	shell
+[1397]	SCHEDULE	3	0	busy 
+[1398]	SCHEDULE	1	-1	shell
+[1399]	SCHEDULE	3	0	busy 
+[1400]	SCHEDULE	1	-1	shell
+[1404]	SCHEDULE	3	0	busy 
+[1405]	SCHEDULE	1	-1	shell
+[1406]	SCHEDULE	3	0	busy 
+[1407]	SCHEDULE	1	-1	shell
+[1408]	SCHEDULE	3	0	busy 
+[1409]	SCHEDULE	1	-1	shell
+[1410]	SCHEDULE	3	0	busy 
+[1411]	SCHEDULE	1	-1	shell
+[1412]	SCHEDULE	3	0	busy 
+[1413]	SCHEDULE	1	-1	shell
+[1414]	SCHEDULE	3	0	busy 
+[1415]	SCHEDULE	1	-1	shell
+[1419]	SCHEDULE	3	0	busy 
+[1420]	SCHEDULE	1	-1	shell
+[1421]	SCHEDULE	3	0	busy 
+[1422]	SCHEDULE	1	-1	shell
+[1423]	SCHEDULE	3	0	busy 
+[1424]	SCHEDULE	1	-1	shell
+[1425]	SCHEDULE	3	0	busy 
+[1426]	SCHEDULE	1	-1	shell
+[1427]	SCHEDULE	3	0	busy 
+[1428]	SCHEDULE	1	-1	shell
+[1429]	SCHEDULE	3	0	busy 
+[1430]	SCHEDULE	1	-1	shell
+[1434]	SCHEDULE	3	0	busy 
+[1435]	SCHEDULE	1	-1	shell
+[1436]	SCHEDULE	3	0	busy 
+[1437]	SCHEDULE	1	-1	shell
+[1438]	SCHEDULE	3	0	busy 
+[1439]	SCHEDULE	1	-1	shell
+[1440]	SCHEDULE	3	0	busy 
+[1441]	SCHEDULE	1	-1	shell
+[1442]	SCHEDULE	3	0	busy 
+[1443]	SCHEDULE	1	-1	shell
+[1444]	SCHEDULE	3	0	busy 
+[1445]	SCHEDULE	1	-1	shell
+[1449]	SCHEDULE	3	0	busy 
+[1450]	SCHEDULE	1	-1	shell
+[1451]	SCHEDULE	3	0	busy 
+[1452]	SCHEDULE	1	-1	shell
+[1453]	SCHEDULE	3	0	busy 
+[1454]	SCHEDULE	1	-1	shell
+[1455]	SCHEDULE	3	0	busy 
+[1456]	SCHEDULE	1	-1	shell
+[1457]	SCHEDULE	3	0	busy 
+[1458]	SCHEDULE	1	-1	shell
+[1459]	SCHEDULE	3	0	busy 
+[1460]	SCHEDULE	1	-1	shell
+[1464]	SCHEDULE	3	0	busy 
+[1465]	SCHEDULE	1	-1	shell
+[1466]	SCHEDULE	3	0	busy 
+[1467]	SCHEDULE	1	-1	shell
+[1468]	SCHEDULE	3	0	busy 
+[1469]	SCHEDULE	1	-1	shell
+[1470]	SCHEDULE	3	0	busy 
+[1471]	SCHEDULE	1	-1	shell
+[1472]	SCHEDULE	3	0	busy 
+[1473]	SCHEDULE	1	-1	shell
+[1474]	SCHEDULE	3	0	busy 
+[1475]	SCHEDULE	1	-1	shell
+[1479]	SCHEDULE	3	0	busy 
+[1480]	SCHEDULE	1	-1	shell
+[1481]	SCHEDULE	3	0	busy 
+[1482]	SCHEDULE	1	-1	shell
+[1483]	SCHEDULE	3	0	busy 
+[1484]	SCHEDULE	1	-1	shell
+[1485]	SCHEDULE	3	0	busy 
+[1486]	SCHEDULE	1	-1	shell
+[1487]	SCHEDULE	3	0	busy 
+[1488]	SCHEDULE	1	-1	shell
+[1489]	SCHEDULE	3	0	busy 
+[1490]	SCHEDULE	1	-1	shell
+[1494]	SCHEDULE	3	0	busy 
+[1495]	SCHEDULE	1	-1	shell
+[1496]	SCHEDULE	3	0	busy 
+[1497]	SCHEDULE	1	-1	shell
+[1498]	SCHEDULE	3	0	busy 
+[1499]	SCHEDULE	1	-1	shell
+[1500]	SCHEDULE	3	0	busy 
+[1501]	SCHEDULE	1	-1	shell
+[1502]	SCHEDULE	3	0	busy 
+[1503]	SCHEDULE	1	-1	shell
+[1504]	SCHEDULE	3	0	busy 
+[1505]	SCHEDULE	1	-1	shell
+[1509]	SCHEDULE	3	0	busy 
+[1510]	SCHEDULE	1	-1	shell
+[1511]	SCHEDULE	3	0	busy 
+[1512]	SCHEDULE	1	-1	shell
+[1513]	SCHEDULE	3	0	busy 
+[1514]	SCHEDULE	1	-1	shell
+[1515]	SCHEDULE	3	0	busy 
+[1516]	SCHEDULE	1	-1	shell
+[1517]	SCHEDULE	3	0	busy 
+[1518]	SCHEDULE	1	-1	shell
+[1519]	SCHEDULE	3	0	busy 
+[1520]	SCHEDULE	1	-1	shell
+[1524]	SCHEDULE	3	0	busy 
+[1525]	SCHEDULE	1	-1	shell
+[1526]	SCHEDULE	3	0	busy 
+[1527]	SCHEDULE	1	-1	shell
+[1528]	SCHEDULE	3	0	busy 
+[1529]	SCHEDULE	1	-1	shell
+[1530]	SCHEDULE	3	0	busy 
+[1531]	SCHEDULE	1	-1	shell
+[1532]	SCHEDULE	3	0	busy 
+[1533]	SCHEDULE	1	-1	shell
+[1534]	SCHEDULE	3	0	busy 
+[1535]	SCHEDULE	1	-1	shell
+[1539]	SCHEDULE	3	0	busy 
+[1540]	SCHEDULE	1	-1	shell
+[1541]	SCHEDULE	3	0	busy 
+[1542]	SCHEDULE	1	-1	shell
+[1543]	SCHEDULE	3	0	busy 
+[1544]	SCHEDULE	1	-1	shell
+[1545]	SCHEDULE	3	0	busy 
+[1546]	SCHEDULE	1	-1	shell
+[1547]	SCHEDULE	3	0	busy 
+[1548]	SCHEDULE	1	-1	shell
+[1549]	SCHEDULE	3	0	busy 
+[1550]	SCHEDULE	1	-1	shell
+[1554]	SCHEDULE	3	0	busy 
+[1555]	SCHEDULE	1	-1	shell
+[1556]	SCHEDULE	3	0	busy 
+[1557]	SCHEDULE	1	-1	shell
+[1558]	SCHEDULE	3	0	busy 
+[1559]	SCHEDULE	1	-1	shell
+[1560]	SCHEDULE	3	0	busy 
+[1561]	SCHEDULE	1	-1	shell
+[1562]	SCHEDULE	3	0	busy 
+[1563]	SCHEDULE	1	-1	shell
+[1564]	SCHEDULE	3	0	busy 
+[1565]	SCHEDULE	1	-1	shell
+[1569]	SCHEDULE	3	0	busy 
+[1570]	SCHEDULE	1	-1	shell
+[1571]	SCHEDULE	3	0	busy 
+[1572]	SCHEDULE	1	-1	shell
+[1573]	SCHEDULE	3	0	busy 
+[1574]	SCHEDULE	1	-1	shell
+[1575]	SCHEDULE	3	0	busy 
+[1576]	SCHEDULE	1	-1	shell
+[1577]	SCHEDULE	3	0	busy 
+[1578]	SCHEDULE	1	-1	shell
+[1579]	SCHEDULE	3	0	busy 
+[1580]	SCHEDULE	1	-1	shell
+[1584]	SCHEDULE	3	0	busy 
+[1585]	SCHEDULE	1	-1	shell
+[1586]	SCHEDULE	3	0	busy 
+[1587]	SCHEDULE	1	-1	shell
+[1588]	SCHEDULE	3	0	busy 
+[1589]	SCHEDULE	1	-1	shell
+[1590]	SCHEDULE	3	0	busy 
+[1591]	SCHEDULE	1	-1	shell
+[1592]	SCHEDULE	3	0	busy 
+[1593]	SCHEDULE	1	-1	shell
+[1594]	SCHEDULE	3	0	busy 
+[1595]	SCHEDULE	1	-1	shell
+[1599]	SCHEDULE	3	0	busy 
+[1600]	SCHEDULE	1	-1	shell
+[1601]	SCHEDULE	3	0	busy 
+[1602]	SCHEDULE	1	-1	shell
+[1603]	SCHEDULE	3	0	busy 
+[1604]	SCHEDULE	1	-1	shell
+[1605]	SCHEDULE	3	0	busy 
+[1606]	SCHEDULE	1	-1	shell
+[1607]	SCHEDULE	3	0	busy 
+[1608]	SCHEDULE	1	-1	shell
+[1609]	SCHEDULE	3	0	busy 
+[1610]	SCHEDULE	1	-1	shell
+[1614]	SCHEDULE	3	0	busy 
+[1615]	SCHEDULE	1	-1	shell
+[1616]	SCHEDULE	3	0	busy 
+[1617]	SCHEDULE	1	-1	shell
+[1618]	SCHEDULE	3	0	busy 
+[1619]	SCHEDULE	1	-1	shell
+[1620]	SCHEDULE	3	0	busy 
+[1621]	SCHEDULE	1	-1	shell
+[1622]	SCHEDULE	3	0	busy 
+[1623]	SCHEDULE	1	-1	shell
+[1624]	SCHEDULE	3	0	busy 
+[1625]	SCHEDULE	1	-1	shell
+[1629]	SCHEDULE	3	0	busy 
+[1630]	SCHEDULE	1	-1	shell
+[1631]	SCHEDULE	3	0	busy 
+[1632]	SCHEDULE	1	-1	shell
+[1633]	SCHEDULE	3	0	busy 
+[1634]	SCHEDULE	1	-1	shell
+[1635]	SCHEDULE	3	0	busy 
+[1636]	SCHEDULE	1	-1	shell
+[1637]	SCHEDULE	3	0	busy 
+[1638]	SCHEDULE	1	-1	shell
+[1639]	SCHEDULE	3	0	busy 
+[1640]	SCHEDULE	1	-1	shell
+[1644]	SCHEDULE	3	0	busy 
+[1645]	SCHEDULE	1	-1	shell
+[1646]	SCHEDULE	3	0	busy 
+[1647]	SCHEDULE	1	-1	shell
+[1648]	SCHEDULE	3	0	busy 
+[1649]	SCHEDULE	1	-1	shell
+[1650]	SCHEDULE	3	0	busy 
+[1651]	SCHEDULE	1	-1	shell
+[1652]	SCHEDULE	3	0	busy 
+[1653]	SCHEDULE	1	-1	shell
+[1654]	SCHEDULE	3	0	busy 
+[1655]	SCHEDULE	1	-1	shell
+[1659]	SCHEDULE	3	0	busy 
+[1660]	SCHEDULE	1	-1	shell
+[1661]	SCHEDULE	3	0	busy 
+[1662]	SCHEDULE	1	-1	shell
+[1663]	SCHEDULE	3	0	busy 
+[1664]	SCHEDULE	1	-1	shell
+[1665]	SCHEDULE	3	0	busy 
+[1666]	SCHEDULE	1	-1	shell
+[1667]	SCHEDULE	3	0	busy 
+[1668]	SCHEDULE	1	-1	shell
+[1669]	SCHEDULE	3	0	busy 
+[1670]	SCHEDULE	1	-1	shell
+[1674]	SCHEDULE	3	0	busy 
+[1675]	SCHEDULE	1	-1	shell
+[1676]	SCHEDULE	3	0	busy 
+[1677]	SCHEDULE	1	-1	shell
+[1678]	SCHEDULE	3	0	busy 
+[1679]	SCHEDULE	1	-1	shell
+[1680]	SCHEDULE	3	0	busy 
+[1681]	SCHEDULE	1	-1	shell
+[1682]	SCHEDULE	3	0	busy 
+[1683]	SCHEDULE	1	-1	shell
+[1684]	SCHEDULE	3	0	busy 
+[1685]	SCHEDULE	1	-1	shell
+[1689]	SCHEDULE	3	0	busy 
+[1690]	SCHEDULE	1	-1	shell
+[1691]	SCHEDULE	3	0	busy 
+[1692]	SCHEDULE	1	-1	shell
+[1693]	SCHEDULE	3	0	busy 
+[1694]	SCHEDULE	1	-1	shell
+[1695]	SCHEDULE	3	0	busy 
+[1696]	SCHEDULE	1	-1	shell
+[1697]	SCHEDULE	3	0	busy 
+[1698]	SCHEDULE	1	-1	shell
+[1699]	SCHEDULE	3	0	busy 
+[1700]	SCHEDULE	1	-1	shell
+[1704]	SCHEDULE	3	0	busy 
+[1705]	SCHEDULE	1	-1	shell
+[1706]	SCHEDULE	3	0	busy 
+[1707]	SCHEDULE	1	-1	shell
+[1708]	SCHEDULE	3	0	busy 
+[1709]	SCHEDULE	1	-1	shell
+[1710]	SCHEDULE	3	0	busy 
+[1711]	SCHEDULE	1	-1	shell
+[1712]	SCHEDULE	3	0	busy 
+[1713]	SCHEDULE	1	-1	shell
+[1714]	SCHEDULE	3	0	busy 
+[1715]	SCHEDULE	1	-1	shell
+[1719]	SCHEDULE	3	0	busy 
+[1720]	SCHEDULE	1	-1	shell
+[1721]	SCHEDULE	3	0	busy 
+[1722]	SCHEDULE	1	-1	shell
+[1723]	SCHEDULE	3	0	busy 
+[1724]	SCHEDULE	1	-1	shell
+[1724]	CREATE		4	0	ps 
+[1724]	BLOCKED		1	-1	shell
+[1725]	SCHEDULE	3	0	busy 
+[1726]	SCHEDULE	4	0	ps 
+[1726]	EXITED		4	0	ps 
+[1726]	ZOMBIE		4	0	ps 
+[1726]	UNBLOCKED	1	-1	shell
+[1726]	SCHEDULE	1	-1	shell
+[1726]	WAITED		4	0	ps 
+[1727]	SCHEDULE	3	0	busy 
+[1728]	SCHEDULE	1	-1	shell
+[1732]	SCHEDULE	3	0	busy 
+[1733]	SCHEDULE	1	-1	shell
+[1734]	SCHEDULE	3	0	busy 
+[1735]	SCHEDULE	1	-1	shell
+[1736]	SCHEDULE	3	0	busy 
+[1737]	SCHEDULE	1	-1	shell
+[1738]	SCHEDULE	3	0	busy 
+[1739]	SCHEDULE	1	-1	shell
+[1740]	SCHEDULE	3	0	busy 
+[1741]	SCHEDULE	1	-1	shell
+[1742]	SCHEDULE	3	0	busy 
+[1743]	SCHEDULE	1	-1	shell
+[1747]	SCHEDULE	3	0	busy 
+[1748]	SCHEDULE	1	-1	shell
+[1749]	SCHEDULE	3	0	busy 
+[1750]	SCHEDULE	1	-1	shell
+[1751]	SCHEDULE	3	0	busy 
+[1752]	SCHEDULE	1	-1	shell
+[1753]	SCHEDULE	3	0	busy 
+[1754]	SCHEDULE	1	-1	shell
+[1755]	SCHEDULE	3	0	busy 
+[1756]	SCHEDULE	1	-1	shell
+[1757]	SCHEDULE	3	0	busy 
+[1758]	SCHEDULE	1	-1	shell
+[1762]	SCHEDULE	3	0	busy 
+[1763]	SCHEDULE	1	-1	shell
+[1764]	SCHEDULE	3	0	busy 
+[1765]	SCHEDULE	1	-1	shell
+[1766]	SCHEDULE	3	0	busy 
+[1767]	SCHEDULE	1	-1	shell
+[1768]	SCHEDULE	3	0	busy 
+[1769]	SCHEDULE	1	-1	shell
+[1770]	SCHEDULE	3	0	busy 
+[1771]	SCHEDULE	1	-1	shell
+[1772]	SCHEDULE	3	0	busy 
+[1773]	SCHEDULE	1	-1	shell
+[1777]	SCHEDULE	3	0	busy 
+[1778]	SCHEDULE	1	-1	shell
+[1779]	SCHEDULE	3	0	busy 
+[1780]	SCHEDULE	1	-1	shell
+[1781]	SCHEDULE	3	0	busy 
+[1782]	SCHEDULE	1	-1	shell
+[1783]	SCHEDULE	3	0	busy 
+[1784]	SCHEDULE	1	-1	shell
+[1785]	SCHEDULE	3	0	busy 
+[1786]	SCHEDULE	1	-1	shell
+[1787]	SCHEDULE	3	0	busy 
+[1788]	SCHEDULE	1	-1	shell
+[1792]	SCHEDULE	3	0	busy 
+[1793]	SCHEDULE	1	-1	shell
+[1794]	SCHEDULE	3	0	busy 
+[1795]	SCHEDULE	1	-1	shell
+[1796]	SCHEDULE	3	0	busy 
+[1797]	SCHEDULE	1	-1	shell
+[1798]	SCHEDULE	3	0	busy 
+[1799]	SCHEDULE	1	-1	shell
+[1800]	SCHEDULE	3	0	busy 
+[1801]	SCHEDULE	1	-1	shell
+[1802]	SCHEDULE	3	0	busy 
+[1803]	SCHEDULE	1	-1	shell
+[1807]	SCHEDULE	3	0	busy 
+[1808]	SCHEDULE	1	-1	shell
+[1809]	SCHEDULE	3	0	busy 
+[1810]	SCHEDULE	1	-1	shell
+[1811]	SCHEDULE	3	0	busy 
+[1812]	SCHEDULE	1	-1	shell
+[1813]	SCHEDULE	3	0	busy 
+[1814]	SCHEDULE	1	-1	shell
+[1815]	SCHEDULE	3	0	busy 
+[1816]	SCHEDULE	1	-1	shell
+[1817]	SCHEDULE	3	0	busy 
+[1818]	SCHEDULE	1	-1	shell
+[1822]	SCHEDULE	3	0	busy 
+[1823]	SCHEDULE	1	-1	shell
+[1824]	SCHEDULE	3	0	busy 
+[1825]	SCHEDULE	1	-1	shell
+[1826]	SCHEDULE	3	0	busy 
+[1827]	SCHEDULE	1	-1	shell
+[1828]	SCHEDULE	3	0	busy 
+[1829]	SCHEDULE	1	-1	shell
+[1830]	SCHEDULE	3	0	busy 
+[1831]	SCHEDULE	1	-1	shell
+[1832]	SCHEDULE	3	0	busy 
+[1833]	SCHEDULE	1	-1	shell
+[1837]	SCHEDULE	3	0	busy 
+[1838]	SCHEDULE	1	-1	shell
+[1839]	SCHEDULE	3	0	busy 
+[1840]	SCHEDULE	1	-1	shell
+[1841]	SCHEDULE	3	0	busy 
+[1842]	SCHEDULE	1	-1	shell
+[1843]	SCHEDULE	3	0	busy 
+[1844]	SCHEDULE	1	-1	shell
+[1844]	CREATE		5	0	kill -term 3 
+[1844]	BLOCKED		1	-1	shell
+[1845]	SCHEDULE	3	0	busy 
+[1846]	SCHEDULE	5	0	kill -term 3 
+[1846]	SIGNALED	3	0	busy 
+[1846]	ZOMBIE		3	0	busy 
+[1846]	ZOMBIE		5	0	kill -term 3 
+[1846]	UNBLOCKED	1	-1	shell
+[1846]	SCHEDULE	1	-1	shell
+[1846]	WAITED		5	0	kill -term 3 
+[1846]	WAITED		3	0	busy 
+[1872]	CREATE		6	0	ps 
+[1872]	BLOCKED		1	-1	shell
+[1873]	SCHEDULE	6	0	ps 
+[1873]	EXITED		6	0	ps 
+[1873]	ZOMBIE		6	0	ps 
+[1873]	UNBLOCKED	1	-1	shell
+[1873]	SCHEDULE	1	-1	shell
+[1873]	WAITED		6	0	ps 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[ 349]	CREATE		2	0	ls testfs 
+[ 349]	BLOCKED		1	-1	shell
+[ 350]	SCHEDULE	2	0	ls testfs 
+[ 350]	ZOMBIE		2	0	ls testfs 
+[ 350]	UNBLOCKED	1	-1	shell
+[ 350]	SCHEDULE	1	-1	shell
+[ 351]	WAITED		2	0	ls testfs 
+[ 372]	CREATE		3	0	touch abc 
+[ 372]	BLOCKED		1	-1	shell
+[ 373]	SCHEDULE	3	0	touch abc 
+[ 373]	ZOMBIE		3	0	touch abc 
+[ 373]	UNBLOCKED	1	-1	shell
+[ 373]	SCHEDULE	1	-1	shell
+[ 373]	WAITED		3	0	touch abc 
+[ 400]	CREATE		4	0	ls testfs 
+[ 400]	BLOCKED		1	-1	shell
+[ 401]	SCHEDULE	4	0	ls testfs 
+[ 401]	ZOMBIE		4	0	ls testfs 
+[ 401]	UNBLOCKED	1	-1	shell
+[ 401]	SCHEDULE	1	-1	shell
+[ 401]	WAITED		4	0	ls testfs 
+[ 453]	CREATE		5	0	echo hi 
+[ 453]	BLOCKED		1	-1	shell
+[ 454]	SCHEDULE	5	0	echo hi 
+[ 454]	ZOMBIE		5	0	echo hi 
+[ 454]	UNBLOCKED	1	-1	shell
+[ 454]	SCHEDULE	1	-1	shell
+[ 454]	WAITED		5	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[ 186]	CREATE		2	0	echo hi 
+[ 186]	BLOCKED		1	-1	shell
+[ 187]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  46]	CREATE		2	0	echo hi 
+[  46]	BLOCKED		1	-1	shell
+[  47]	SCHEDULE	2	0	echo hi 
+[  47]	ZOMBIE		2	0	echo hi 
+[  47]	UNBLOCKED	1	-1	shell
+[  47]	SCHEDULE	1	-1	shell
+[  47]	WAITED		2	0	echo hi 
+[3364]	CREATE		3	0	ls testfs 
+[3364]	BLOCKED		1	-1	shell
+[3365]	SCHEDULE	3	0	ls testfs 
+[3365]	ZOMBIE		3	0	ls testfs 
+[3365]	UNBLOCKED	1	-1	shell
+[3365]	SCHEDULE	1	-1	shell
+[3365]	WAITED		3	0	ls testfs 
+[4467]	CREATE		4	0	echo hi 
+[4467]	BLOCKED		1	-1	shell
+[4468]	SCHEDULE	4	0	echo hi 
+[4468]	ZOMBIE		4	0	echo hi 
+[4468]	UNBLOCKED	1	-1	shell
+[4468]	SCHEDULE	1	-1	shell
+[4468]	WAITED		4	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  29]	CREATE		2	0	ls testfs 
+[  29]	BLOCKED		1	-1	shell
+[  30]	SCHEDULE	2	0	ls testfs 
+[  30]	ZOMBIE		2	0	ls testfs 
+[  30]	UNBLOCKED	1	-1	shell
+[  30]	SCHEDULE	1	-1	shell
+[  30]	WAITED		2	0	ls testfs 
+[  65]	CREATE		3	0	echo hi 
+[  65]	BLOCKED		1	-1	shell
+[  66]	SCHEDULE	3	0	echo hi 
+[  66]	ZOMBIE		3	0	echo hi 
+[  66]	UNBLOCKED	1	-1	shell
+[  66]	SCHEDULE	1	-1	shell
+[  66]	WAITED		3	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  23]	CREATE		2	0	echo hi 
+[  23]	BLOCKED		1	-1	shell
+[  24]	SCHEDULE	2	0	echo hi 
+[  24]	ZOMBIE		2	0	echo hi 
+[  24]	UNBLOCKED	1	-1	shell
+[  24]	SCHEDULE	1	-1	shell
+[  24]	WAITED		2	0	echo hi 
+[3074]	CREATE		3	0	ls testfs 
+[3074]	BLOCKED		1	-1	shell
+[3075]	SCHEDULE	3	0	ls testfs 
+[3075]	ZOMBIE		3	0	ls testfs 
+[3075]	UNBLOCKED	1	-1	shell
+[3075]	SCHEDULE	1	-1	shell
+[3075]	WAITED		3	0	ls testfs 
+[3125]	CREATE		4	0	touch new_file 
+[3125]	BLOCKED		1	-1	shell
+[3126]	SCHEDULE	4	0	touch new_file 
+[3126]	ZOMBIE		4	0	touch new_file 
+[3126]	UNBLOCKED	1	-1	shell
+[3126]	SCHEDULE	1	-1	shell
+[3126]	WAITED		4	0	touch new_file 
+[3150]	CREATE		5	0	ls testfs 
+[3150]	BLOCKED		1	-1	shell
+[3151]	SCHEDULE	5	0	ls testfs 
+[3151]	ZOMBIE		5	0	ls testfs 
+[3151]	UNBLOCKED	1	-1	shell
+[3151]	SCHEDULE	1	-1	shell
+[3151]	WAITED		5	0	ls testfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  39]	CREATE		2	0	echo hi 
+[  39]	BLOCKED		1	-1	shell
+[  40]	SCHEDULE	2	0	echo hi 
+[  40]	ZOMBIE		2	0	echo hi 
+[  40]	UNBLOCKED	1	-1	shell
+[  40]	SCHEDULE	1	-1	shell
+[  40]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[ 134]	CREATE		2	0	ls newfs 
+[ 134]	BLOCKED		1	-1	shell
+[ 135]	SCHEDULE	2	0	ls newfs 
+[ 135]	ZOMBIE		2	0	ls newfs 
+[ 135]	UNBLOCKED	1	-1	shell
+[ 135]	SCHEDULE	1	-1	shell
+[ 135]	WAITED		2	0	ls newfs 
+[ 166]	CREATE		3	0	touch abc\ 
+[ 166]	BLOCKED		1	-1	shell
+[ 167]	SCHEDULE	3	0	touch abc\ 
+[ 167]	ZOMBIE		3	0	touch abc\ 
+[ 167]	UNBLOCKED	1	-1	shell
+[ 167]	SCHEDULE	1	-1	shell
+[ 167]	WAITED		3	0	touch abc\ 
+[ 215]	CREATE		4	0	touch abc 
+[ 215]	BLOCKED		1	-1	shell
+[ 216]	SCHEDULE	4	0	touch abc 
+[ 216]	ZOMBIE		4	0	touch abc 
+[ 216]	UNBLOCKED	1	-1	shell
+[ 216]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[ 166]	CREATE		2	0	touch new_file 
+[ 166]	BLOCKED		1	-1	shell
+[ 167]	SCHEDULE	2	0	touch new_file 
+[ 167]	ZOMBIE		2	0	touch new_file 
+[ 167]	UNBLOCKED	1	-1	shell
+[ 167]	SCHEDULE	1	-1	shell
+[ 167]	WAITED		2	0	touch new_file 
+[ 226]	CREATE		3	0	echo hi 
+[ 226]	BLOCKED		1	-1	shell
+[ 227]	SCHEDULE	3	0	echo hi 
+[ 227]	ZOMBIE		3	0	echo hi 
+[ 227]	UNBLOCKED	1	-1	shell
+[ 227]	SCHEDULE	1	-1	shell
+[ 227]	WAITED		3	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  31]	CREATE		2	0	ls newfs 
+[  31]	BLOCKED		1	-1	shell
+[  32]	SCHEDULE	2	0	ls newfs 
+[  32]	ZOMBIE		2	0	ls newfs 
+[  32]	UNBLOCKED	1	-1	shell
+[  32]	SCHEDULE	1	-1	shell
+[  32]	WAITED		2	0	ls newfs 
+[  70]	CREATE		3	0	echo hi 
+[  70]	BLOCKED		1	-1	shell
+[  71]	SCHEDULE	3	0	echo hi 
+[  71]	ZOMBIE		3	0	echo hi 
+[  71]	UNBLOCKED	1	-1	shell
+[  71]	SCHEDULE	1	-1	shell
+[  71]	WAITED		3	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  39]	CREATE		2	0	echo hi 
+[  39]	BLOCKED		1	-1	shell
+[  40]	SCHEDULE	2	0	echo hi 
+[  40]	ZOMBIE		2	0	echo hi 
+[  40]	UNBLOCKED	1	-1	shell
+[  40]	SCHEDULE	1	-1	shell
+[  40]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  35]	CREATE		2	0	echo hi 
+[  35]	BLOCKED		1	-1	shell
+[  36]	SCHEDULE	2	0	echo hi 
+[  36]	ZOMBIE		2	0	echo hi 
+[  36]	UNBLOCKED	1	-1	shell
+[  36]	SCHEDULE	1	-1	shell
+[  36]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  34]	CREATE		2	0	echo hi 
+[  34]	BLOCKED		1	-1	shell
+[  35]	SCHEDULE	2	0	echo hi 
+[  35]	ZOMBIE		2	0	echo hi 
+[  35]	UNBLOCKED	1	-1	shell
+[  35]	SCHEDULE	1	-1	shell
+[  35]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  27]	CREATE		2	0	echo hi 
+[  27]	BLOCKED		1	-1	shell
+[  28]	SCHEDULE	2	0	echo hi 
+[  28]	ZOMBIE		2	0	echo hi 
+[  28]	UNBLOCKED	1	-1	shell
+[  28]	SCHEDULE	1	-1	shell
+[  28]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  16]	CREATE		2	0	echo hi 
+[  16]	BLOCKED		1	-1	shell
+[  17]	SCHEDULE	2	0	echo hi 
+[  17]	ZOMBIE		2	0	echo hi 
+[  17]	UNBLOCKED	1	-1	shell
+[  17]	SCHEDULE	1	-1	shell
+[  17]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  24]	CREATE		2	0	ls newfs 
+[  24]	BLOCKED		1	-1	shell
+[  25]	SCHEDULE	2	0	ls newfs 
+[  25]	ZOMBIE		2	0	ls newfs 
+[  25]	UNBLOCKED	1	-1	shell
+[  25]	SCHEDULE	1	-1	shell
+[  25]	WAITED		2	0	ls newfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  30]	CREATE		2	0	ls newfs 
+[  30]	BLOCKED		1	-1	shell
+[  31]	SCHEDULE	2	0	ls newfs 
+[  31]	ZOMBIE		2	0	ls newfs 
+[  31]	UNBLOCKED	1	-1	shell
+[  31]	SCHEDULE	1	-1	shell
+[  31]	WAITED		2	0	ls newfs 
+[ 243]	CREATE		3	0	touch a 
+[ 243]	BLOCKED		1	-1	shell
+[ 244]	SCHEDULE	3	0	touch a 
+[ 244]	ZOMBIE		3	0	touch a 
+[ 244]	UNBLOCKED	1	-1	shell
+[ 244]	SCHEDULE	1	-1	shell
+[ 244]	WAITED		3	0	touch a 
+[ 300]	CREATE		4	0	touch b 
+[ 300]	BLOCKED		1	-1	shell
+[ 301]	SCHEDULE	4	0	touch b 
+[ 301]	ZOMBIE		4	0	touch b 
+[ 301]	UNBLOCKED	1	-1	shell
+[ 301]	SCHEDULE	1	-1	shell
+[ 301]	WAITED		4	0	touch b 
+[ 330]	CREATE		5	0	ls newfs 
+[ 330]	BLOCKED		1	-1	shell
+[ 331]	SCHEDULE	5	0	ls newfs 
+[ 331]	ZOMBIE		5	0	ls newfs 
+[ 331]	UNBLOCKED	1	-1	shell
+[ 331]	SCHEDULE	1	-1	shell
+[ 331]	WAITED		5	0	ls newfs 
+[ 415]	CREATE		6	0	echo hi 
+[ 415]	BLOCKED		1	-1	shell
+[ 416]	SCHEDULE	6	0	echo hi 
+[ 416]	ZOMBIE		6	0	echo hi 
+[ 416]	UNBLOCKED	1	-1	shell
+[ 416]	SCHEDULE	1	-1	shell
+[ 416]	WAITED		6	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  45]	CREATE		2	0	ls newfs 
+[  45]	BLOCKED		1	-1	shell
+[  46]	SCHEDULE	2	0	ls newfs 
+[  46]	ZOMBIE		2	0	ls newfs 
+[  46]	UNBLOCKED	1	-1	shell
+[  46]	SCHEDULE	1	-1	shell
+[  46]	WAITED		2	0	ls newfs 
+[ 199]	CREATE		3	0	touch c 
+[ 199]	BLOCKED		1	-1	shell
+[ 200]	SCHEDULE	3	0	touch c 
+[ 200]	ZOMBIE		3	0	touch c 
+[ 200]	UNBLOCKED	1	-1	shell
+[ 200]	SCHEDULE	1	-1	shell
+[ 200]	WAITED		3	0	touch c 
+[ 265]	CREATE		4	0	ls newfs 
+[ 265]	BLOCKED		1	-1	shell
+[ 266]	SCHEDULE	4	0	ls newfs 
+[ 266]	ZOMBIE		4	0	ls newfs 
+[ 266]	UNBLOCKED	1	-1	shell
+[ 266]	SCHEDULE	1	-1	shell
+[ 266]	WAITED		4	0	ls newfs 
+[ 976]	CREATE		5	0	echo hi 
+[ 976]	BLOCKED		1	-1	shell
+[ 977]	SCHEDULE	5	0	echo hi 
+[ 977]	ZOMBIE		5	0	echo hi 
+[ 977]	UNBLOCKED	1	-1	shell
+[ 977]	SCHEDULE	1	-1	shell
+[ 977]	WAITED		5	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  25]	CREATE		2	0	touch z 
+[  25]	BLOCKED		1	-1	shell
+[  26]	SCHEDULE	2	0	touch z 
+[  26]	ZOMBIE		2	0	touch z 
+[  26]	UNBLOCKED	1	-1	shell
+[  26]	SCHEDULE	1	-1	shell
+[  26]	WAITED		2	0	touch z 
+[  48]	CREATE		3	0	ls newfs 
+[  48]	BLOCKED		1	-1	shell
+[  49]	SCHEDULE	3	0	ls newfs 
+[  49]	ZOMBIE		3	0	ls newfs 
+[  49]	UNBLOCKED	1	-1	shell
+[  49]	SCHEDULE	1	-1	shell
+[  49]	WAITED		3	0	ls newfs 
+[ 120]	CREATE		4	0	echo hi 
+[ 120]	BLOCKED		1	-1	shell
+[ 121]	SCHEDULE	4	0	echo hi 
+[ 121]	ZOMBIE		4	0	echo hi 
+[ 121]	UNBLOCKED	1	-1	shell
+[ 121]	SCHEDULE	1	-1	shell
+[ 121]	WAITED		4	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[ 117]	CREATE		2	0	echo hi 
+[ 117]	BLOCKED		1	-1	shell
+[ 118]	SCHEDULE	2	0	echo hi 
+[ 118]	ZOMBIE		2	0	echo hi 
+[ 118]	UNBLOCKED	1	-1	shell
+[ 118]	SCHEDULE	1	-1	shell
+[ 118]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  14]	CREATE		2	0	echo hi 
+[  14]	BLOCKED		1	-1	shell
+[  15]	SCHEDULE	2	0	echo hi 
+[  15]	ZOMBIE		2	0	echo hi 
+[  15]	UNBLOCKED	1	-1	shell
+[  15]	SCHEDULE	1	-1	shell
+[  15]	WAITED		2	0	echo hi 
+[ 282]	CREATE		3	0	ls newfs 
+[ 282]	BLOCKED		1	-1	shell
+[ 283]	SCHEDULE	3	0	ls newfs 
+[ 283]	ZOMBIE		3	0	ls newfs 
+[ 283]	UNBLOCKED	1	-1	shell
+[ 283]	SCHEDULE	1	-1	shell
+[ 283]	WAITED		3	0	ls newfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  55]	CREATE		2	0	echo hi 
+[  55]	BLOCKED		1	-1	shell
+[  56]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  73]	CREATE		2	0	echo hi 
+[  73]	BLOCKED		1	-1	shell
+[  74]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  37]	CREATE		2	0	echo 
+[  37]	BLOCKED		1	-1	shell
+[  38]	SCHEDULE	2	0	echo 
+[  38]	ZOMBIE		2	0	echo 
+[  38]	UNBLOCKED	1	-1	shell
+[  38]	SCHEDULE	1	-1	shell
+[  38]	WAITED		2	0	echo 
+[ 135]	CREATE		3	0	ls newfs 
+[ 135]	BLOCKED		1	-1	shell
+[ 136]	SCHEDULE	3	0	ls newfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  19]	CREATE		2	0	ls newfs 
+[  19]	BLOCKED		1	-1	shell
+[  20]	SCHEDULE	2	0	ls newfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  40]	CREATE		2	0	echo hi 
+[  40]	BLOCKED		1	-1	shell
+[  41]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  36]	CREATE		2	0	echo hi 
+[  36]	BLOCKED		1	-1	shell
+[  37]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  52]	CREATE		2	0	echo hi 
+[  52]	BLOCKED		1	-1	shell
+[  53]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  32]	CREATE		2	0	echo hi 
+[  32]	BLOCKED		1	-1	shell
+[  33]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  42]	CREATE		2	0	echo hi 
+[  42]	BLOCKED		1	-1	shell
+[  43]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  42]	CREATE		2	0	echo hi u 
+[  42]	BLOCKED		1	-1	shell
+[  43]	SCHEDULE	2	0	echo hi u 
+[  43]	ZOMBIE		2	0	echo hi u 
+[  43]	UNBLOCKED	1	-1	shell
+[  43]	SCHEDULE	1	-1	shell
+[  43]	WAITED		2	0	echo hi u 
+[  70]	CREATE		3	0	echo hi 
+[  70]	BLOCKED		1	-1	shell
+[  71]	SCHEDULE	3	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  74]	CREATE		2	0	echo hi 
+[  74]	BLOCKED		1	-1	shell
+[  75]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  45]	CREATE		2	0	echo hi 
+[  45]	BLOCKED		1	-1	shell
+[  46]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  51]	CREATE		2	0	echo hi 
+[  51]	BLOCKED		1	-1	shell
+[  52]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  60]	CREATE		2	0	echo hi 
+[  60]	BLOCKED		1	-1	shell
+[  61]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  68]	CREATE		2	0	echo hi 
+[  68]	BLOCKED		1	-1	shell
+[  69]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  25]	CREATE		2	0	echo hi 
+[  26]	BLOCKED		1	-1	shell
+[  27]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  29]	CREATE		2	0	echo hi 
+[  29]	BLOCKED		1	-1	shell
+[  30]	SCHEDULE	2	0	echo hi 
+[  30]	ZOMBIE		2	0	echo hi 
+[  30]	UNBLOCKED	1	-1	shell
+[  30]	SCHEDULE	1	-1	shell
+[  30]	WAITED		2	0	echo hi 
+[ 111]	CREATE		3	0	ls newfs 
+[ 111]	BLOCKED		1	-1	shell
+[ 112]	SCHEDULE	3	0	ls newfs 
+[ 112]	ZOMBIE		3	0	ls newfs 
+[ 112]	UNBLOCKED	1	-1	shell
+[ 112]	SCHEDULE	1	-1	shell
+[ 112]	WAITED		3	0	ls newfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  33]	CREATE		2	0	echo hi 
+[  33]	BLOCKED		1	-1	shell
+[  34]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  43]	CREATE		2	0	echo hi 
+[  43]	BLOCKED		1	-1	shell
+[  44]	SCHEDULE	2	0	echo hi 
+[  44]	ZOMBIE		2	0	echo hi 
+[  44]	UNBLOCKED	1	-1	shell
+[  44]	SCHEDULE	1	-1	shell
+[  44]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  30]	CREATE		2	0	echo hi 
+[  30]	BLOCKED		1	-1	shell
+[  31]	SCHEDULE	2	0	echo hi 
+[  31]	ZOMBIE		2	0	echo hi 
+[  31]	UNBLOCKED	1	-1	shell
+[  31]	SCHEDULE	1	-1	shell
+[  31]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  21]	CREATE		2	0	echo hi 
+[  21]	BLOCKED		1	-1	shell
+[  22]	SCHEDULE	2	0	echo hi 
+[  22]	ZOMBIE		2	0	echo hi 
+[  22]	UNBLOCKED	1	-1	shell
+[  22]	SCHEDULE	1	-1	shell
+[  22]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  42]	CREATE		2	0	echo hi 
+[  42]	BLOCKED		1	-1	shell
+[  43]	SCHEDULE	2	0	echo hi 
+[  43]	ZOMBIE		2	0	echo hi 
+[  43]	UNBLOCKED	1	-1	shell
+[  43]	SCHEDULE	1	-1	shell
+[  43]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  22]	CREATE		2	0	echo hi 
+[  22]	BLOCKED		1	-1	shell
+[  23]	SCHEDULE	2	0	echo hi 
+[  23]	ZOMBIE		2	0	echo hi 
+[  23]	UNBLOCKED	1	-1	shell
+[  23]	SCHEDULE	1	-1	shell
+[  23]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  17]	CREATE		2	0	echo hi 
+[  17]	BLOCKED		1	-1	shell
+[  18]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  23]	CREATE		2	0	echo hi 
+[  23]	BLOCKED		1	-1	shell
+[  24]	SCHEDULE	2	0	echo hi 
+[  25]	ZOMBIE		2	0	echo hi 
+[  25]	UNBLOCKED	1	-1	shell
+[  25]	SCHEDULE	1	-1	shell
+[  25]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  22]	CREATE		2	0	echo hi 
+[  22]	BLOCKED		1	-1	shell
+[  23]	SCHEDULE	2	0	echo hi 
+[  24]	ZOMBIE		2	0	echo hi 
+[  25]	SCHEDULE	1	-1	shell
+[  25]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  28]	CREATE		2	0	echo hi 
+[  28]	BLOCKED		1	-1	shell
+[  29]	SCHEDULE	2	0	echo hi 
+[  30]	ZOMBIE		2	0	echo hi 
+[  30]	UNBLOCKED	1	-1	shell
+[  30]	SCHEDULE	1	-1	shell
+[  30]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  44]	CREATE		2	0	echo hi 
+[  44]	BLOCKED		1	-1	shell
+[  45]	SCHEDULE	2	0	echo hi 
+[  46]	ZOMBIE		2	0	echo hi 
+[  46]	UNBLOCKED	1	-1	shell
+[  46]	SCHEDULE	1	-1	shell
+[  46]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  16]	CREATE		2	0	echo hi 
+[  16]	BLOCKED		1	-1	shell
+[  17]	SCHEDULE	2	0	echo hi 
+[  18]	ZOMBIE		2	0	echo hi 
+[  18]	UNBLOCKED	1	-1	shell
+[  18]	SCHEDULE	1	-1	shell
+[  18]	WAITED		2	0	echo hi 
+[ 869]	CREATE		3	0	ls newfs 
+[ 869]	BLOCKED		1	-1	shell
+[ 870]	SCHEDULE	3	0	ls newfs 
+[ 870]	ZOMBIE		3	0	ls newfs 
+[ 870]	UNBLOCKED	1	-1	shell
+[ 870]	SCHEDULE	1	-1	shell
+[ 870]	WAITED		3	0	ls newfs 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  25]	CREATE		2	0	echo hi 
+[  26]	BLOCKED		1	-1	shell
+[  27]	SCHEDULE	2	0	echo hi 
+[  27]	ZOMBIE		2	0	echo hi 
+[  27]	UNBLOCKED	1	-1	shell
+[  27]	SCHEDULE	1	-1	shell
+[  27]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  17]	CREATE		2	0	echo hi 
+[  17]	BLOCKED		1	-1	shell
+[  18]	SCHEDULE	2	0	echo hi 
+[  18]	ZOMBIE		2	0	echo hi 
+[  18]	UNBLOCKED	1	-1	shell
+[  18]	SCHEDULE	1	-1	shell
+[  18]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  28]	CREATE		2	0	echo hi 
+[  28]	BLOCKED		1	-1	shell
+[  29]	SCHEDULE	2	0	echo hi 
+[  29]	ZOMBIE		2	0	echo hi 
+[  29]	UNBLOCKED	1	-1	shell
+[  29]	SCHEDULE	1	-1	shell
+[  29]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  26]	CREATE		2	0	echo hi 
+[  27]	BLOCKED		1	-1	shell
+[  28]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  22]	CREATE		2	0	echo hi 
+[  22]	BLOCKED		1	-1	shell
+[  23]	SCHEDULE	2	0	echo hi 
+[  23]	ZOMBIE		2	0	echo hi 
+[  23]	UNBLOCKED	1	-1	shell
+[  23]	SCHEDULE	1	-1	shell
+[  23]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  50]	CREATE		2	0	echo hi 
+[  50]	BLOCKED		1	-1	shell
+[  51]	SCHEDULE	2	0	echo hi 
+[  52]	ZOMBIE		2	0	echo hi 
+[  52]	UNBLOCKED	1	-1	shell
+[  52]	SCHEDULE	1	-1	shell
+[  52]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  52]	CREATE		2	0	echo hi 
+[  52]	BLOCKED		1	-1	shell
+[  53]	SCHEDULE	2	0	echo hi 
+[  53]	ZOMBIE		2	0	echo hi 
+[  53]	UNBLOCKED	1	-1	shell
+[  53]	SCHEDULE	1	-1	shell
+[  53]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  28]	CREATE		2	0	echo hi 
+[  28]	BLOCKED		1	-1	shell
+[  29]	SCHEDULE	2	0	echo hi 
+[  29]	ZOMBIE		2	0	echo hi 
+[  29]	UNBLOCKED	1	-1	shell
+[  29]	SCHEDULE	1	-1	shell
+[  29]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  32]	CREATE		2	0	echo hi 
+[  32]	BLOCKED		1	-1	shell
+[  33]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  40]	CREATE		2	0	echo hi 
+[  41]	SCHEDULE	2	0	echo hi 
+[  42]	SCHEDULE	1	-1	shell
+[  40]	BLOCKED		1	-1	shell
+[  43]	SCHEDULE	2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  68]	CREATE		2	0	echo hi 
+[  68]	BLOCKED		1	-1	shell
+[  69]	SCHEDULE	2	0	echo hi 
+[  69]	ZOMBIE		2	0	echo hi 
+[  69]	UNBLOCKED	1	-1	shell
+[  69]	SCHEDULE	1	-1	shell
+[  69]	WAITED		2	0	echo hi 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[ 144]	CREATE		2	0	echo echo line1 
+[ 144]	BLOCKED		1	-1	shell
+[ 145]	SCHEDULE	2	0	echo echo line1 
+[ 145]	ZOMBIE		2	0	echo echo line1 
+[ 145]	UNBLOCKED	1	-1	shell
+[ 145]	SCHEDULE	1	-1	shell
+[ 145]	WAITED		2	0	echo echo line1 
+[ 282]	CREATE		3	0	ls newfs 
+[ 282]	BLOCKED		1	-1	shell
+[ 283]	SCHEDULE	3	0	ls newfs 
+[ 283]	ZOMBIE		3	0	ls newfs 
+[ 283]	UNBLOCKED	1	-1	shell
+[ 283]	SCHEDULE	1	-1	shell
+[ 283]	WAITED		3	0	ls newfs 
+[ 844]	CREATE		4	0	echo echo line2 
+[ 844]	BLOCKED		1	-1	shell
+[ 845]	SCHEDULE	4	0	echo echo line2 
+[ 845]	ZOMBIE		4	0	echo echo line2 
+[ 845]	UNBLOCKED	1	-1	shell
+[ 845]	SCHEDULE	1	-1	shell
+[ 845]	WAITED		4	0	echo echo line2 
+[ 963]	CREATE		5	0	echo test123 
+[ 963]	BLOCKED		1	-1	shell
+[ 964]	SCHEDULE	5	0	echo test123 
+[ 964]	ZOMBIE		5	0	echo test123 
+[ 964]	UNBLOCKED	1	-1	shell
+[ 964]	SCHEDULE	1	-1	shell
+[ 964]	WAITED		5	0	echo test123 
+[ 964]	CREATE		6	0	echo test2123 
+[ 964]	BLOCKED		1	-1	shell
+[ 965]	SCHEDULE	6	0	echo test2123 
+[ 965]	ZOMBIE		6	0	echo test2123 
+[ 965]	UNBLOCKED	1	-1	shell
+[ 965]	SCHEDULE	1	-1	shell
+[ 965]	WAITED		6	0	echo test2123 
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  59]	CREATE		2	0	ls newfs 
+[  59]	BLOCKED		1	-1	shell
+[  60]	SCHEDULE	2	0	ls newfs 
+[  60]	ZOMBIE		2	0	ls newfs 
+[  60]	UNBLOCKED	1	-1	shell
+[  60]	SCHEDULE	1	-1	shell
+[  60]	WAITED		2	0	ls newfs 
+[  97]	CREATE		3	0	touch file1 
+[  97]	BLOCKED		1	-1	shell
+[  98]	SCHEDULE	3	0	touch file1 
+[  98]	ZOMBIE		3	0	touch file1 
+[  98]	UNBLOCKED	1	-1	shell
+[  98]	SCHEDULE	1	-1	shell
+[  98]	WAITED		3	0	touch file1 
+[ 140]	CREATE		4	0	rm file1 
+[ 140]	BLOCKED		1	-1	shell
+[ 141]	SCHEDULE	4	0	rm file1 
+[ 141]	ZOMBIE		4	0	rm file1 
+[ 141]	UNBLOCKED	1	-1	shell
+[ 141]	SCHEDULE	1	-1	shell
+[ 141]	WAITED		4	0	rm file1 
+[ 164]	CREATE		5	0	ls newfs 
+[ 165]	BLOCKED		1	-1	shell
+[ 166]	SCHEDULE	5	0	ls newfs 
+[ 166]	ZOMBIE		5	0	ls newfs 
+[ 166]	UNBLOCKED	1	-1	shell
+[ 166]	SCHEDULE	1	-1	shell
+[ 166]	WAITED		5	0	ls newfs 
+[ 211]	CREATE		6	0	touch fil1 
+[ 211]	BLOCKED		1	-1	shell
+[ 212]	SCHEDULE	6	0	touch fil1 
+[ 212]	ZOMBIE		6	0	touch fil1 
+[ 212]	UNBLOCKED	1	-1	shell
+[ 212]	SCHEDULE	1	-1	shell
+[ 212]	WAITED		6	0	touch fil1 
+[ 241]	CREATE		7	0	ls newfs 
+[ 242]	SCHEDULE	7	0	ls newfs 
+[ 242]	ZOMBIE		7	0	ls newfs 
+[ 242]	UNBLOCKED	1	-1	shell
+[ 242]	SCHEDULE	1	-1	shell
+[ 242]	BLOCKED		1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[   0]	CREATE		1	0	shell
+[   0]	NICE		1	0	-1 shell
+[   0]	SCHEDULE	1	-1	shell
+[  51]	CREATE		2	0	touch file1 
+[  51]	BLOCKED		1	-1	shell
+[  52]	SCHEDULE	2	0	touch file1 
+[  52]	ZOMBIE		2	0	touch file1 
+[  52]	UNBLOCKED	1	-1	shell
+[  52]	SCHEDULE	1	-1	shell
+[  52]	WAITED		2	0	touch file1 
+[ 159]	CREATE		3	0	echo hi 
+[ 159]	BLOCKED		1	-1	shell
+[ 160]	SCHEDULE	3	0	echo hi 
+[ 160]	ZOMBIE		3	0	echo hi 
+[ 160]	UNBLOCKED	1	-1	shell
+[ 160]	SCHEDULE	1	-1	shell
+[ 160]	WAITED		3	0	echo hi 
+[ 254]	CREATE		4	0	cat file1 
+[ 254]	BLOCKED		1	-1	shell
+[ 255]	SCHEDULE	4	0	cat file1 

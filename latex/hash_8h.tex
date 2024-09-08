@@ -1,0 +1,129 @@
+\hypertarget{hash_8h}{}\doxysection{src/util/hash.h File Reference}
+\label{hash_8h}\index{src/util/hash.h@{src/util/hash.h}}
+
+
+Header file for hash table implementation in Penn\+OS.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../shell/shell-\/commands.\+h\char`\"{}}\newline
+Include dependency graph for hash.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHashNode}{Hash\+Node}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structNode}{Node}} structure for the hash table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{hash_8h_a032503e76d6f69bc67e99e909c8125da}\label{hash_8h_a032503e76d6f69bc67e99e909c8125da}} 
+\#define \mbox{\hyperlink{hash_8h_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}~100
+\begin{DoxyCompactList}\small\item\em Size of the hash table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{hash_8h_a90b3d6503a09521c0435e36f19158680}\label{hash_8h_a90b3d6503a09521c0435e36f19158680}} 
+typedef void($\ast$ \mbox{\hyperlink{hash_8h_a90b3d6503a09521c0435e36f19158680}{command\+\_\+function}}) (char $\ast$$\ast$)
+\begin{DoxyCompactList}\small\item\em Type definition for a command function. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structHashNode}{Hash\+Node}} \mbox{\hyperlink{hash_8h_a9a999a0999ddfe3f538476912add9107}{Hash\+Node}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structNode}{Node}} structure for the hash table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{hash_8h_a000dca28f2d41ec2970993d9985dd3f8}{hash}} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Hash function for command strings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hash_8h_a19a5b59accc3d9311030be4dc7f267c2}{insert}} (char $\ast$command, int index)
+\begin{DoxyCompactList}\small\item\em Inserts a command into the hash table. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{hash_8h_a5afe2893ea9459f712720b70439877ec}{lookup}} (char $\ast$command)
+\begin{DoxyCompactList}\small\item\em Looks up a command in the hash table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{hash_8h_a3314cd43586d32a90c2c64b1946ac938}\label{hash_8h_a3314cd43586d32a90c2c64b1946ac938}} 
+\mbox{\hyperlink{structHashNode}{Hash\+Node}} $\ast$ \mbox{\hyperlink{hash_8h_a3314cd43586d32a90c2c64b1946ac938}{hash\+Table}} \mbox{[}\mbox{\hyperlink{hash_8h_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Global hash table array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for hash table implementation in Penn\+OS. 
+
+Defines structures and functions for managing a hash table used in Penn\+OS, primarily for command processing and lookup. Created by Omar Ameen on 11/14/23. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{hash_8h_a9a999a0999ddfe3f538476912add9107}\label{hash_8h_a9a999a0999ddfe3f538476912add9107}} 
+\index{hash.h@{hash.h}!HashNode@{HashNode}}
+\index{HashNode@{HashNode}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{HashNode}{HashNode}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structHashNode}{Hash\+Node}} \mbox{\hyperlink{structHashNode}{Hash\+Node}}}
+
+
+
+\mbox{\hyperlink{structNode}{Node}} structure for the hash table. 
+
+Represents a single entry in the hash table, containing a command, its index, the corresponding function to execute, and a pointer to the next node in the chain for handling collisions. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hash_8h_a000dca28f2d41ec2970993d9985dd3f8}\label{hash_8h_a000dca28f2d41ec2970993d9985dd3f8}} 
+\index{hash.h@{hash.h}!hash@{hash}}
+\index{hash@{hash}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{hash()}{hash()}}
+{\footnotesize\ttfamily unsigned int hash (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Hash function for command strings. 
+
+Computes the hash value for a given command string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The command string to hash. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed hash value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hash_8h_a19a5b59accc3d9311030be4dc7f267c2}\label{hash_8h_a19a5b59accc3d9311030be4dc7f267c2}} 
+\index{hash.h@{hash.h}!insert@{insert}}
+\index{insert@{insert}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}\item[{char $\ast$}]{command,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Inserts a command into the hash table. 
+
+Adds a new command and its associated function to the hash table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command string. \\
+\hline
+{\em index} & The index in the hash table. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash_8h_a5afe2893ea9459f712720b70439877ec}\label{hash_8h_a5afe2893ea9459f712720b70439877ec}} 
+\index{hash.h@{hash.h}!lookup@{lookup}}
+\index{lookup@{lookup}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{lookup()}{lookup()}}
+{\footnotesize\ttfamily int lookup (\begin{DoxyParamCaption}\item[{char $\ast$}]{command }\end{DoxyParamCaption})}
+
+
+
+Looks up a command in the hash table. 
+
+Searches for a command in the hash table and returns its index if found.
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command string to look up. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of the command in the hash table or -\/1 if not found. 
+\end{DoxyReturn}

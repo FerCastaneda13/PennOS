@@ -1,0 +1,382 @@
+\hypertarget{shell-commands_8c}{}\doxysection{src/shell/shell-\/commands.c File Reference}
+\label{shell-commands_8c}\index{src/shell/shell-\/commands.c@{src/shell/shell-\/commands.c}}
+
+
+This file implements all shell commands and built-\/in functions for the Penn\+OS project. It includes functions like \textquotesingle{}cat\textquotesingle{}, \textquotesingle{}sleep\textquotesingle{}, \textquotesingle{}echo\textquotesingle{}, as well as unique commands like \textquotesingle{}zombify\textquotesingle{} and \textquotesingle{}orphanify\textquotesingle{}. The file also contains signal handlers that send signals to the foreground process.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$dirent.\+h$>$}\newline
+{\ttfamily \#include $<$utime.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}shell-\/commands.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../kernel/scheduler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../kernel/user.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../kernel/kernel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}shell-\/parser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/logger.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/errno.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+FAT/system-\/calls.\+h\char`\"{}}\newline
+Include dependency graph for shell-\/commands.c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{shell-commands_8c_a83e1379f5adf4452f72fcc0be266a7b5}\label{shell-commands_8c_a83e1379f5adf4452f72fcc0be266a7b5}} 
+void {\bfseries sig\+\_\+handler} (int signum)
+\item 
+void \mbox{\hyperlink{shell-commands_8c_ad708c27628c5d7230c6a6d11744f1227}{register\+\_\+sig\+\_\+handlers}} ()
+\begin{DoxyCompactList}\small\item\em Registers signal handlers that will be used by the shell. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_a72382fcf60947eb2d7268a5ec76bbc5c}{s\+\_\+cat}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Concatenates and prints arguments. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_abf985678312bf4cbae0cd8f332d29015}{s\+\_\+sleep}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Spawns a sleep process that will sleep for the specified duration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_a48cad9d7daec21c777e2c7e23c077f75}{s\+\_\+busy}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Spawns a busy process that will busy wait indefinitely. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_a8747923076ef8e7a2a399e6a819825fb}{s\+\_\+echo}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Prints arguments to the console. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{shell-commands_8c_a3261f8e518482975dbebb4dae1beb7cc}\label{shell-commands_8c_a3261f8e518482975dbebb4dae1beb7cc}} 
+void \mbox{\hyperlink{shell-commands_8c_a3261f8e518482975dbebb4dae1beb7cc}{list\+\_\+directory}} (const char $\ast$path)
+\begin{DoxyCompactList}\small\item\em Helper function\+: Lists the contents of the specified directory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_af38f72bd6ff042a69fe4f7bac1830cae}{s\+\_\+ls}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Lists the contents of the specified directory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{shell-commands_8c_af802603a15d0551e46b4d55e4bc6bc89}\label{shell-commands_8c_af802603a15d0551e46b4d55e4bc6bc89}} 
+void \mbox{\hyperlink{shell-commands_8c_af802603a15d0551e46b4d55e4bc6bc89}{touch\+\_\+file}} (char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Helper function\+: Updates the access and modification times of the specified file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_a662b1fb3c61cb62298289c1d6a44a10f}{s\+\_\+touch}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Creates an empty file or updates timestamp of existing files, similar to \textquotesingle{}touch\textquotesingle{} command in bash. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_a93239808bf8917ba5805f8eeb46c158b}{s\+\_\+mv}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Renames a file from source to destination, similar to \textquotesingle{}mv\textquotesingle{} command in bash. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_aa12a145016467937e8af4018c9e6a543}{s\+\_\+cp}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Copies a file from source to destination, similar to \textquotesingle{}cp\textquotesingle{} command in bash. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_a82780269a6347473b1c06ff79bb3a5b5}{s\+\_\+rm}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Removes files, similar to \textquotesingle{}rm\textquotesingle{} command in bash. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{shell-commands_8c_a7c620b997a21761023cb9ac7b8fb0628}\label{shell-commands_8c_a7c620b997a21761023cb9ac7b8fb0628}} 
+void \mbox{\hyperlink{shell-commands_8c_a7c620b997a21761023cb9ac7b8fb0628}{change\+\_\+mode}} (mode\+\_\+t $\ast$curr\+\_\+mode, const char $\ast$changes)
+\begin{DoxyCompactList}\small\item\em Helper function\+: Changes the mode of the specified file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_a058039bc88a1c78aa5800e8956b48fdc}{s\+\_\+chmod}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Changes file modes, similar to \textquotesingle{}chmod\textquotesingle{} command in bash. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{shell-commands_8c_a75c90fb53a07db1c4c6698b1a223298a}\label{shell-commands_8c_a75c90fb53a07db1c4c6698b1a223298a}} 
+void \mbox{\hyperlink{shell-commands_8c_a75c90fb53a07db1c4c6698b1a223298a}{s\+\_\+ps}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Lists all processes on Penn\+OS, displaying pid, ppid, and priority. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_a50299b46da04cd14048ba42145b095de}{s\+\_\+kill}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Sends a signal to a process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_a207aa0233930926e573fde214b18ce5f}{s\+\_\+nice}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Runs a command with a modified priority. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_a91009de32f88ef5a2e762a9789045a0e}{s\+\_\+nice\+\_\+pid}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Adjusts the priority of a process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_a1b973484ac47e192189ab3cdb2080b66}{s\+\_\+man}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Lists all available commands. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_a1bfe8f507eee9ac8404cece141c742b0}{s\+\_\+bg}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Continues the last stopped job, or the job specified by job\+\_\+id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_ab8b5591ae0fd4b2d91f28214b4e25149}{s\+\_\+fg}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Brings the last stopped or backgrounded job to the foreground, or the job specified by job\+\_\+id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_aa01c6fa36c13929d7c4e38115ad86ac2}{s\+\_\+jobs}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Lists all jobs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_a135a36028d1c120cf76729d536651e00}{s\+\_\+logout}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Exits the shell. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{shell-commands_8c_abbb0f4301d7e9665b3c43aa988c07670}\label{shell-commands_8c_abbb0f4301d7e9665b3c43aa988c07670}} 
+void \mbox{\hyperlink{shell-commands_8c_abbb0f4301d7e9665b3c43aa988c07670}{zombie\+\_\+child}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em A process is spawned with this ucontext function in \mbox{\hyperlink{shell-commands_8c_a703cc976c885ee6c62ee8dbb408048fe}{s\+\_\+zombify()}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_a703cc976c885ee6c62ee8dbb408048fe}{s\+\_\+zombify}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Spawns a child process that will become a zombie. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{shell-commands_8c_af9a194049dcead3d480b24c0904450ec}\label{shell-commands_8c_af9a194049dcead3d480b24c0904450ec}} 
+void \mbox{\hyperlink{shell-commands_8c_af9a194049dcead3d480b24c0904450ec}{orphan\+\_\+child}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em A process is spawned with this ucontext function in \mbox{\hyperlink{shell-commands_8c_abb69aec2f2a284c146c80301a02e2b48}{s\+\_\+orphanify()}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_abb69aec2f2a284c146c80301a02e2b48}{s\+\_\+orphanify}} (char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Spawns a child process that will become an orphan. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shell-commands_8c_a83abbeda22fc5e6c2b35523b64199c1c}{idle}} ()
+\begin{DoxyCompactList}\small\item\em Idle function for Idle Context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file implements all shell commands and built-\/in functions for the Penn\+OS project. It includes functions like \textquotesingle{}cat\textquotesingle{}, \textquotesingle{}sleep\textquotesingle{}, \textquotesingle{}echo\textquotesingle{}, as well as unique commands like \textquotesingle{}zombify\textquotesingle{} and \textquotesingle{}orphanify\textquotesingle{}. The file also contains signal handlers that send signals to the foreground process. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{shell-commands_8c_a83abbeda22fc5e6c2b35523b64199c1c}\label{shell-commands_8c_a83abbeda22fc5e6c2b35523b64199c1c}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!idle@{idle}}
+\index{idle@{idle}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{idle()}{idle()}}
+{\footnotesize\ttfamily void idle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Idle function for Idle Context. 
+
+Spawns a child process that idle waits by calling sigsuspend until a signal is received. \mbox{\Hypertarget{shell-commands_8c_ad708c27628c5d7230c6a6d11744f1227}\label{shell-commands_8c_ad708c27628c5d7230c6a6d11744f1227}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!register\_sig\_handlers@{register\_sig\_handlers}}
+\index{register\_sig\_handlers@{register\_sig\_handlers}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{register\_sig\_handlers()}{register\_sig\_handlers()}}
+{\footnotesize\ttfamily void register\+\_\+sig\+\_\+handlers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Registers signal handlers that will be used by the shell. 
+
+Registers signal handlers. \mbox{\Hypertarget{shell-commands_8c_a1bfe8f507eee9ac8404cece141c742b0}\label{shell-commands_8c_a1bfe8f507eee9ac8404cece141c742b0}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_bg@{s\_bg}}
+\index{s\_bg@{s\_bg}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_bg()}{s\_bg()}}
+{\footnotesize\ttfamily void s\+\_\+bg (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Continues the last stopped job, or the job specified by job\+\_\+id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Optional job\+\_\+id to be continued; if not provided, continues the last stopped job. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{shell-commands_8c_a48cad9d7daec21c777e2c7e23c077f75}\label{shell-commands_8c_a48cad9d7daec21c777e2c7e23c077f75}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_busy@{s\_busy}}
+\index{s\_busy@{s\_busy}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_busy()}{s\_busy()}}
+{\footnotesize\ttfamily void s\+\_\+busy (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Spawns a busy process that will busy wait indefinitely. 
+
+Busy waits indefinitely. \mbox{\Hypertarget{shell-commands_8c_a72382fcf60947eb2d7268a5ec76bbc5c}\label{shell-commands_8c_a72382fcf60947eb2d7268a5ec76bbc5c}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_cat@{s\_cat}}
+\index{s\_cat@{s\_cat}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_cat()}{s\_cat()}}
+{\footnotesize\ttfamily void s\+\_\+cat (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Concatenates and prints arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Arguments to be concatenated. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{shell-commands_8c_a058039bc88a1c78aa5800e8956b48fdc}\label{shell-commands_8c_a058039bc88a1c78aa5800e8956b48fdc}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_chmod@{s\_chmod}}
+\index{s\_chmod@{s\_chmod}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_chmod()}{s\_chmod()}}
+{\footnotesize\ttfamily void s\+\_\+chmod (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Changes file modes, similar to \textquotesingle{}chmod\textquotesingle{} command in bash. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Arguments specifying file mode changes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{shell-commands_8c_aa12a145016467937e8af4018c9e6a543}\label{shell-commands_8c_aa12a145016467937e8af4018c9e6a543}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_cp@{s\_cp}}
+\index{s\_cp@{s\_cp}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_cp()}{s\_cp()}}
+{\footnotesize\ttfamily void s\+\_\+cp (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Copies a file from source to destination, similar to \textquotesingle{}cp\textquotesingle{} command in bash. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Array containing source and destination file names. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{shell-commands_8c_a8747923076ef8e7a2a399e6a819825fb}\label{shell-commands_8c_a8747923076ef8e7a2a399e6a819825fb}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_echo@{s\_echo}}
+\index{s\_echo@{s\_echo}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_echo()}{s\_echo()}}
+{\footnotesize\ttfamily void s\+\_\+echo (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Prints arguments to the console. 
+
+Echoes arguments to the output, similar to \textquotesingle{}echo\textquotesingle{} command in bash. \mbox{\Hypertarget{shell-commands_8c_ab8b5591ae0fd4b2d91f28214b4e25149}\label{shell-commands_8c_ab8b5591ae0fd4b2d91f28214b4e25149}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_fg@{s\_fg}}
+\index{s\_fg@{s\_fg}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_fg()}{s\_fg()}}
+{\footnotesize\ttfamily void s\+\_\+fg (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Brings the last stopped or backgrounded job to the foreground, or the job specified by job\+\_\+id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Optional job\+\_\+id to be brought to the foreground; if not provided, brings the last job to the foreground. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{shell-commands_8c_aa01c6fa36c13929d7c4e38115ad86ac2}\label{shell-commands_8c_aa01c6fa36c13929d7c4e38115ad86ac2}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_jobs@{s\_jobs}}
+\index{s\_jobs@{s\_jobs}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_jobs()}{s\_jobs()}}
+{\footnotesize\ttfamily void s\+\_\+jobs (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Lists all jobs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Arguments to be ignored. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{shell-commands_8c_a50299b46da04cd14048ba42145b095de}\label{shell-commands_8c_a50299b46da04cd14048ba42145b095de}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_kill@{s\_kill}}
+\index{s\_kill@{s\_kill}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_kill()}{s\_kill()}}
+{\footnotesize\ttfamily void s\+\_\+kill (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Sends a signal to a process. 
+
+Sends a specified signal to specified processes, similar to \textquotesingle{}/bin/kill\textquotesingle{} in bash. \mbox{\Hypertarget{shell-commands_8c_a135a36028d1c120cf76729d536651e00}\label{shell-commands_8c_a135a36028d1c120cf76729d536651e00}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_logout@{s\_logout}}
+\index{s\_logout@{s\_logout}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_logout()}{s\_logout()}}
+{\footnotesize\ttfamily void s\+\_\+logout (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Exits the shell. 
+
+Exits the shell and shuts down Penn\+OS. \mbox{\Hypertarget{shell-commands_8c_af38f72bd6ff042a69fe4f7bac1830cae}\label{shell-commands_8c_af38f72bd6ff042a69fe4f7bac1830cae}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_ls@{s\_ls}}
+\index{s\_ls@{s\_ls}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_ls()}{s\_ls()}}
+{\footnotesize\ttfamily void s\+\_\+ls (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Lists the contents of the specified directory. 
+
+Lists all files in the working directory, similar to \textquotesingle{}ls -\/il\textquotesingle{} command in bash. \mbox{\Hypertarget{shell-commands_8c_a1b973484ac47e192189ab3cdb2080b66}\label{shell-commands_8c_a1b973484ac47e192189ab3cdb2080b66}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_man@{s\_man}}
+\index{s\_man@{s\_man}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_man()}{s\_man()}}
+{\footnotesize\ttfamily void s\+\_\+man (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Lists all available commands. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Arguments to be ignored. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{shell-commands_8c_a93239808bf8917ba5805f8eeb46c158b}\label{shell-commands_8c_a93239808bf8917ba5805f8eeb46c158b}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_mv@{s\_mv}}
+\index{s\_mv@{s\_mv}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_mv()}{s\_mv()}}
+{\footnotesize\ttfamily void s\+\_\+mv (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Renames a file from source to destination, similar to \textquotesingle{}mv\textquotesingle{} command in bash. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Array containing source and destination file names. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{shell-commands_8c_a207aa0233930926e573fde214b18ce5f}\label{shell-commands_8c_a207aa0233930926e573fde214b18ce5f}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_nice@{s\_nice}}
+\index{s\_nice@{s\_nice}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_nice()}{s\_nice()}}
+{\footnotesize\ttfamily void s\+\_\+nice (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Runs a command with a modified priority. 
+
+Sets the priority of the command and executes it. \mbox{\Hypertarget{shell-commands_8c_a91009de32f88ef5a2e762a9789045a0e}\label{shell-commands_8c_a91009de32f88ef5a2e762a9789045a0e}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_nice\_pid@{s\_nice\_pid}}
+\index{s\_nice\_pid@{s\_nice\_pid}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_nice\_pid()}{s\_nice\_pid()}}
+{\footnotesize\ttfamily void s\+\_\+nice\+\_\+pid (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Adjusts the priority of a process. 
+
+Adjusts the nice level of a process to a specified priority. \mbox{\Hypertarget{shell-commands_8c_abb69aec2f2a284c146c80301a02e2b48}\label{shell-commands_8c_abb69aec2f2a284c146c80301a02e2b48}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_orphanify@{s\_orphanify}}
+\index{s\_orphanify@{s\_orphanify}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_orphanify()}{s\_orphanify()}}
+{\footnotesize\ttfamily void s\+\_\+orphanify (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Spawns a child process that will become an orphan. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Arguments to be ignored. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{shell-commands_8c_a82780269a6347473b1c06ff79bb3a5b5}\label{shell-commands_8c_a82780269a6347473b1c06ff79bb3a5b5}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_rm@{s\_rm}}
+\index{s\_rm@{s\_rm}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_rm()}{s\_rm()}}
+{\footnotesize\ttfamily void s\+\_\+rm (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Removes files, similar to \textquotesingle{}rm\textquotesingle{} command in bash. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & File names to be removed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{shell-commands_8c_abf985678312bf4cbae0cd8f332d29015}\label{shell-commands_8c_abf985678312bf4cbae0cd8f332d29015}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_sleep@{s\_sleep}}
+\index{s\_sleep@{s\_sleep}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_sleep()}{s\_sleep()}}
+{\footnotesize\ttfamily void s\+\_\+sleep (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Spawns a sleep process that will sleep for the specified duration. 
+
+Spawns a sleep process. \mbox{\Hypertarget{shell-commands_8c_a662b1fb3c61cb62298289c1d6a44a10f}\label{shell-commands_8c_a662b1fb3c61cb62298289c1d6a44a10f}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_touch@{s\_touch}}
+\index{s\_touch@{s\_touch}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_touch()}{s\_touch()}}
+{\footnotesize\ttfamily void s\+\_\+touch (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Creates an empty file or updates timestamp of existing files, similar to \textquotesingle{}touch\textquotesingle{} command in bash. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & File names to be created or updated. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{shell-commands_8c_a703cc976c885ee6c62ee8dbb408048fe}\label{shell-commands_8c_a703cc976c885ee6c62ee8dbb408048fe}} 
+\index{shell-\/commands.c@{shell-\/commands.c}!s\_zombify@{s\_zombify}}
+\index{s\_zombify@{s\_zombify}!shell-\/commands.c@{shell-\/commands.c}}
+\doxysubsubsection{\texorpdfstring{s\_zombify()}{s\_zombify()}}
+{\footnotesize\ttfamily void s\+\_\+zombify (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Spawns a child process that will become a zombie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Arguments to be ignored. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,57 @@
+\hypertarget{stress_8h}{}\doxysection{src/shell/stress.h File Reference}
+\label{stress_8h}\index{src/shell/stress.h@{src/shell/stress.h}}
+
+
+Header file for stress test commands, including hang, nohang, and recur.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{stress_8h_a1b2a4626595c910b3d3ce25ad4934960}{hang}} (void)
+\begin{DoxyCompactList}\small\item\em Hang command that spawns 10 children and block-\/waits for any of them until all are reaped. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stress_8h_abaaeefe806d9f0dced0ea5a1f6f21fe5}{nohang}} (void)
+\begin{DoxyCompactList}\small\item\em Nohang command that spawns 10 children and nonblocking waits for any of them until all are reaped. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stress_8h_aed672bfe234aaab49f6bdbd655714f02}{recur}} (void)
+\begin{DoxyCompactList}\small\item\em Recur command that recursively spawns itself 26 times, naming the spawned processes Gen\+\_\+A through Gen\+\_\+Z. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for stress test commands, including hang, nohang, and recur. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{stress_8h_a1b2a4626595c910b3d3ce25ad4934960}\label{stress_8h_a1b2a4626595c910b3d3ce25ad4934960}} 
+\index{stress.h@{stress.h}!hang@{hang}}
+\index{hang@{hang}!stress.h@{stress.h}}
+\doxysubsubsection{\texorpdfstring{hang()}{hang()}}
+{\footnotesize\ttfamily void hang (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Hang command that spawns 10 children and block-\/waits for any of them until all are reaped. 
+
+This command spawns 10 children and block-\/waits for any of them in a loop until all of them are reaped. Note that the order in which the children get reaped is non-\/deterministic. \mbox{\Hypertarget{stress_8h_abaaeefe806d9f0dced0ea5a1f6f21fe5}\label{stress_8h_abaaeefe806d9f0dced0ea5a1f6f21fe5}} 
+\index{stress.h@{stress.h}!nohang@{nohang}}
+\index{nohang@{nohang}!stress.h@{stress.h}}
+\doxysubsubsection{\texorpdfstring{nohang()}{nohang()}}
+{\footnotesize\ttfamily void nohang (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Nohang command that spawns 10 children and nonblocking waits for any of them until all are reaped. 
+
+This command spawns 10 children and nonblocking waits for any of them in a loop until all of them are reaped. Note that the order in which the children get reaped is non-\/deterministic. \mbox{\Hypertarget{stress_8h_aed672bfe234aaab49f6bdbd655714f02}\label{stress_8h_aed672bfe234aaab49f6bdbd655714f02}} 
+\index{stress.h@{stress.h}!recur@{recur}}
+\index{recur@{recur}!stress.h@{stress.h}}
+\doxysubsubsection{\texorpdfstring{recur()}{recur()}}
+{\footnotesize\ttfamily void recur (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Recur command that recursively spawns itself 26 times, naming the spawned processes Gen\+\_\+A through Gen\+\_\+Z. 
+
+Each process is block-\/waited and reaped by its parent. 

@@ -1,0 +1,106 @@
+\hypertarget{PCB_8c}{}\doxysection{src/kernel/\+PCB.c File Reference}
+\label{PCB_8c}\index{src/kernel/PCB.c@{src/kernel/PCB.c}}
+
+
+C file for Process Control Block (\mbox{\hyperlink{structPCB}{PCB}}) related definitions and functions.  
+
+
+{\ttfamily \#include \char`\"{}PCB.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/linked\+\_\+list.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../util/errno.\+h\char`\"{}}\newline
+Include dependency graph for PCB.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structPCB}{PCB}} $\ast$ \mbox{\hyperlink{PCB_8c_aee38ebb9b55bb4160f36af97b3330f97}{create\+\_\+\+PCB}} (ucontext\+\_\+t $\ast$context, int pid, int parent\+\_\+pid, int state, int priority)
+\begin{DoxyCompactList}\small\item\em Creates a new Process Control Block (\mbox{\hyperlink{structPCB}{PCB}}) with the specified parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPCB}{PCB}} $\ast$ \mbox{\hyperlink{PCB_8c_a46964564c62cc0f4673b4b7f7a7594ce}{get\+\_\+\+PCB\+\_\+by\+\_\+pid}} (\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$list, int pid)
+\begin{DoxyCompactList}\small\item\em Retrieves a \mbox{\hyperlink{structPCB}{PCB}} by its process ID from a linked list of PCBs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PCB_8c_a52b3ca0f9056ca253d5f3843bc54a6fb}{free\+\_\+\+PCB}} (\mbox{\hyperlink{structPCB}{PCB}} $\ast$pcb)
+\begin{DoxyCompactList}\small\item\em Frees the memory occupied by a \mbox{\hyperlink{structPCB}{PCB}}. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{PCB_8c_ac43bbc3dc500ab08ebf69383ef5c624e}{get\+State\+Name}} (int state)
+\begin{DoxyCompactList}\small\item\em Retrieves the cleanup context for a process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C file for Process Control Block (\mbox{\hyperlink{structPCB}{PCB}}) related definitions and functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{PCB_8c_aee38ebb9b55bb4160f36af97b3330f97}\label{PCB_8c_aee38ebb9b55bb4160f36af97b3330f97}} 
+\index{PCB.c@{PCB.c}!create\_PCB@{create\_PCB}}
+\index{create\_PCB@{create\_PCB}!PCB.c@{PCB.c}}
+\doxysubsubsection{\texorpdfstring{create\_PCB()}{create\_PCB()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPCB}{PCB}}$\ast$ create\+\_\+\+PCB (\begin{DoxyParamCaption}\item[{ucontext\+\_\+t $\ast$}]{context,  }\item[{int}]{pid,  }\item[{int}]{parent\+\_\+pid,  }\item[{int}]{state,  }\item[{int}]{priority }\end{DoxyParamCaption})}
+
+
+
+Creates a new Process Control Block (\mbox{\hyperlink{structPCB}{PCB}}) with the specified parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Pointer to the ucontext information. \\
+\hline
+{\em pid} & The process ID. \\
+\hline
+{\em parent\+\_\+pid} & The parent process ID. \\
+\hline
+{\em state} & The initial state of the process. \\
+\hline
+{\em priority} & The priority level of the process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the newly created \mbox{\hyperlink{structPCB}{PCB}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{PCB_8c_a52b3ca0f9056ca253d5f3843bc54a6fb}\label{PCB_8c_a52b3ca0f9056ca253d5f3843bc54a6fb}} 
+\index{PCB.c@{PCB.c}!free\_PCB@{free\_PCB}}
+\index{free\_PCB@{free\_PCB}!PCB.c@{PCB.c}}
+\doxysubsubsection{\texorpdfstring{free\_PCB()}{free\_PCB()}}
+{\footnotesize\ttfamily void free\+\_\+\+PCB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPCB}{PCB}} $\ast$}]{pcb }\end{DoxyParamCaption})}
+
+
+
+Frees the memory occupied by a \mbox{\hyperlink{structPCB}{PCB}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pcb} & Pointer to the \mbox{\hyperlink{structPCB}{PCB}} to be freed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{PCB_8c_a46964564c62cc0f4673b4b7f7a7594ce}\label{PCB_8c_a46964564c62cc0f4673b4b7f7a7594ce}} 
+\index{PCB.c@{PCB.c}!get\_PCB\_by\_pid@{get\_PCB\_by\_pid}}
+\index{get\_PCB\_by\_pid@{get\_PCB\_by\_pid}!PCB.c@{PCB.c}}
+\doxysubsubsection{\texorpdfstring{get\_PCB\_by\_pid()}{get\_PCB\_by\_pid()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPCB}{PCB}}$\ast$ get\+\_\+\+PCB\+\_\+by\+\_\+pid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$}]{list,  }\item[{int}]{pid }\end{DoxyParamCaption})}
+
+
+
+Retrieves a \mbox{\hyperlink{structPCB}{PCB}} by its process ID from a linked list of PCBs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Pointer to the linked list of PCBs. \\
+\hline
+{\em pid} & The process ID to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{structPCB}{PCB}} with the specified process ID if found, or NULL if not found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{PCB_8c_ac43bbc3dc500ab08ebf69383ef5c624e}\label{PCB_8c_ac43bbc3dc500ab08ebf69383ef5c624e}} 
+\index{PCB.c@{PCB.c}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!PCB.c@{PCB.c}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily char$\ast$ get\+State\+Name (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})}
+
+
+
+Retrieves the cleanup context for a process. 
+
+Gets the name of a process state based on its state code. 

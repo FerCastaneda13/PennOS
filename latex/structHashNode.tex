@@ -1,0 +1,40 @@
+\hypertarget{structHashNode}{}\doxysection{Hash\+Node Struct Reference}
+\label{structHashNode}\index{HashNode@{HashNode}}
+
+
+\mbox{\hyperlink{structNode}{Node}} structure for the hash table.  
+
+
+
+
+{\ttfamily \#include $<$hash.\+h$>$}
+
+
+
+Collaboration diagram for Hash\+Node\+:
+% FIG 0
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structHashNode_aef6b8ab2d36c12ecd1a5dd7273cac7cf}\label{structHashNode_aef6b8ab2d36c12ecd1a5dd7273cac7cf}} 
+char $\ast$ \mbox{\hyperlink{structHashNode_aef6b8ab2d36c12ecd1a5dd7273cac7cf}{command}}
+\begin{DoxyCompactList}\small\item\em Command string. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structHashNode_a10270494ea2fe015c308b5a106ae1a0f}\label{structHashNode_a10270494ea2fe015c308b5a106ae1a0f}} 
+int \mbox{\hyperlink{structHashNode_a10270494ea2fe015c308b5a106ae1a0f}{index}}
+\begin{DoxyCompactList}\small\item\em Index of the command in the hash table. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structHashNode_a3ca091a1440ad3a9d4f166806974415e}\label{structHashNode_a3ca091a1440ad3a9d4f166806974415e}} 
+\mbox{\hyperlink{hash_8h_a90b3d6503a09521c0435e36f19158680}{command\+\_\+function}} $\ast$ \mbox{\hyperlink{structHashNode_a3ca091a1440ad3a9d4f166806974415e}{function}}
+\begin{DoxyCompactList}\small\item\em Function pointer to the command\textquotesingle{}s implementation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structHashNode_a3213171b5cdc2bfab119ce74c9971e36}\label{structHashNode_a3213171b5cdc2bfab119ce74c9971e36}} 
+struct \mbox{\hyperlink{structHashNode}{Hash\+Node}} $\ast$ \mbox{\hyperlink{structHashNode_a3213171b5cdc2bfab119ce74c9971e36}{next}}
+\begin{DoxyCompactList}\small\item\em Pointer to the next node in the chain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{structNode}{Node}} structure for the hash table. 
+
+Represents a single entry in the hash table, containing a command, its index, the corresponding function to execute, and a pointer to the next node in the chain for handling collisions. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/util/\mbox{\hyperlink{hash_8h}{hash.\+h}}\end{DoxyCompactItemize}

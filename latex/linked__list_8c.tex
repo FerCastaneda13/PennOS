@@ -1,0 +1,62 @@
+\hypertarget{linked__list_8c}{}\doxysection{src/util/linked\+\_\+list.c File Reference}
+\label{linked__list_8c}\index{src/util/linked\_list.c@{src/util/linked\_list.c}}
+
+
+Implementation of linked list functions.  
+
+
+{\ttfamily \#include \char`\"{}linked\+\_\+list.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}errno.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for linked\+\_\+list.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{linked__list_8c_ac85e1c1c8288ee1ff74aa1a539f48935}\label{linked__list_8c_ac85e1c1c8288ee1ff74aa1a539f48935}} 
+\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$ \mbox{\hyperlink{linked__list_8c_ac85e1c1c8288ee1ff74aa1a539f48935}{create\+\_\+list}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the doubly linked list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{linked__list_8c_a9bb5863666d3601e9bb891539193e335}\label{linked__list_8c_a9bb5863666d3601e9bb891539193e335}} 
+\mbox{\hyperlink{structNode}{Node}} $\ast$ \mbox{\hyperlink{linked__list_8c_a9bb5863666d3601e9bb891539193e335}{create\+\_\+node}} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Create a new node with the given data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{linked__list_8c_af4212833551e585dd5d4749db28cf2cb}\label{linked__list_8c_af4212833551e585dd5d4749db28cf2cb}} 
+void \mbox{\hyperlink{linked__list_8c_af4212833551e585dd5d4749db28cf2cb}{insert\+\_\+front}} (\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$list, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Insert a node at the front of the list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{linked__list_8c_a10c4d2c274e9c7233c99ba877a149a20}\label{linked__list_8c_a10c4d2c274e9c7233c99ba877a149a20}} 
+void \mbox{\hyperlink{linked__list_8c_a10c4d2c274e9c7233c99ba877a149a20}{insert\+\_\+end}} (\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$list, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Insert a node at the end of the list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{linked__list_8c_a0eca4e930dfddb17fe02c56490eb4f04}\label{linked__list_8c_a0eca4e930dfddb17fe02c56490eb4f04}} 
+void \mbox{\hyperlink{linked__list_8c_a0eca4e930dfddb17fe02c56490eb4f04}{insert\+\_\+before}} (\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$list, \mbox{\hyperlink{structNode}{Node}} $\ast$reference\+Node, \mbox{\hyperlink{structNode}{Node}} $\ast$new\+Node)
+\begin{DoxyCompactList}\small\item\em Insert a node before the reference\+Node. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{linked__list_8c_a38f8362c96b6a8442800445e447e85a0}\label{linked__list_8c_a38f8362c96b6a8442800445e447e85a0}} 
+void \mbox{\hyperlink{linked__list_8c_a38f8362c96b6a8442800445e447e85a0}{delete\+\_\+node}} (\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$list, \mbox{\hyperlink{structNode}{Node}} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Delete a node from the list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{linked__list_8c_a032fd25b126814c3991efab89990f6b7}\label{linked__list_8c_a032fd25b126814c3991efab89990f6b7}} 
+\mbox{\hyperlink{structNode}{Node}} $\ast$ {\bfseries get\+\_\+fd\+\_\+node} (\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$list, int data)
+\item 
+\mbox{\Hypertarget{linked__list_8c_a3cffe730b370734a234991d2eeee1f74}\label{linked__list_8c_a3cffe730b370734a234991d2eeee1f74}} 
+\mbox{\hyperlink{structNode}{Node}} $\ast$ \mbox{\hyperlink{linked__list_8c_a3cffe730b370734a234991d2eeee1f74}{get\+\_\+node}} (\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$list, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Find a node in the list with the given data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{linked__list_8c_ab846a49f354cbdfac1f205d682cb616d}\label{linked__list_8c_ab846a49f354cbdfac1f205d682cb616d}} 
+\mbox{\hyperlink{structNode}{Node}} $\ast$ \mbox{\hyperlink{linked__list_8c_ab846a49f354cbdfac1f205d682cb616d}{get\+\_\+node\+\_\+int}} (\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$list, int pid)
+\begin{DoxyCompactList}\small\item\em Find a node in the list with given pid int. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{linked__list_8c_a57b9a8a28c50a042fd97d530df6b0ad5}\label{linked__list_8c_a57b9a8a28c50a042fd97d530df6b0ad5}} 
+\mbox{\hyperlink{structNode}{Node}} $\ast$ \mbox{\hyperlink{linked__list_8c_a57b9a8a28c50a042fd97d530df6b0ad5}{get\+\_\+node\+\_\+by\+\_\+index}} (\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$list, int index)
+\begin{DoxyCompactList}\small\item\em Get the node at the given index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{linked__list_8c_a614df949abf4f7aa0a566a3ea30c4df1}\label{linked__list_8c_a614df949abf4f7aa0a566a3ea30c4df1}} 
+void \mbox{\hyperlink{linked__list_8c_a614df949abf4f7aa0a566a3ea30c4df1}{free\+\_\+list}} (\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Free the list and all its nodes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{linked__list_8c_a387eaadba409e65e45ab4e16777c240d}\label{linked__list_8c_a387eaadba409e65e45ab4e16777c240d}} 
+bool \mbox{\hyperlink{linked__list_8c_a387eaadba409e65e45ab4e16777c240d}{move\+\_\+head\+\_\+to\+\_\+end}} (\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Move the head to the end of the list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{linked__list_8c_ab3ceba9f893aaf35f71fb3387551fbab}\label{linked__list_8c_ab3ceba9f893aaf35f71fb3387551fbab}} 
+int \mbox{\hyperlink{linked__list_8c_ab3ceba9f893aaf35f71fb3387551fbab}{get\+\_\+index}} (\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$list, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Find a node in the list with the given data and return its index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of linked list functions. 
+
+This file contains the implementation of functions declared in \mbox{\hyperlink{linked__list_8h_source}{linked\+\_\+list.\+h}}. It includes functions for creating and manipulating a doubly linked list, such as adding, removing, and searching for nodes, as well as managing the list itself. 

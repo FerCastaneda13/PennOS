@@ -1,0 +1,73 @@
+\hypertarget{structPCB}{}\doxysection{PCB Struct Reference}
+\label{structPCB}\index{PCB@{PCB}}
+
+
+Process Control Block (\mbox{\hyperlink{structPCB}{PCB}}) structure.  
+
+
+
+
+{\ttfamily \#include $<$PCB.\+h$>$}
+
+
+
+Collaboration diagram for PCB\+:
+% FIG 0
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structPCB_a09c7d9fb7d4b37de439ebd97229894f9}\label{structPCB_a09c7d9fb7d4b37de439ebd97229894f9}} 
+ucontext\+\_\+t $\ast$ \mbox{\hyperlink{structPCB_a09c7d9fb7d4b37de439ebd97229894f9}{context}}
+\begin{DoxyCompactList}\small\item\em Pointer to the ucontext information. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPCB_ae788ed31e3946e3557a0c85044e93bc1}\label{structPCB_ae788ed31e3946e3557a0c85044e93bc1}} 
+int \mbox{\hyperlink{structPCB_ae788ed31e3946e3557a0c85044e93bc1}{pid}}
+\begin{DoxyCompactList}\small\item\em The thread\textquotesingle{}s process ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPCB_a534af4395982423a6feb799caa861f13}\label{structPCB_a534af4395982423a6feb799caa861f13}} 
+int \mbox{\hyperlink{structPCB_a534af4395982423a6feb799caa861f13}{parent\+\_\+pid}}
+\begin{DoxyCompactList}\small\item\em The parent process ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPCB_a569e875020aa72819c635a1ca82464e3}\label{structPCB_a569e875020aa72819c635a1ca82464e3}} 
+\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$ \mbox{\hyperlink{structPCB_a569e875020aa72819c635a1ca82464e3}{children}}
+\begin{DoxyCompactList}\small\item\em Pointer to a linked list of children process IDs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPCB_a7ef628ed9fdf43c1efc6252e0a2ebf5a}\label{structPCB_a7ef628ed9fdf43c1efc6252e0a2ebf5a}} 
+\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$ \mbox{\hyperlink{structPCB_a7ef628ed9fdf43c1efc6252e0a2ebf5a}{zombie\+\_\+q}}
+\begin{DoxyCompactList}\small\item\em Pointer to a linked list of zombie processes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPCB_a3c7caba540f651b96b566a47f75d1ce9}\label{structPCB_a3c7caba540f651b96b566a47f75d1ce9}} 
+\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$ \mbox{\hyperlink{structPCB_a3c7caba540f651b96b566a47f75d1ce9}{wait\+\_\+q}}
+\begin{DoxyCompactList}\small\item\em Pointer to a linked list of processes waiting on this process. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPCB_ab78c42c991b73e180b38488358fb3511}\label{structPCB_ab78c42c991b73e180b38488358fb3511}} 
+int \mbox{\hyperlink{structPCB_ab78c42c991b73e180b38488358fb3511}{state}}
+\begin{DoxyCompactList}\small\item\em The process state (e.\+g., RUNNING, STOPPED, BLOCKED). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPCB_a84a8d888cc661a040f4f1a081807d5b4}\label{structPCB_a84a8d888cc661a040f4f1a081807d5b4}} 
+int \mbox{\hyperlink{structPCB_a84a8d888cc661a040f4f1a081807d5b4}{priority}}
+\begin{DoxyCompactList}\small\item\em The priority level of the process. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPCB_a4fe5b4ae3e4b5feacf44ac8f100f1214}\label{structPCB_a4fe5b4ae3e4b5feacf44ac8f100f1214}} 
+int \mbox{\hyperlink{structPCB_a4fe5b4ae3e4b5feacf44ac8f100f1214}{exit\+\_\+status}}
+\begin{DoxyCompactList}\small\item\em The exit status of the process. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPCB_a90a9853b27084363fed9018b0a930328}\label{structPCB_a90a9853b27084363fed9018b0a930328}} 
+int \mbox{\hyperlink{structPCB_a90a9853b27084363fed9018b0a930328}{waiting\+\_\+on}}
+\begin{DoxyCompactList}\small\item\em The process ID the current process is waiting on. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPCB_a10ecc0fcc291eaefda0490973863cc77}\label{structPCB_a10ecc0fcc291eaefda0490973863cc77}} 
+bool \mbox{\hyperlink{structPCB_a10ecc0fcc291eaefda0490973863cc77}{state\+\_\+change\+\_\+checked}}
+\begin{DoxyCompactList}\small\item\em Flag indicating if the state change has been checked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPCB_ad1af31abf45657cdb6dc92cdcc9f99d2}\label{structPCB_ad1af31abf45657cdb6dc92cdcc9f99d2}} 
+bool \mbox{\hyperlink{structPCB_ad1af31abf45657cdb6dc92cdcc9f99d2}{in\+\_\+waitpid\+\_\+neg\+\_\+one\+\_\+hanging}}
+\begin{DoxyCompactList}\small\item\em Flag indicating if the process is in a waitpid(-\/1, ...) hanging state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPCB_a668e68312685e7ce0585ed8980a43751}\label{structPCB_a668e68312685e7ce0585ed8980a43751}} 
+char $\ast$ \mbox{\hyperlink{structPCB_a668e68312685e7ce0585ed8980a43751}{name}}
+\begin{DoxyCompactList}\small\item\em The name or identifier of the process. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPCB_a4b40263aff0fbd55bd29a3ed7f2c0bff}\label{structPCB_a4b40263aff0fbd55bd29a3ed7f2c0bff}} 
+int \mbox{\hyperlink{structPCB_a4b40263aff0fbd55bd29a3ed7f2c0bff}{fd\+\_\+in}}
+\begin{DoxyCompactList}\small\item\em The file descriptor for stdin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPCB_a9d27ee6143572d6b11bba27a40605844}\label{structPCB_a9d27ee6143572d6b11bba27a40605844}} 
+int \mbox{\hyperlink{structPCB_a9d27ee6143572d6b11bba27a40605844}{fd\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em The file descriptor for stdout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Process Control Block (\mbox{\hyperlink{structPCB}{PCB}}) structure. 
+
+The \mbox{\hyperlink{structPCB}{PCB}} contains information about a thread or process, including its context, process ID, parent process ID, children process IDs, open file descriptors, priority level, and more. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/kernel/\mbox{\hyperlink{PCB_8h}{PCB.\+h}}\end{DoxyCompactItemize}

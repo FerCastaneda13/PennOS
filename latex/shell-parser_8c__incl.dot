@@ -1,0 +1,31 @@
+digraph "src/shell/shell-parser.c"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/shell/shell-parser.c",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Implements the parsing and execution of shell commands for the PennOS project. This file contains the..."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="stdio.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="stdlib.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="string.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ctype.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="shell-parser.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$shell-parser_8h.html",tooltip="Defines the interface for shell command parsing in the PennOS project. It includes function prototype..."];
+  Node6 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="../util/hash.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hash_8h.html",tooltip="Header file for hash table implementation in PennOS."];
+  Node7 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="../shell/shell-commands.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$shell-commands_8h_source.html",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="stress.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stress_8h.html",tooltip="Header file for stress test commands, including hang, nohang, and recur."];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="../util/errno.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$errno_8h_source.html",tooltip=" "];
+}

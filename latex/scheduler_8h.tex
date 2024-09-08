@@ -1,0 +1,144 @@
+\hypertarget{scheduler_8h}{}\doxysection{src/kernel/scheduler.h File Reference}
+\label{scheduler_8h}\index{src/kernel/scheduler.h@{src/kernel/scheduler.h}}
+
+
+Header file for the scheduler module.  
+
+
+{\ttfamily \#include \char`\"{}PCB.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/linked\+\_\+list.\+h\char`\"{}}\newline
+Include dependency graph for scheduler.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSchedulerContext}{Scheduler\+Context}}
+\begin{DoxyCompactList}\small\item\em Structure for scheduler context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{scheduler_8h_a1a48bb63f6d895a764f45f82d557fc60}{schedule\+Process}} (\mbox{\hyperlink{structPCB}{PCB}} $\ast$process)
+\begin{DoxyCompactList}\small\item\em Schedule a process for execution. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPCB}{PCB}} $\ast$ \mbox{\hyperlink{scheduler_8h_a9cc65f1156ef4f6e9de7aacc317fa4e0}{k\+\_\+current\+\_\+process}} ()
+\begin{DoxyCompactList}\small\item\em Get a pointer to the currently executing process\textquotesingle{}s \mbox{\hyperlink{structPCB}{PCB}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{scheduler_8h_a6665772e03dec62497c563f7fc3a30ed}{k\+\_\+get\+\_\+pq\+\_\+num}} ()
+\begin{DoxyCompactList}\small\item\em Get the priority queue number for the current process. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$ \mbox{\hyperlink{scheduler_8h_a3cddda4e5e393ad4f51e79aaa2b248db}{get\+\_\+process\+\_\+pq}} (\mbox{\hyperlink{structPCB}{PCB}} $\ast$pcb)
+\begin{DoxyCompactList}\small\item\em Get the priority queue of a process. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scheduler_8h_ab6612825159e64946ed5f4bb447f35b5}\label{scheduler_8h_ab6612825159e64946ed5f4bb447f35b5}} 
+void \mbox{\hyperlink{scheduler_8h_ab6612825159e64946ed5f4bb447f35b5}{timer\+Service}} ()
+\begin{DoxyCompactList}\small\item\em Timer service routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{scheduler_8h_a424136d707f8b15842e1b15f963d5a20}\label{scheduler_8h_a424136d707f8b15842e1b15f963d5a20}} 
+\mbox{\hyperlink{structSchedulerContext}{Scheduler\+Context}} $\ast$ \mbox{\hyperlink{scheduler_8h_a424136d707f8b15842e1b15f963d5a20}{scheduler\+Context}}
+\begin{DoxyCompactList}\small\item\em Pointer to the scheduler context. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scheduler_8h_a4b7332c053076ec572ad8d53f15ee306}\label{scheduler_8h_a4b7332c053076ec572ad8d53f15ee306}} 
+\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$ \mbox{\hyperlink{scheduler_8h_a4b7332c053076ec572ad8d53f15ee306}{pcb\+\_\+list}}
+\begin{DoxyCompactList}\small\item\em Pointer to the \mbox{\hyperlink{structPCB}{PCB}} list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scheduler_8h_af310669e984a4b86cfe2ac821b416913}\label{scheduler_8h_af310669e984a4b86cfe2ac821b416913}} 
+\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$ \mbox{\hyperlink{scheduler_8h_af310669e984a4b86cfe2ac821b416913}{pq\+\_\+neg\+\_\+one}}
+\begin{DoxyCompactList}\small\item\em Pointer to priority queue with priority -\/1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scheduler_8h_ad9b2d841a28d7b767c219d63b2b954bb}\label{scheduler_8h_ad9b2d841a28d7b767c219d63b2b954bb}} 
+\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$ \mbox{\hyperlink{scheduler_8h_ad9b2d841a28d7b767c219d63b2b954bb}{pq\+\_\+zero}}
+\begin{DoxyCompactList}\small\item\em Pointer to priority queue with priority 0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scheduler_8h_a8da24ed6cb721b6ed235a27d7427008f}\label{scheduler_8h_a8da24ed6cb721b6ed235a27d7427008f}} 
+\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$ \mbox{\hyperlink{scheduler_8h_a8da24ed6cb721b6ed235a27d7427008f}{pq\+\_\+one}}
+\begin{DoxyCompactList}\small\item\em Pointer to priority queue with priority 1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scheduler_8h_a45c3334c68ab7c0afb85210d90a1eb07}\label{scheduler_8h_a45c3334c68ab7c0afb85210d90a1eb07}} 
+\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$ \mbox{\hyperlink{scheduler_8h_a45c3334c68ab7c0afb85210d90a1eb07}{signals}}
+\begin{DoxyCompactList}\small\item\em Pointer to the list of signals. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scheduler_8h_acdc2fc97f9b764b94f2d661979103aef}\label{scheduler_8h_acdc2fc97f9b764b94f2d661979103aef}} 
+ucontext\+\_\+t $\ast$ \mbox{\hyperlink{scheduler_8h_acdc2fc97f9b764b94f2d661979103aef}{shell\+Context}}
+\begin{DoxyCompactList}\small\item\em Pointer to the shell context. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scheduler_8h_a40e91bb878f6fad63562fbb7cc120c5a}\label{scheduler_8h_a40e91bb878f6fad63562fbb7cc120c5a}} 
+\mbox{\hyperlink{structPCB}{PCB}} $\ast$ \mbox{\hyperlink{scheduler_8h_a40e91bb878f6fad63562fbb7cc120c5a}{shell\+Process}}
+\begin{DoxyCompactList}\small\item\em Pointer to the shell process. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scheduler_8h_aa1c2b623d562d9c6460aade1dfec5028}\label{scheduler_8h_aa1c2b623d562d9c6460aade1dfec5028}} 
+\mbox{\hyperlink{structPCB}{PCB}} $\ast$ \mbox{\hyperlink{scheduler_8h_aa1c2b623d562d9c6460aade1dfec5028}{foreground\+Process}}
+\begin{DoxyCompactList}\small\item\em Pointer to the foreground process. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scheduler_8h_a7cff971f3e573bc333bcabb6e5e7eeba}\label{scheduler_8h_a7cff971f3e573bc333bcabb6e5e7eeba}} 
+\mbox{\hyperlink{structPCB}{PCB}} $\ast$ \mbox{\hyperlink{scheduler_8h_a7cff971f3e573bc333bcabb6e5e7eeba}{current\+Process}}
+\begin{DoxyCompactList}\small\item\em Pointer to the current process. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scheduler_8h_a3fbee46d2c0333649fbfc297ff61880e}\label{scheduler_8h_a3fbee46d2c0333649fbfc297ff61880e}} 
+const int \mbox{\hyperlink{scheduler_8h_a3fbee46d2c0333649fbfc297ff61880e}{centisecond}}
+\begin{DoxyCompactList}\small\item\em Centisecond constant. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scheduler_8h_a9d40aabf8bb769a95c8a440e063298a6}\label{scheduler_8h_a9d40aabf8bb769a95c8a440e063298a6}} 
+\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$ \mbox{\hyperlink{scheduler_8h_a9d40aabf8bb769a95c8a440e063298a6}{waiting\+\_\+processes}}
+\begin{DoxyCompactList}\small\item\em Pointer to the list of waiting processes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scheduler_8h_ad510f0dff5b23f11023a2f48ec7e5cdd}\label{scheduler_8h_ad510f0dff5b23f11023a2f48ec7e5cdd}} 
+unsigned int \mbox{\hyperlink{scheduler_8h_ad510f0dff5b23f11023a2f48ec7e5cdd}{curr\+\_\+ticks}}
+\begin{DoxyCompactList}\small\item\em Current ticks count. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scheduler_8h_ac9c74225da785e7d675fbf468515e166}\label{scheduler_8h_ac9c74225da785e7d675fbf468515e166}} 
+\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$ \mbox{\hyperlink{scheduler_8h_ac9c74225da785e7d675fbf468515e166}{timer\+Queue}}
+\begin{DoxyCompactList}\small\item\em Pointer to the timer queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the scheduler module. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{scheduler_8h_a3cddda4e5e393ad4f51e79aaa2b248db}\label{scheduler_8h_a3cddda4e5e393ad4f51e79aaa2b248db}} 
+\index{scheduler.h@{scheduler.h}!get\_process\_pq@{get\_process\_pq}}
+\index{get\_process\_pq@{get\_process\_pq}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{get\_process\_pq()}{get\_process\_pq()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLinkedList}{Linked\+List}}$\ast$ get\+\_\+process\+\_\+pq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPCB}{PCB}} $\ast$}]{pcb }\end{DoxyParamCaption})}
+
+
+
+Get the priority queue of a process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pcb} & Pointer to the \mbox{\hyperlink{structPCB}{PCB}} of the process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the priority queue of the process. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scheduler_8h_a9cc65f1156ef4f6e9de7aacc317fa4e0}\label{scheduler_8h_a9cc65f1156ef4f6e9de7aacc317fa4e0}} 
+\index{scheduler.h@{scheduler.h}!k\_current\_process@{k\_current\_process}}
+\index{k\_current\_process@{k\_current\_process}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{k\_current\_process()}{k\_current\_process()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPCB}{PCB}}$\ast$ k\+\_\+current\+\_\+process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get a pointer to the currently executing process\textquotesingle{}s \mbox{\hyperlink{structPCB}{PCB}}. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{structPCB}{PCB}} of the currently executing process. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scheduler_8h_a6665772e03dec62497c563f7fc3a30ed}\label{scheduler_8h_a6665772e03dec62497c563f7fc3a30ed}} 
+\index{scheduler.h@{scheduler.h}!k\_get\_pq\_num@{k\_get\_pq\_num}}
+\index{k\_get\_pq\_num@{k\_get\_pq\_num}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{k\_get\_pq\_num()}{k\_get\_pq\_num()}}
+{\footnotesize\ttfamily int k\+\_\+get\+\_\+pq\+\_\+num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the priority queue number for the current process. 
+
+\begin{DoxyReturn}{Returns}
+The priority queue number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scheduler_8h_a1a48bb63f6d895a764f45f82d557fc60}\label{scheduler_8h_a1a48bb63f6d895a764f45f82d557fc60}} 
+\index{scheduler.h@{scheduler.h}!scheduleProcess@{scheduleProcess}}
+\index{scheduleProcess@{scheduleProcess}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{scheduleProcess()}{scheduleProcess()}}
+{\footnotesize\ttfamily void schedule\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPCB}{PCB}} $\ast$}]{process }\end{DoxyParamCaption})}
+
+
+
+Schedule a process for execution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process} & Pointer to the \mbox{\hyperlink{structPCB}{PCB}} of the process to be scheduled. \\
+\hline
+\end{DoxyParams}

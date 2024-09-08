@@ -1,0 +1,1 @@
+check that substrings don't cause bugs in touch, rm, and mv

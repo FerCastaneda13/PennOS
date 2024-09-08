@@ -1,0 +1,179 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Class Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Class List}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}File Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Documentation}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}file\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}descriptor Struct Reference}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{5}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Node Struct Reference}{5}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Detailed Description}{6}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Linked\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List Struct Reference}{6}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Detailed Description}{6}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Node Struct Reference}{7}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{7}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}parsed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}command Struct Reference}{7}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Detailed Description}{7}{subsection.3.5.1}%
+\contentsline {section}{\numberline {3.6}PCB Struct Reference}{8}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Detailed Description}{8}{subsection.3.6.1}%
+\contentsline {section}{\numberline {3.7}Scheduler\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Context Struct Reference}{9}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Detailed Description}{9}{subsection.3.7.1}%
+\contentsline {section}{\numberline {3.8}signal Struct Reference}{9}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Detailed Description}{9}{subsection.3.8.1}%
+\contentsline {section}{\numberline {3.9}timer Struct Reference}{10}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Detailed Description}{10}{subsection.3.9.1}%
+\contentsline {section}{\numberline {3.10}waiting\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}process Struct Reference}{10}{section.3.10}%
+\contentsline {subsection}{\numberline {3.10.1}Detailed Description}{10}{subsection.3.10.1}%
+\contentsline {chapter}{\numberline {4}File Documentation}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}FAT/file\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}descriptor.h File Reference}{11}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{11}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Function Documentation}{11}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}fd\_create()}{12}{subsubsection.4.1.2.1}%
+\contentsline {section}{\numberline {4.2}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}FAT/system-\/calls.h File Reference}{12}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{13}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Enumeration Type Documentation}{13}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}mode}{13}{subsubsection.4.2.2.1}%
+\contentsline {subsection}{\numberline {4.2.3}Function Documentation}{13}{subsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}f\_chmod()}{13}{subsubsection.4.2.3.1}%
+\contentsline {subsubsection}{\numberline {4.2.3.2}f\_close()}{14}{subsubsection.4.2.3.2}%
+\contentsline {subsubsection}{\numberline {4.2.3.3}f\_ls()}{14}{subsubsection.4.2.3.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.4}f\_lseek()}{14}{subsubsection.4.2.3.4}%
+\contentsline {subsubsection}{\numberline {4.2.3.5}f\_move()}{15}{subsubsection.4.2.3.5}%
+\contentsline {subsubsection}{\numberline {4.2.3.6}f\_open()}{15}{subsubsection.4.2.3.6}%
+\contentsline {subsubsection}{\numberline {4.2.3.7}f\_read()}{15}{subsubsection.4.2.3.7}%
+\contentsline {subsubsection}{\numberline {4.2.3.8}f\_touch()}{16}{subsubsection.4.2.3.8}%
+\contentsline {subsubsection}{\numberline {4.2.3.9}f\_unlink()}{16}{subsubsection.4.2.3.9}%
+\contentsline {subsubsection}{\numberline {4.2.3.10}f\_write()}{17}{subsubsection.4.2.3.10}%
+\contentsline {subsubsection}{\numberline {4.2.3.11}mount()}{17}{subsubsection.4.2.3.11}%
+\contentsline {section}{\numberline {4.3}src/kernel/kernel.c File Reference}{17}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{18}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Function Documentation}{18}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}k\_process\_cleanup()}{18}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}k\_process\_create()}{19}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}k\_process\_kill()}{19}{subsubsection.4.3.2.3}%
+\contentsline {subsubsection}{\numberline {4.3.2.4}setStack()}{19}{subsubsection.4.3.2.4}%
+\contentsline {section}{\numberline {4.4}src/kernel/kernel.h File Reference}{19}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{20}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Function Documentation}{20}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}cleanup\_context()}{20}{subsubsection.4.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}k\_process\_cleanup()}{20}{subsubsection.4.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.3}k\_process\_create()}{20}{subsubsection.4.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.4.2.4}k\_process\_kill()}{22}{subsubsection.4.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.4.2.5}setStack()}{22}{subsubsection.4.4.2.5}%
+\contentsline {section}{\numberline {4.5}src/kernel/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}PCB.c File Reference}{22}{section.4.5}%
+\contentsline {section}{\numberline {4.6}src/kernel/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}PCB.h File Reference}{23}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{23}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Enumeration Type Documentation}{23}{subsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.1}process\_state}{23}{subsubsection.4.6.2.1}%
+\contentsline {subsection}{\numberline {4.6.3}Function Documentation}{24}{subsection.4.6.3}%
+\contentsline {subsubsection}{\numberline {4.6.3.1}create\_PCB()}{24}{subsubsection.4.6.3.1}%
+\contentsline {subsubsection}{\numberline {4.6.3.2}free\_PCB()}{24}{subsubsection.4.6.3.2}%
+\contentsline {subsubsection}{\numberline {4.6.3.3}get\_PCB\_by\_pid()}{25}{subsubsection.4.6.3.3}%
+\contentsline {subsubsection}{\numberline {4.6.3.4}getStateName()}{25}{subsubsection.4.6.3.4}%
+\contentsline {section}{\numberline {4.7}src/kernel/scheduler.h File Reference}{25}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{27}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Function Documentation}{27}{subsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.1}get\_process\_pq()}{27}{subsubsection.4.7.2.1}%
+\contentsline {subsubsection}{\numberline {4.7.2.2}k\_current\_process()}{27}{subsubsection.4.7.2.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.3}k\_get\_pq\_num()}{27}{subsubsection.4.7.2.3}%
+\contentsline {subsubsection}{\numberline {4.7.2.4}scheduleProcess()}{27}{subsubsection.4.7.2.4}%
+\contentsline {section}{\numberline {4.8}src/kernel/user.c File Reference}{28}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Detailed Description}{29}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Function Documentation}{29}{subsection.4.8.2}%
+\contentsline {subsubsection}{\numberline {4.8.2.1}p\_kill()}{29}{subsubsection.4.8.2.1}%
+\contentsline {subsubsection}{\numberline {4.8.2.2}p\_nice()}{29}{subsubsection.4.8.2.2}%
+\contentsline {subsubsection}{\numberline {4.8.2.3}p\_sleep()}{30}{subsubsection.4.8.2.3}%
+\contentsline {subsubsection}{\numberline {4.8.2.4}p\_spawn()}{30}{subsubsection.4.8.2.4}%
+\contentsline {subsubsection}{\numberline {4.8.2.5}p\_spawn\_shell()}{30}{subsubsection.4.8.2.5}%
+\contentsline {subsubsection}{\numberline {4.8.2.6}p\_waitpid()}{31}{subsubsection.4.8.2.6}%
+\contentsline {subsubsection}{\numberline {4.8.2.7}W\_WIFEXITED()}{31}{subsubsection.4.8.2.7}%
+\contentsline {subsubsection}{\numberline {4.8.2.8}W\_WIFSIGNALED()}{32}{subsubsection.4.8.2.8}%
+\contentsline {subsubsection}{\numberline {4.8.2.9}W\_WIFSTOPPED()}{32}{subsubsection.4.8.2.9}%
+\contentsline {section}{\numberline {4.9}src/kernel/user.h File Reference}{32}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Detailed Description}{33}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Function Documentation}{33}{subsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.2.1}collectChild()}{33}{subsubsection.4.9.2.1}%
+\contentsline {subsubsection}{\numberline {4.9.2.2}p\_kill()}{34}{subsubsection.4.9.2.2}%
+\contentsline {subsubsection}{\numberline {4.9.2.3}p\_nice()}{34}{subsubsection.4.9.2.3}%
+\contentsline {subsubsection}{\numberline {4.9.2.4}p\_sleep()}{35}{subsubsection.4.9.2.4}%
+\contentsline {subsubsection}{\numberline {4.9.2.5}p\_spawn()}{35}{subsubsection.4.9.2.5}%
+\contentsline {subsubsection}{\numberline {4.9.2.6}p\_spawn\_shell()}{35}{subsubsection.4.9.2.6}%
+\contentsline {subsubsection}{\numberline {4.9.2.7}p\_waitpid()}{36}{subsubsection.4.9.2.7}%
+\contentsline {subsubsection}{\numberline {4.9.2.8}W\_WIFEXITED()}{36}{subsubsection.4.9.2.8}%
+\contentsline {subsubsection}{\numberline {4.9.2.9}W\_WIFSIGNALED()}{37}{subsubsection.4.9.2.9}%
+\contentsline {subsubsection}{\numberline {4.9.2.10}W\_WIFSTOPPED()}{37}{subsubsection.4.9.2.10}%
+\contentsline {section}{\numberline {4.10}src/shell/shell-\/commands.c File Reference}{37}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Detailed Description}{39}{subsection.4.10.1}%
+\contentsline {subsection}{\numberline {4.10.2}Function Documentation}{39}{subsection.4.10.2}%
+\contentsline {subsubsection}{\numberline {4.10.2.1}idle()}{39}{subsubsection.4.10.2.1}%
+\contentsline {subsubsection}{\numberline {4.10.2.2}register\_sig\_handlers()}{39}{subsubsection.4.10.2.2}%
+\contentsline {subsubsection}{\numberline {4.10.2.3}s\_bg()}{39}{subsubsection.4.10.2.3}%
+\contentsline {subsubsection}{\numberline {4.10.2.4}s\_busy()}{40}{subsubsection.4.10.2.4}%
+\contentsline {subsubsection}{\numberline {4.10.2.5}s\_cat()}{40}{subsubsection.4.10.2.5}%
+\contentsline {subsubsection}{\numberline {4.10.2.6}s\_chmod()}{40}{subsubsection.4.10.2.6}%
+\contentsline {subsubsection}{\numberline {4.10.2.7}s\_cp()}{40}{subsubsection.4.10.2.7}%
+\contentsline {subsubsection}{\numberline {4.10.2.8}s\_echo()}{41}{subsubsection.4.10.2.8}%
+\contentsline {subsubsection}{\numberline {4.10.2.9}s\_fg()}{41}{subsubsection.4.10.2.9}%
+\contentsline {subsubsection}{\numberline {4.10.2.10}s\_jobs()}{41}{subsubsection.4.10.2.10}%
+\contentsline {subsubsection}{\numberline {4.10.2.11}s\_kill()}{41}{subsubsection.4.10.2.11}%
+\contentsline {subsubsection}{\numberline {4.10.2.12}s\_logout()}{42}{subsubsection.4.10.2.12}%
+\contentsline {subsubsection}{\numberline {4.10.2.13}s\_ls()}{42}{subsubsection.4.10.2.13}%
+\contentsline {subsubsection}{\numberline {4.10.2.14}s\_man()}{42}{subsubsection.4.10.2.14}%
+\contentsline {subsubsection}{\numberline {4.10.2.15}s\_mv()}{42}{subsubsection.4.10.2.15}%
+\contentsline {subsubsection}{\numberline {4.10.2.16}s\_nice()}{42}{subsubsection.4.10.2.16}%
+\contentsline {subsubsection}{\numberline {4.10.2.17}s\_nice\_pid()}{43}{subsubsection.4.10.2.17}%
+\contentsline {subsubsection}{\numberline {4.10.2.18}s\_orphanify()}{43}{subsubsection.4.10.2.18}%
+\contentsline {subsubsection}{\numberline {4.10.2.19}s\_rm()}{43}{subsubsection.4.10.2.19}%
+\contentsline {subsubsection}{\numberline {4.10.2.20}s\_sleep()}{43}{subsubsection.4.10.2.20}%
+\contentsline {subsubsection}{\numberline {4.10.2.21}s\_touch()}{44}{subsubsection.4.10.2.21}%
+\contentsline {subsubsection}{\numberline {4.10.2.22}s\_zombify()}{44}{subsubsection.4.10.2.22}%
+\contentsline {section}{\numberline {4.11}src/shell/shell-\/parser.c File Reference}{44}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}Detailed Description}{45}{subsection.4.11.1}%
+\contentsline {subsection}{\numberline {4.11.2}Function Documentation}{45}{subsection.4.11.2}%
+\contentsline {subsubsection}{\numberline {4.11.2.1}read\_line()}{45}{subsubsection.4.11.2.1}%
+\contentsline {subsubsection}{\numberline {4.11.2.2}to\_upper()}{45}{subsubsection.4.11.2.2}%
+\contentsline {subsection}{\numberline {4.11.3}Variable Documentation}{46}{subsection.4.11.3}%
+\contentsline {subsubsection}{\numberline {4.11.3.1}commands}{46}{subsubsection.4.11.3.1}%
+\contentsline {section}{\numberline {4.12}src/shell/shell-\/parser.h File Reference}{46}{section.4.12}%
+\contentsline {subsection}{\numberline {4.12.1}Detailed Description}{47}{subsection.4.12.1}%
+\contentsline {subsection}{\numberline {4.12.2}Function Documentation}{47}{subsection.4.12.2}%
+\contentsline {subsubsection}{\numberline {4.12.2.1}identify\_command()}{47}{subsubsection.4.12.2.1}%
+\contentsline {subsubsection}{\numberline {4.12.2.2}read\_line()}{48}{subsubsection.4.12.2.2}%
+\contentsline {subsubsection}{\numberline {4.12.2.3}to\_upper()}{48}{subsubsection.4.12.2.3}%
+\contentsline {section}{\numberline {4.13}src/shell/shell.c File Reference}{48}{section.4.13}%
+\contentsline {subsection}{\numberline {4.13.1}Detailed Description}{49}{subsection.4.13.1}%
+\contentsline {subsection}{\numberline {4.13.2}Function Documentation}{49}{subsection.4.13.2}%
+\contentsline {subsubsection}{\numberline {4.13.2.1}shell\_loop()}{49}{subsubsection.4.13.2.1}%
+\contentsline {section}{\numberline {4.14}src/shell/shell.h File Reference}{49}{section.4.14}%
+\contentsline {subsection}{\numberline {4.14.1}Detailed Description}{49}{subsection.4.14.1}%
+\contentsline {subsection}{\numberline {4.14.2}Function Documentation}{49}{subsection.4.14.2}%
+\contentsline {subsubsection}{\numberline {4.14.2.1}shell\_loop()}{50}{subsubsection.4.14.2.1}%
+\contentsline {section}{\numberline {4.15}src/shell/stress.h File Reference}{50}{section.4.15}%
+\contentsline {subsection}{\numberline {4.15.1}Detailed Description}{50}{subsection.4.15.1}%
+\contentsline {subsection}{\numberline {4.15.2}Function Documentation}{50}{subsection.4.15.2}%
+\contentsline {subsubsection}{\numberline {4.15.2.1}hang()}{50}{subsubsection.4.15.2.1}%
+\contentsline {subsubsection}{\numberline {4.15.2.2}nohang()}{51}{subsubsection.4.15.2.2}%
+\contentsline {subsubsection}{\numberline {4.15.2.3}recur()}{51}{subsubsection.4.15.2.3}%
+\contentsline {section}{\numberline {4.16}src/util/hash.c File Reference}{51}{section.4.16}%
+\contentsline {subsection}{\numberline {4.16.1}Detailed Description}{51}{subsection.4.16.1}%
+\contentsline {subsection}{\numberline {4.16.2}Function Documentation}{52}{subsection.4.16.2}%
+\contentsline {subsubsection}{\numberline {4.16.2.1}hash()}{52}{subsubsection.4.16.2.1}%
+\contentsline {subsubsection}{\numberline {4.16.2.2}insert()}{52}{subsubsection.4.16.2.2}%
+\contentsline {subsubsection}{\numberline {4.16.2.3}lookup()}{52}{subsubsection.4.16.2.3}%
+\contentsline {section}{\numberline {4.17}src/util/hash.h File Reference}{53}{section.4.17}%
+\contentsline {subsection}{\numberline {4.17.1}Detailed Description}{54}{subsection.4.17.1}%
+\contentsline {subsection}{\numberline {4.17.2}Typedef Documentation}{54}{subsection.4.17.2}%
+\contentsline {subsubsection}{\numberline {4.17.2.1}HashNode}{54}{subsubsection.4.17.2.1}%
+\contentsline {subsection}{\numberline {4.17.3}Function Documentation}{54}{subsection.4.17.3}%
+\contentsline {subsubsection}{\numberline {4.17.3.1}hash()}{54}{subsubsection.4.17.3.1}%
+\contentsline {subsubsection}{\numberline {4.17.3.2}insert()}{55}{subsubsection.4.17.3.2}%
+\contentsline {subsubsection}{\numberline {4.17.3.3}lookup()}{55}{subsubsection.4.17.3.3}%
+\contentsline {section}{\numberline {4.18}src/util/linked\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}list.c File Reference}{55}{section.4.18}%
+\contentsline {subsection}{\numberline {4.18.1}Detailed Description}{56}{subsection.4.18.1}%
+\contentsline {section}{\numberline {4.19}src/util/logger.c File Reference}{56}{section.4.19}%
+\contentsline {subsection}{\numberline {4.19.1}Detailed Description}{57}{subsection.4.19.1}%
+\contentsline {subsection}{\numberline {4.19.2}Function Documentation}{57}{subsection.4.19.2}%
+\contentsline {subsubsection}{\numberline {4.19.2.1}log\_file()}{57}{subsubsection.4.19.2.1}%
+\contentsline {subsubsection}{\numberline {4.19.2.2}write\_log()}{57}{subsubsection.4.19.2.2}%
+\contentsline {section}{\numberline {4.20}src/util/signal.c File Reference}{57}{section.4.20}%
+\contentsline {subsection}{\numberline {4.20.1}Detailed Description}{57}{subsection.4.20.1}%

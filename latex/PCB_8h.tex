@@ -1,0 +1,181 @@
+\hypertarget{PCB_8h}{}\doxysection{src/kernel/\+PCB.h File Reference}
+\label{PCB_8h}\index{src/kernel/PCB.h@{src/kernel/PCB.h}}
+
+
+Header file for Process Control Block (\mbox{\hyperlink{structPCB}{PCB}}) related definitions and functions.  
+
+
+{\ttfamily \#include $<$ucontext.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for PCB.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPCB}{PCB}}
+\begin{DoxyCompactList}\small\item\em Process Control Block (\mbox{\hyperlink{structPCB}{PCB}}) structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{PCB_8h_a3b09f37e675bcd48a01bf22155996872}\label{PCB_8h_a3b09f37e675bcd48a01bf22155996872}} 
+typedef struct \mbox{\hyperlink{structNode}{Node}} \mbox{\hyperlink{PCB_8h_a3b09f37e675bcd48a01bf22155996872}{Node}}
+\begin{DoxyCompactList}\small\item\em Forward declaration of the \mbox{\hyperlink{structNode}{Node}} struct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{PCB_8h_a44ddc92df57836b0340ed4213598da2c}\label{PCB_8h_a44ddc92df57836b0340ed4213598da2c}} 
+typedef struct \mbox{\hyperlink{structLinkedList}{Linked\+List}} \mbox{\hyperlink{PCB_8h_a44ddc92df57836b0340ed4213598da2c}{Linked\+List}}
+\begin{DoxyCompactList}\small\item\em Forward declaration of the \mbox{\hyperlink{structLinkedList}{Linked\+List}} struct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{PCB_8h_a86b56be801a071f739ce359b56ae24fd}\label{PCB_8h_a86b56be801a071f739ce359b56ae24fd}} 
+typedef struct \mbox{\hyperlink{structPCB}{PCB}} {\bfseries PCB}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{PCB_8h_a4e1a76273cf189daed25256e3ba34aef}{process\+\_\+state}} \{ \newline
+\mbox{\hyperlink{PCB_8h_a4e1a76273cf189daed25256e3ba34aefa1061be6c3fb88d32829cba6f6b2be304}{RUNNING}} = 1
+, \mbox{\hyperlink{PCB_8h_a4e1a76273cf189daed25256e3ba34aefa948b2aee15f52b421fa4770c47bcfe8c}{STOPPED}} = 0
+, \mbox{\hyperlink{PCB_8h_a4e1a76273cf189daed25256e3ba34aefa376c1b6a3f75d283a2efacf737438d61}{BLOCKED}} = -\/1
+, \mbox{\hyperlink{PCB_8h_a4e1a76273cf189daed25256e3ba34aefa5dfb36109b24f39d54d5c3f48f53def8}{ZOMBIE}} = -\/2
+, \newline
+\mbox{\hyperlink{PCB_8h_a4e1a76273cf189daed25256e3ba34aefab9f9543350f6bd6191e52158daa88884}{EXITED}} = -\/3
+, \mbox{\hyperlink{PCB_8h_a4e1a76273cf189daed25256e3ba34aefa240c1965a48eaf409ba68c4cc9462ac5}{TERMINATED}} = -\/4
+ \}
+\begin{DoxyCompactList}\small\item\em Enumerated type representing process states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structPCB}{PCB}} $\ast$ \mbox{\hyperlink{PCB_8h_aee38ebb9b55bb4160f36af97b3330f97}{create\+\_\+\+PCB}} (ucontext\+\_\+t $\ast$context, int pid, int parent\+\_\+pid, int state, int priority)
+\begin{DoxyCompactList}\small\item\em Creates a new Process Control Block (\mbox{\hyperlink{structPCB}{PCB}}) with the specified parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPCB}{PCB}} $\ast$ \mbox{\hyperlink{PCB_8h_a46964564c62cc0f4673b4b7f7a7594ce}{get\+\_\+\+PCB\+\_\+by\+\_\+pid}} (\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$list, int pid)
+\begin{DoxyCompactList}\small\item\em Retrieves a \mbox{\hyperlink{structPCB}{PCB}} by its process ID from a linked list of PCBs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PCB_8h_a52b3ca0f9056ca253d5f3843bc54a6fb}{free\+\_\+\+PCB}} (\mbox{\hyperlink{structPCB}{PCB}} $\ast$pcb)
+\begin{DoxyCompactList}\small\item\em Frees the memory occupied by a \mbox{\hyperlink{structPCB}{PCB}}. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{PCB_8h_ac43bbc3dc500ab08ebf69383ef5c624e}{get\+State\+Name}} (int state)
+\begin{DoxyCompactList}\small\item\em Gets the name of a process state based on its state code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for Process Control Block (\mbox{\hyperlink{structPCB}{PCB}}) related definitions and functions. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{PCB_8h_a4e1a76273cf189daed25256e3ba34aef}\label{PCB_8h_a4e1a76273cf189daed25256e3ba34aef}} 
+\index{PCB.h@{PCB.h}!process\_state@{process\_state}}
+\index{process\_state@{process\_state}!PCB.h@{PCB.h}}
+\doxysubsubsection{\texorpdfstring{process\_state}{process\_state}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{PCB_8h_a4e1a76273cf189daed25256e3ba34aef}{process\+\_\+state}}}
+
+
+
+Enumerated type representing process states. 
+
+This enum defines various process states such as RUNNING, STOPPED, BLOCKED, ZOMBIE, and EXITED. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RUNNING@{RUNNING}!PCB.h@{PCB.h}}\index{PCB.h@{PCB.h}!RUNNING@{RUNNING}}}\mbox{\Hypertarget{PCB_8h_a4e1a76273cf189daed25256e3ba34aefa1061be6c3fb88d32829cba6f6b2be304}\label{PCB_8h_a4e1a76273cf189daed25256e3ba34aefa1061be6c3fb88d32829cba6f6b2be304}} 
+RUNNING&The process is running. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STOPPED@{STOPPED}!PCB.h@{PCB.h}}\index{PCB.h@{PCB.h}!STOPPED@{STOPPED}}}\mbox{\Hypertarget{PCB_8h_a4e1a76273cf189daed25256e3ba34aefa948b2aee15f52b421fa4770c47bcfe8c}\label{PCB_8h_a4e1a76273cf189daed25256e3ba34aefa948b2aee15f52b421fa4770c47bcfe8c}} 
+STOPPED&The process is stopped. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLOCKED@{BLOCKED}!PCB.h@{PCB.h}}\index{PCB.h@{PCB.h}!BLOCKED@{BLOCKED}}}\mbox{\Hypertarget{PCB_8h_a4e1a76273cf189daed25256e3ba34aefa376c1b6a3f75d283a2efacf737438d61}\label{PCB_8h_a4e1a76273cf189daed25256e3ba34aefa376c1b6a3f75d283a2efacf737438d61}} 
+BLOCKED&The process is blocked. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ZOMBIE@{ZOMBIE}!PCB.h@{PCB.h}}\index{PCB.h@{PCB.h}!ZOMBIE@{ZOMBIE}}}\mbox{\Hypertarget{PCB_8h_a4e1a76273cf189daed25256e3ba34aefa5dfb36109b24f39d54d5c3f48f53def8}\label{PCB_8h_a4e1a76273cf189daed25256e3ba34aefa5dfb36109b24f39d54d5c3f48f53def8}} 
+ZOMBIE&The process is a zombie. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXITED@{EXITED}!PCB.h@{PCB.h}}\index{PCB.h@{PCB.h}!EXITED@{EXITED}}}\mbox{\Hypertarget{PCB_8h_a4e1a76273cf189daed25256e3ba34aefab9f9543350f6bd6191e52158daa88884}\label{PCB_8h_a4e1a76273cf189daed25256e3ba34aefab9f9543350f6bd6191e52158daa88884}} 
+EXITED&The process has exited. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TERMINATED@{TERMINATED}!PCB.h@{PCB.h}}\index{PCB.h@{PCB.h}!TERMINATED@{TERMINATED}}}\mbox{\Hypertarget{PCB_8h_a4e1a76273cf189daed25256e3ba34aefa240c1965a48eaf409ba68c4cc9462ac5}\label{PCB_8h_a4e1a76273cf189daed25256e3ba34aefa240c1965a48eaf409ba68c4cc9462ac5}} 
+TERMINATED&The process has been terminated. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{PCB_8h_aee38ebb9b55bb4160f36af97b3330f97}\label{PCB_8h_aee38ebb9b55bb4160f36af97b3330f97}} 
+\index{PCB.h@{PCB.h}!create\_PCB@{create\_PCB}}
+\index{create\_PCB@{create\_PCB}!PCB.h@{PCB.h}}
+\doxysubsubsection{\texorpdfstring{create\_PCB()}{create\_PCB()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPCB}{PCB}}$\ast$ create\+\_\+\+PCB (\begin{DoxyParamCaption}\item[{ucontext\+\_\+t $\ast$}]{context,  }\item[{int}]{pid,  }\item[{int}]{parent\+\_\+pid,  }\item[{int}]{state,  }\item[{int}]{priority }\end{DoxyParamCaption})}
+
+
+
+Creates a new Process Control Block (\mbox{\hyperlink{structPCB}{PCB}}) with the specified parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Pointer to the ucontext information. \\
+\hline
+{\em pid} & The process ID. \\
+\hline
+{\em parent\+\_\+pid} & The parent process ID. \\
+\hline
+{\em state} & The initial state of the process. \\
+\hline
+{\em priority} & The priority level of the process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the newly created \mbox{\hyperlink{structPCB}{PCB}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{PCB_8h_a52b3ca0f9056ca253d5f3843bc54a6fb}\label{PCB_8h_a52b3ca0f9056ca253d5f3843bc54a6fb}} 
+\index{PCB.h@{PCB.h}!free\_PCB@{free\_PCB}}
+\index{free\_PCB@{free\_PCB}!PCB.h@{PCB.h}}
+\doxysubsubsection{\texorpdfstring{free\_PCB()}{free\_PCB()}}
+{\footnotesize\ttfamily void free\+\_\+\+PCB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPCB}{PCB}} $\ast$}]{pcb }\end{DoxyParamCaption})}
+
+
+
+Frees the memory occupied by a \mbox{\hyperlink{structPCB}{PCB}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pcb} & Pointer to the \mbox{\hyperlink{structPCB}{PCB}} to be freed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{PCB_8h_a46964564c62cc0f4673b4b7f7a7594ce}\label{PCB_8h_a46964564c62cc0f4673b4b7f7a7594ce}} 
+\index{PCB.h@{PCB.h}!get\_PCB\_by\_pid@{get\_PCB\_by\_pid}}
+\index{get\_PCB\_by\_pid@{get\_PCB\_by\_pid}!PCB.h@{PCB.h}}
+\doxysubsubsection{\texorpdfstring{get\_PCB\_by\_pid()}{get\_PCB\_by\_pid()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPCB}{PCB}}$\ast$ get\+\_\+\+PCB\+\_\+by\+\_\+pid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$}]{list,  }\item[{int}]{pid }\end{DoxyParamCaption})}
+
+
+
+Retrieves a \mbox{\hyperlink{structPCB}{PCB}} by its process ID from a linked list of PCBs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Pointer to the linked list of PCBs. \\
+\hline
+{\em pid} & The process ID to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{structPCB}{PCB}} with the specified process ID if found, or NULL if not found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{PCB_8h_ac43bbc3dc500ab08ebf69383ef5c624e}\label{PCB_8h_ac43bbc3dc500ab08ebf69383ef5c624e}} 
+\index{PCB.h@{PCB.h}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!PCB.h@{PCB.h}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily char$\ast$ get\+State\+Name (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})}
+
+
+
+Gets the name of a process state based on its state code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The process state code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representing the name of the process state.
+\end{DoxyReturn}
+Gets the name of a process state based on its state code. 

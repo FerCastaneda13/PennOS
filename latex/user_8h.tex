@@ -1,0 +1,250 @@
+\hypertarget{user_8h}{}\doxysection{src/kernel/user.h File Reference}
+\label{user_8h}\index{src/kernel/user.h@{src/kernel/user.h}}
+
+
+Header file for user-\/level functions and system calls.  
+
+
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}PCB.\+h\char`\"{}}\newline
+Include dependency graph for user.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{user_8h_aba0bd39ac1403897db3bfb2b4aa6edc2}{W\+\_\+\+WIFEXITED}} (int $\ast$wstatus)
+\begin{DoxyCompactList}\small\item\em Check if the child process has exited. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{user_8h_a398b4ebc66eeb1bfd57df6bc4d40f448}{W\+\_\+\+WIFSTOPPED}} (int $\ast$wstatus)
+\begin{DoxyCompactList}\small\item\em Check if the child process has been stopped. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{user_8h_a9effa01864c0e66c69308bed3e18066c}{W\+\_\+\+WIFSIGNALED}} (int $\ast$wstatus)
+\begin{DoxyCompactList}\small\item\em Check if the child process has been signaled. \end{DoxyCompactList}\item 
+pid\+\_\+t \mbox{\hyperlink{user_8h_afdf2d5e232f639455ab3c39321fb93d1}{p\+\_\+spawn}} (void($\ast$func)(), char $\ast$argv\mbox{[}$\,$\mbox{]}, int fd0, int fd1)
+\begin{DoxyCompactList}\small\item\em Forks a new thread that retains most attributes of the parent thread and executes a function with arguments. \end{DoxyCompactList}\item 
+pid\+\_\+t \mbox{\hyperlink{user_8h_aee844cf4d46e79b4d2bed4ac8fa87038}{p\+\_\+spawn\+\_\+shell}} (void($\ast$func)(), int fd0, int fd1)
+\begin{DoxyCompactList}\small\item\em Forks a new thread that retains most attributes of the parent thread and executes a function. \end{DoxyCompactList}\item 
+pid\+\_\+t \mbox{\hyperlink{user_8h_a8ddf9a2934c3397ab06f48872bc24ce6}{p\+\_\+waitpid}} (pid\+\_\+t pid, int $\ast$wstatus, bool \mbox{\hyperlink{stress_8h_abaaeefe806d9f0dced0ea5a1f6f21fe5}{nohang}})
+\begin{DoxyCompactList}\small\item\em Wait for a child process to change state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{user_8h_a51b0c5be136911b0b56288a08fde4f4a}{p\+\_\+kill}} (pid\+\_\+t pid, int sig)
+\begin{DoxyCompactList}\small\item\em Send a signal to a thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{user_8h_a9c62837d1387bfa1fe4df7297efd4343}{collect\+Child}} (\mbox{\hyperlink{structPCB}{PCB}} $\ast$child, int $\ast$wstatus)
+\begin{DoxyCompactList}\small\item\em Collect information about a child process. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{user_8h_abab29a9906bac0b035d41a3c067d9c36}\label{user_8h_abab29a9906bac0b035d41a3c067d9c36}} 
+void \mbox{\hyperlink{user_8h_abab29a9906bac0b035d41a3c067d9c36}{p\+\_\+exit}} (void)
+\begin{DoxyCompactList}\small\item\em Exit the current thread unconditionally. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{user_8h_a04ac94d68aaa795abdeed08f2d9481a3}{p\+\_\+nice}} (pid\+\_\+t pid, int priority)
+\begin{DoxyCompactList}\small\item\em Change the priority of a process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{user_8h_a44e7020c166926f5ea422998ec262653}{p\+\_\+sleep}} (unsigned int ticks)
+\begin{DoxyCompactList}\small\item\em Sleep for a specified number of ticks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for user-\/level functions and system calls. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{user_8h_a9c62837d1387bfa1fe4df7297efd4343}\label{user_8h_a9c62837d1387bfa1fe4df7297efd4343}} 
+\index{user.h@{user.h}!collectChild@{collectChild}}
+\index{collectChild@{collectChild}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{collectChild()}{collectChild()}}
+{\footnotesize\ttfamily void collect\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPCB}{PCB}} $\ast$}]{child,  }\item[{int $\ast$}]{wstatus }\end{DoxyParamCaption})}
+
+
+
+Collect information about a child process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & Pointer to the \mbox{\hyperlink{structPCB}{PCB}} of the child process. \\
+\hline
+{\em wstatus} & Pointer to the status of the child process. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{user_8h_a51b0c5be136911b0b56288a08fde4f4a}\label{user_8h_a51b0c5be136911b0b56288a08fde4f4a}} 
+\index{user.h@{user.h}!p\_kill@{p\_kill}}
+\index{p\_kill@{p\_kill}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{p\_kill()}{p\_kill()}}
+{\footnotesize\ttfamily int p\+\_\+kill (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{int}]{sig }\end{DoxyParamCaption})}
+
+
+
+Send a signal to a thread. 
+
+This function sends the signal {\ttfamily sig} to the thread referenced by {\ttfamily pid}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & PID of the thread to send the signal to. \\
+\hline
+{\em sig} & Signal to send. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{user_8h_a04ac94d68aaa795abdeed08f2d9481a3}\label{user_8h_a04ac94d68aaa795abdeed08f2d9481a3}} 
+\index{user.h@{user.h}!p\_nice@{p\_nice}}
+\index{p\_nice@{p\_nice}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{p\_nice()}{p\_nice()}}
+{\footnotesize\ttfamily int p\+\_\+nice (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{int}]{priority }\end{DoxyParamCaption})}
+
+
+
+Change the priority of a process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & PID of the process to change priority. \\
+\hline
+{\em priority} & New priority level. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{user_8h_a44e7020c166926f5ea422998ec262653}\label{user_8h_a44e7020c166926f5ea422998ec262653}} 
+\index{user.h@{user.h}!p\_sleep@{p\_sleep}}
+\index{p\_sleep@{p\_sleep}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{p\_sleep()}{p\_sleep()}}
+{\footnotesize\ttfamily void p\+\_\+sleep (\begin{DoxyParamCaption}\item[{unsigned int}]{ticks }\end{DoxyParamCaption})}
+
+
+
+Sleep for a specified number of ticks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ticks} & Number of ticks to sleep. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{user_8h_afdf2d5e232f639455ab3c39321fb93d1}\label{user_8h_afdf2d5e232f639455ab3c39321fb93d1}} 
+\index{user.h@{user.h}!p\_spawn@{p\_spawn}}
+\index{p\_spawn@{p\_spawn}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{p\_spawn()}{p\_spawn()}}
+{\footnotesize\ttfamily pid\+\_\+t p\+\_\+spawn (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{func,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]},  }\item[{int}]{fd0,  }\item[{int}]{fd1 }\end{DoxyParamCaption})}
+
+
+
+Forks a new thread that retains most attributes of the parent thread and executes a function with arguments. 
+
+This function creates a new thread that executes the function referenced by {\ttfamily func} with the argument array {\ttfamily argv}. {\ttfamily fd0} is the file descriptor for the input file, and {\ttfamily fd1} is the file descriptor for the output file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Pointer to the function to execute. \\
+\hline
+{\em argv} & Argument array for the function. \\
+\hline
+{\em fd0} & File descriptor for input. \\
+\hline
+{\em fd1} & File descriptor for output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The PID of the child thread on success, or -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{user_8h_aee844cf4d46e79b4d2bed4ac8fa87038}\label{user_8h_aee844cf4d46e79b4d2bed4ac8fa87038}} 
+\index{user.h@{user.h}!p\_spawn\_shell@{p\_spawn\_shell}}
+\index{p\_spawn\_shell@{p\_spawn\_shell}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{p\_spawn\_shell()}{p\_spawn\_shell()}}
+{\footnotesize\ttfamily pid\+\_\+t p\+\_\+spawn\+\_\+shell (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{func,  }\item[{int}]{fd0,  }\item[{int}]{fd1 }\end{DoxyParamCaption})}
+
+
+
+Forks a new thread that retains most attributes of the parent thread and executes a function. 
+
+This function creates a new thread that executes the function referenced by {\ttfamily func}. {\ttfamily fd0} is the file descriptor for the input file, and {\ttfamily fd1} is the file descriptor for the output file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Pointer to the function to execute. \\
+\hline
+{\em fd0} & File descriptor for input. \\
+\hline
+{\em fd1} & File descriptor for output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The PID of the child thread on success, or -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{user_8h_a8ddf9a2934c3397ab06f48872bc24ce6}\label{user_8h_a8ddf9a2934c3397ab06f48872bc24ce6}} 
+\index{user.h@{user.h}!p\_waitpid@{p\_waitpid}}
+\index{p\_waitpid@{p\_waitpid}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{p\_waitpid()}{p\_waitpid()}}
+{\footnotesize\ttfamily pid\+\_\+t p\+\_\+waitpid (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{int $\ast$}]{wstatus,  }\item[{bool}]{nohang }\end{DoxyParamCaption})}
+
+
+
+Wait for a child process to change state. 
+
+This function sets the calling thread as blocked (if {\ttfamily nohang} is false) until a child of the calling thread changes state. It is similar to Linux {\ttfamily waitpid(2)}. If {\ttfamily nohang} is true, {\ttfamily p\+\_\+waitpid} does not block but returns immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & PID of the child process to wait for. \\
+\hline
+{\em wstatus} & Pointer to the status of the child process. \\
+\hline
+{\em nohang} & If true, do not block and return immediately. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The PID of the child which has changed state on success, or -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{user_8h_aba0bd39ac1403897db3bfb2b4aa6edc2}\label{user_8h_aba0bd39ac1403897db3bfb2b4aa6edc2}} 
+\index{user.h@{user.h}!W\_WIFEXITED@{W\_WIFEXITED}}
+\index{W\_WIFEXITED@{W\_WIFEXITED}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{W\_WIFEXITED()}{W\_WIFEXITED()}}
+{\footnotesize\ttfamily bool W\+\_\+\+WIFEXITED (\begin{DoxyParamCaption}\item[{int $\ast$}]{wstatus }\end{DoxyParamCaption})}
+
+
+
+Check if the child process has exited. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wstatus} & Pointer to the status of the child process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the child process has exited, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{user_8h_a9effa01864c0e66c69308bed3e18066c}\label{user_8h_a9effa01864c0e66c69308bed3e18066c}} 
+\index{user.h@{user.h}!W\_WIFSIGNALED@{W\_WIFSIGNALED}}
+\index{W\_WIFSIGNALED@{W\_WIFSIGNALED}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{W\_WIFSIGNALED()}{W\_WIFSIGNALED()}}
+{\footnotesize\ttfamily bool W\+\_\+\+WIFSIGNALED (\begin{DoxyParamCaption}\item[{int $\ast$}]{wstatus }\end{DoxyParamCaption})}
+
+
+
+Check if the child process has been signaled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wstatus} & Pointer to the status of the child process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the child process has been signaled, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{user_8h_a398b4ebc66eeb1bfd57df6bc4d40f448}\label{user_8h_a398b4ebc66eeb1bfd57df6bc4d40f448}} 
+\index{user.h@{user.h}!W\_WIFSTOPPED@{W\_WIFSTOPPED}}
+\index{W\_WIFSTOPPED@{W\_WIFSTOPPED}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{W\_WIFSTOPPED()}{W\_WIFSTOPPED()}}
+{\footnotesize\ttfamily bool W\+\_\+\+WIFSTOPPED (\begin{DoxyParamCaption}\item[{int $\ast$}]{wstatus }\end{DoxyParamCaption})}
+
+
+
+Check if the child process has been stopped. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wstatus} & Pointer to the status of the child process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the child process has been stopped, false otherwise. 
+\end{DoxyReturn}

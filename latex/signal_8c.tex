@@ -1,0 +1,29 @@
+\hypertarget{signal_8c}{}\doxysection{src/util/signal.c File Reference}
+\label{signal_8c}\index{src/util/signal.c@{src/util/signal.c}}
+
+
+Implementation of signal handling functions for Penn\+OS.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}signal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linked\+\_\+list.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/errno.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for signal.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{signal_8c_acd25a8a531f53fe4ffc309e1e1fee6f9}\label{signal_8c_acd25a8a531f53fe4ffc309e1e1fee6f9}} 
+\mbox{\hyperlink{structsignal}{signal\+\_\+t}} $\ast$ \mbox{\hyperlink{signal_8c_acd25a8a531f53fe4ffc309e1e1fee6f9}{add\+\_\+signal}} (int sender\+\_\+pid, int receiver\+\_\+pid, int \mbox{\hyperlink{structsignal}{signal}})
+\begin{DoxyCompactList}\small\item\em Adds a signal to the signal queue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{signal_8c_a5c58c93e7111c0c328ae8c6805b66a4e}\label{signal_8c_a5c58c93e7111c0c328ae8c6805b66a4e}} 
+void \mbox{\hyperlink{signal_8c_a5c58c93e7111c0c328ae8c6805b66a4e}{add\+\_\+timer}} (\mbox{\hyperlink{structPCB}{PCB}} $\ast$pcb, unsigned int ticks)
+\begin{DoxyCompactList}\small\item\em Adds a timer for a process to expire after a certain number of ticks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of signal handling functions for Penn\+OS. 
+
+Created by Omar Ameen on 11/10/23. This file contains the implementations of the functions defined in \mbox{\hyperlink{signal_8h_source}{signal.\+h}}. It includes functions for adding signals, waiters, and timers, as well as retrieving waiting processes based on PID or \mbox{\hyperlink{structPCB}{PCB}} pointers. 

@@ -1,0 +1,119 @@
+\hypertarget{shell-parser_8c}{}\doxysection{src/shell/shell-\/parser.c File Reference}
+\label{shell-parser_8c}\index{src/shell/shell-\/parser.c@{src/shell/shell-\/parser.c}}
+
+
+Implements the parsing and execution of shell commands for the Penn\+OS project. This file contains the implementation of functions to read and parse shell commands, convert strings to uppercase, initialize shell commands, and identify commands.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}shell-\/parser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stress.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/errno.\+h\char`\"{}}\newline
+Include dependency graph for shell-\/parser.c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{shell-parser_8c_a674d689494001c62362df82b433dbe00}\label{shell-parser_8c_a674d689494001c62362df82b433dbe00}} 
+\#define {\bfseries SHELL\+\_\+\+TOK\+\_\+\+BUFSIZE}~64
+\item 
+\mbox{\Hypertarget{shell-parser_8c_a02d80c51d0d02edb287a6fc81ffaa44c}\label{shell-parser_8c_a02d80c51d0d02edb287a6fc81ffaa44c}} 
+\#define {\bfseries SHELL\+\_\+\+TOK\+\_\+\+DELIM}~\char`\"{} \textbackslash{}t\textbackslash{}r\textbackslash{}n\textbackslash{}a\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{shell-parser_8c_ac14a4d3d27ec36419b82f72342be3a65}{read\+\_\+line}} (void)
+\begin{DoxyCompactList}\small\item\em Reads a line of input from stdin and returns it. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{shell-parser_8c_a6fe9e2116464a6521b60392d755377b8}{to\+\_\+upper}} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Converts a string to uppercase. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{shell-parser_8c_a441ea7c98bc389b4878e89b87605b0f0}\label{shell-parser_8c_a441ea7c98bc389b4878e89b87605b0f0}} 
+void \mbox{\hyperlink{shell-parser_8c_a441ea7c98bc389b4878e89b87605b0f0}{init\+\_\+shell\+\_\+commands}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes shell commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{hash_8h_a90b3d6503a09521c0435e36f19158680}{command\+\_\+function}} \mbox{\hyperlink{shell-parser_8c_a4f85d8160b3a98705149fd3e67df2d3f}{commands}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of function pointers to shell command functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the parsing and execution of shell commands for the Penn\+OS project. This file contains the implementation of functions to read and parse shell commands, convert strings to uppercase, initialize shell commands, and identify commands. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{shell-parser_8c_ac14a4d3d27ec36419b82f72342be3a65}\label{shell-parser_8c_ac14a4d3d27ec36419b82f72342be3a65}} 
+\index{shell-\/parser.c@{shell-\/parser.c}!read\_line@{read\_line}}
+\index{read\_line@{read\_line}!shell-\/parser.c@{shell-\/parser.c}}
+\doxysubsubsection{\texorpdfstring{read\_line()}{read\_line()}}
+{\footnotesize\ttfamily char$\ast$ read\+\_\+line (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reads a line of input from stdin and returns it. 
+
+Reads a line from the standard input. \mbox{\Hypertarget{shell-parser_8c_a6fe9e2116464a6521b60392d755377b8}\label{shell-parser_8c_a6fe9e2116464a6521b60392d755377b8}} 
+\index{shell-\/parser.c@{shell-\/parser.c}!to\_upper@{to\_upper}}
+\index{to\_upper@{to\_upper}!shell-\/parser.c@{shell-\/parser.c}}
+\doxysubsubsection{\texorpdfstring{to\_upper()}{to\_upper()}}
+{\footnotesize\ttfamily char$\ast$ to\+\_\+upper (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+Converts a string to uppercase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to be converted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the uppercase string. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{shell-parser_8c_a4f85d8160b3a98705149fd3e67df2d3f}\label{shell-parser_8c_a4f85d8160b3a98705149fd3e67df2d3f}} 
+\index{shell-\/parser.c@{shell-\/parser.c}!commands@{commands}}
+\index{commands@{commands}!shell-\/parser.c@{shell-\/parser.c}}
+\doxysubsubsection{\texorpdfstring{commands}{commands}}
+{\footnotesize\ttfamily commands}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_a72382fcf60947eb2d7268a5ec76bbc5c}{s\_cat}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_abf985678312bf4cbae0cd8f332d29015}{s\_sleep}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_a48cad9d7daec21c777e2c7e23c077f75}{s\_busy}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_a8747923076ef8e7a2a399e6a819825fb}{s\_echo}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_af38f72bd6ff042a69fe4f7bac1830cae}{s\_ls}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_a662b1fb3c61cb62298289c1d6a44a10f}{s\_touch}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_a93239808bf8917ba5805f8eeb46c158b}{s\_mv}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_aa12a145016467937e8af4018c9e6a543}{s\_cp}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_a82780269a6347473b1c06ff79bb3a5b5}{s\_rm}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_a058039bc88a1c78aa5800e8956b48fdc}{s\_chmod}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_a75c90fb53a07db1c4c6698b1a223298a}{s\_ps}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_a50299b46da04cd14048ba42145b095de}{s\_kill}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_a207aa0233930926e573fde214b18ce5f}{s\_nice}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_a91009de32f88ef5a2e762a9789045a0e}{s\_nice\_pid}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_a1b973484ac47e192189ab3cdb2080b66}{s\_man}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_a1bfe8f507eee9ac8404cece141c742b0}{s\_bg}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_ab8b5591ae0fd4b2d91f28214b4e25149}{s\_fg}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_aa01c6fa36c13929d7c4e38115ad86ac2}{s\_jobs}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_a135a36028d1c120cf76729d536651e00}{s\_logout}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_a703cc976c885ee6c62ee8dbb408048fe}{s\_zombify}},}
+\DoxyCodeLine{        \mbox{\hyperlink{shell-commands_8c_abb69aec2f2a284c146c80301a02e2b48}{s\_orphanify}},}
+\DoxyCodeLine{        (void (*)(\textcolor{keywordtype}{char} **))\mbox{\hyperlink{stress_8h_a1b2a4626595c910b3d3ce25ad4934960}{hang}},}
+\DoxyCodeLine{        (void (*)(\textcolor{keywordtype}{char} **))\mbox{\hyperlink{stress_8h_abaaeefe806d9f0dced0ea5a1f6f21fe5}{nohang}},}
+\DoxyCodeLine{        (void (*)(\textcolor{keywordtype}{char} **))\mbox{\hyperlink{stress_8h_aed672bfe234aaab49f6bdbd655714f02}{recur}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Array of function pointers to shell command functions. 
+

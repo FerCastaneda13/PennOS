@@ -1,0 +1,135 @@
+\hypertarget{shell-parser_8h}{}\doxysection{src/shell/shell-\/parser.h File Reference}
+\label{shell-parser_8h}\index{src/shell/shell-\/parser.h@{src/shell/shell-\/parser.h}}
+
+
+Defines the interface for shell command parsing in the Penn\+OS project. It includes function prototypes for reading and processing shell commands, as well as the enumeration of supported shell commands.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../util/hash.\+h\char`\"{}}\newline
+Include dependency graph for shell-\/parser.h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{shell-parser_8h_a90b3d6503a09521c0435e36f19158680}\label{shell-parser_8h_a90b3d6503a09521c0435e36f19158680}} 
+typedef void($\ast$ {\bfseries command\+\_\+function}) (char $\ast$$\ast$)
+\item 
+\mbox{\Hypertarget{shell-parser_8h_a42cb611eab6df8040f8e6a07b0d87743}\label{shell-parser_8h_a42cb611eab6df8040f8e6a07b0d87743}} 
+typedef enum \mbox{\hyperlink{shell-parser_8h_a3d5dd7231d78a363edbbe26b45d7d320}{shell\+\_\+command}} {\bfseries shell\+\_\+command}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{shell-parser_8h_a3d5dd7231d78a363edbbe26b45d7d320}\label{shell-parser_8h_a3d5dd7231d78a363edbbe26b45d7d320}} 
+enum \mbox{\hyperlink{shell-parser_8h_a3d5dd7231d78a363edbbe26b45d7d320}{shell\+\_\+command}} \{ \newline
+{\bfseries CAT} = 0
+, {\bfseries SLEEP} = 1
+, {\bfseries BUSY} = 2
+, {\bfseries ECHO} = 3
+, \newline
+{\bfseries LS} = 4
+, {\bfseries TOUCH} = 5
+, {\bfseries MV} = 6
+, {\bfseries CP} = 7
+, \newline
+{\bfseries RM} = 8
+, {\bfseries CHMOD} = 9
+, {\bfseries PS} = 10
+, {\bfseries KILL} = 11
+, \newline
+{\bfseries NICE} = 12
+, {\bfseries NICE\+\_\+\+PID} = 13
+, {\bfseries MAN} = 14
+, {\bfseries BG} = 15
+, \newline
+{\bfseries FG} = 16
+, {\bfseries JOBS} = 17
+, {\bfseries LOGOUT} = 18
+, {\bfseries ZOMBIFY} = 19
+, \newline
+{\bfseries ORPHANIFY} = 20
+, {\bfseries HANG} = 21
+, {\bfseries NOHANG} = 22
+, {\bfseries RECUR} = 23
+ \}
+\begin{DoxyCompactList}\small\item\em Enumerates the available shell commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{shell-parser_8h_ac14a4d3d27ec36419b82f72342be3a65}{read\+\_\+line}} (void)
+\begin{DoxyCompactList}\small\item\em Reads a line from the standard input. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{shell-parser_8h_a441ea7c98bc389b4878e89b87605b0f0}\label{shell-parser_8h_a441ea7c98bc389b4878e89b87605b0f0}} 
+void \mbox{\hyperlink{shell-parser_8h_a441ea7c98bc389b4878e89b87605b0f0}{init\+\_\+shell\+\_\+commands}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes shell commands. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{shell-parser_8h_acfaa796a0dafcf3ae67f0b2808ed1138}{identify\+\_\+command}} (char $\ast$command)
+\begin{DoxyCompactList}\small\item\em Identifies a command from a given string. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{shell-parser_8h_a6fe9e2116464a6521b60392d755377b8}{to\+\_\+upper}} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Converts a string to uppercase. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{shell-parser_8h_a5e1844a0329bf87be8d419478cc1fd67}\label{shell-parser_8h_a5e1844a0329bf87be8d419478cc1fd67}} 
+\mbox{\hyperlink{hash_8h_a90b3d6503a09521c0435e36f19158680}{command\+\_\+function}} \mbox{\hyperlink{shell-parser_8h_a5e1844a0329bf87be8d419478cc1fd67}{commands}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of function pointers to shell command functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the interface for shell command parsing in the Penn\+OS project. It includes function prototypes for reading and processing shell commands, as well as the enumeration of supported shell commands. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{shell-parser_8h_acfaa796a0dafcf3ae67f0b2808ed1138}\label{shell-parser_8h_acfaa796a0dafcf3ae67f0b2808ed1138}} 
+\index{shell-\/parser.h@{shell-\/parser.h}!identify\_command@{identify\_command}}
+\index{identify\_command@{identify\_command}!shell-\/parser.h@{shell-\/parser.h}}
+\doxysubsubsection{\texorpdfstring{identify\_command()}{identify\_command()}}
+{\footnotesize\ttfamily int identify\+\_\+command (\begin{DoxyParamCaption}\item[{char $\ast$}]{command }\end{DoxyParamCaption})}
+
+
+
+Identifies a command from a given string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer representing the command. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{shell-parser_8h_ac14a4d3d27ec36419b82f72342be3a65}\label{shell-parser_8h_ac14a4d3d27ec36419b82f72342be3a65}} 
+\index{shell-\/parser.h@{shell-\/parser.h}!read\_line@{read\_line}}
+\index{read\_line@{read\_line}!shell-\/parser.h@{shell-\/parser.h}}
+\doxysubsubsection{\texorpdfstring{read\_line()}{read\_line()}}
+{\footnotesize\ttfamily char$\ast$ read\+\_\+line (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reads a line from the standard input. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the read line.
+\end{DoxyReturn}
+Reads a line from the standard input. \mbox{\Hypertarget{shell-parser_8h_a6fe9e2116464a6521b60392d755377b8}\label{shell-parser_8h_a6fe9e2116464a6521b60392d755377b8}} 
+\index{shell-\/parser.h@{shell-\/parser.h}!to\_upper@{to\_upper}}
+\index{to\_upper@{to\_upper}!shell-\/parser.h@{shell-\/parser.h}}
+\doxysubsubsection{\texorpdfstring{to\_upper()}{to\_upper()}}
+{\footnotesize\ttfamily char$\ast$ to\+\_\+upper (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+Converts a string to uppercase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to be converted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the uppercase string. 
+\end{DoxyReturn}

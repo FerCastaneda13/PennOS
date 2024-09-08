@@ -1,0 +1,18 @@
+digraph "src/util/hash.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/util/hash.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Header file for hash table implementation in PennOS."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="src/shell/shell-parser.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$shell-parser_8h.html",tooltip="Defines the interface for shell command parsing in the PennOS project. It includes function prototype..."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="src/shell/shell-commands.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$shell-commands_8c.html",tooltip="This file implements all shell commands and built-in functions for the PennOS project...."];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="src/shell/shell-parser.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$shell-parser_8c.html",tooltip="Implements the parsing and execution of shell commands for the PennOS project. This file contains the..."];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="src/shell/shell.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$shell_8c.html",tooltip="C file for the PennOS shell, containing functions for the shell."];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="src/util/hash.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hash_8c.html",tooltip="Implementation of hash table functions for command processing."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

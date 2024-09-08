@@ -1,0 +1,289 @@
+\hypertarget{system-calls_8h}{}\doxysection{src/\+FAT/system-\/calls.h File Reference}
+\label{system-calls_8h}\index{src/FAT/system-\/calls.h@{src/FAT/system-\/calls.h}}
+
+
+Header file for system-\/related calls for file manipulation.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for system-\/calls.h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{system-calls_8h_a1a6b6fb557d8d37d59700faf4e4c9167}{mode}} \{ \mbox{\hyperlink{system-calls_8h_a1a6b6fb557d8d37d59700faf4e4c9167a8d17b4f5bc28a7102c467492b8f26b2e}{F\+\_\+\+WRITE}}
+, \mbox{\hyperlink{system-calls_8h_a1a6b6fb557d8d37d59700faf4e4c9167a327988a43a2cd3bbf68e7241964b331d}{F\+\_\+\+READ}}
+, \mbox{\hyperlink{system-calls_8h_a1a6b6fb557d8d37d59700faf4e4c9167a0998f5aef4b98808df7181445c4b34d7}{F\+\_\+\+APPEND}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum for different f\+\_\+open modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{system-calls_8h_a0745360c39f692a210604e1108fade1c}{f\+\_\+open}} (const char $\ast$fname, int \mbox{\hyperlink{system-calls_8h_a1a6b6fb557d8d37d59700faf4e4c9167}{mode}})
+\begin{DoxyCompactList}\small\item\em Open a file with the specified mode. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{system-calls_8h_aad4a33343238e11c0fc0d20e09164e5f}{f\+\_\+read}} (int fd, int n, char $\ast$buf)
+\begin{DoxyCompactList}\small\item\em Read n bytes from the file referenced by fd. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{system-calls_8h_a2108c5a353c3855dbe6a70fae48ba759}{f\+\_\+write}} (int fd, const char $\ast$str, int n)
+\begin{DoxyCompactList}\small\item\em Write n bytes of the string referenced by str to the file fd and increment the file pointer by n. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{system-calls_8h_ac0d4f7afac0b7885e6435e2334bc09cf}{f\+\_\+close}} (int fd)
+\begin{DoxyCompactList}\small\item\em Close the file referenced by fd. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{system-calls_8h_ab641e8e9e3ccd8e299c81ce9c24c0be4}{f\+\_\+unlink}} (const char $\ast$fname)
+\begin{DoxyCompactList}\small\item\em Remove a file, waiting if multiple processes are currently using it. \end{DoxyCompactList}\item 
+off\+\_\+t \mbox{\hyperlink{system-calls_8h_a3d4d3d6e3043747c7a6f7f9c0029a09e}{f\+\_\+lseek}} (int fd, int offset, int whence)
+\begin{DoxyCompactList}\small\item\em Reposition the file pointer for fd to the offset relative to whence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{system-calls_8h_a6749f62e99543cd88271ec4462379f93}{f\+\_\+ls}} (const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em List the file filename in the current directory. If filename is NULL, list all files in the current directory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{system-calls_8h_aa544525aeb0c6516d82cc6763f7f6985}{f\+\_\+touch}} (char $\ast$file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Create or update a file\textquotesingle{}s timestamp. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{system-calls_8h_a8afeb1df6501dddc22bc6bf7cad7f893}{f\+\_\+move}} (char $\ast$$\ast$files)
+\begin{DoxyCompactList}\small\item\em Helper function that will copy the name of the source to the destination. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{system-calls_8h_a8083342e0f175e7530c40c6f10de74b5}{f\+\_\+chmod}} (char $\ast$$\ast$file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Helper function that will change the permissions of a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{system-calls_8h_a244f8f931216bcd3d6d7957c6975c210}{mount}} (char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Mount the current filesystem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for system-\/related calls for file manipulation. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{system-calls_8h_a1a6b6fb557d8d37d59700faf4e4c9167}\label{system-calls_8h_a1a6b6fb557d8d37d59700faf4e4c9167}} 
+\index{system-\/calls.h@{system-\/calls.h}!mode@{mode}}
+\index{mode@{mode}!system-\/calls.h@{system-\/calls.h}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{system-calls_8h_a1a6b6fb557d8d37d59700faf4e4c9167}{mode}}}
+
+
+
+Enum for different f\+\_\+open modes. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\_WRITE@{F\_WRITE}!system-\/calls.h@{system-\/calls.h}}\index{system-\/calls.h@{system-\/calls.h}!F\_WRITE@{F\_WRITE}}}\mbox{\Hypertarget{system-calls_8h_a1a6b6fb557d8d37d59700faf4e4c9167a8d17b4f5bc28a7102c467492b8f26b2e}\label{system-calls_8h_a1a6b6fb557d8d37d59700faf4e4c9167a8d17b4f5bc28a7102c467492b8f26b2e}} 
+F\+\_\+\+WRITE&Write mode \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\_READ@{F\_READ}!system-\/calls.h@{system-\/calls.h}}\index{system-\/calls.h@{system-\/calls.h}!F\_READ@{F\_READ}}}\mbox{\Hypertarget{system-calls_8h_a1a6b6fb557d8d37d59700faf4e4c9167a327988a43a2cd3bbf68e7241964b331d}\label{system-calls_8h_a1a6b6fb557d8d37d59700faf4e4c9167a327988a43a2cd3bbf68e7241964b331d}} 
+F\+\_\+\+READ&Read mode \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\_APPEND@{F\_APPEND}!system-\/calls.h@{system-\/calls.h}}\index{system-\/calls.h@{system-\/calls.h}!F\_APPEND@{F\_APPEND}}}\mbox{\Hypertarget{system-calls_8h_a1a6b6fb557d8d37d59700faf4e4c9167a0998f5aef4b98808df7181445c4b34d7}\label{system-calls_8h_a1a6b6fb557d8d37d59700faf4e4c9167a0998f5aef4b98808df7181445c4b34d7}} 
+F\+\_\+\+APPEND&Append mode \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{system-calls_8h_a8083342e0f175e7530c40c6f10de74b5}\label{system-calls_8h_a8083342e0f175e7530c40c6f10de74b5}} 
+\index{system-\/calls.h@{system-\/calls.h}!f\_chmod@{f\_chmod}}
+\index{f\_chmod@{f\_chmod}!system-\/calls.h@{system-\/calls.h}}
+\doxysubsubsection{\texorpdfstring{f\_chmod()}{f\_chmod()}}
+{\footnotesize\ttfamily void f\+\_\+chmod (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Helper function that will change the permissions of a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & Char double pointer to the new permissions and the file that will be changed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{system-calls_8h_ac0d4f7afac0b7885e6435e2334bc09cf}\label{system-calls_8h_ac0d4f7afac0b7885e6435e2334bc09cf}} 
+\index{system-\/calls.h@{system-\/calls.h}!f\_close@{f\_close}}
+\index{f\_close@{f\_close}!system-\/calls.h@{system-\/calls.h}}
+\doxysubsubsection{\texorpdfstring{f\_close()}{f\_close()}}
+{\footnotesize\ttfamily int f\+\_\+close (\begin{DoxyParamCaption}\item[{int}]{fd }\end{DoxyParamCaption})}
+
+
+
+Close the file referenced by fd. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the file to be closed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system-calls_8h_a6749f62e99543cd88271ec4462379f93}\label{system-calls_8h_a6749f62e99543cd88271ec4462379f93}} 
+\index{system-\/calls.h@{system-\/calls.h}!f\_ls@{f\_ls}}
+\index{f\_ls@{f\_ls}!system-\/calls.h@{system-\/calls.h}}
+\doxysubsubsection{\texorpdfstring{f\_ls()}{f\_ls()}}
+{\footnotesize\ttfamily void f\+\_\+ls (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+List the file filename in the current directory. If filename is NULL, list all files in the current directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Pointer to the name of the filesystem for which f\+\_\+ls will be performed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{system-calls_8h_a3d4d3d6e3043747c7a6f7f9c0029a09e}\label{system-calls_8h_a3d4d3d6e3043747c7a6f7f9c0029a09e}} 
+\index{system-\/calls.h@{system-\/calls.h}!f\_lseek@{f\_lseek}}
+\index{f\_lseek@{f\_lseek}!system-\/calls.h@{system-\/calls.h}}
+\doxysubsubsection{\texorpdfstring{f\_lseek()}{f\_lseek()}}
+{\footnotesize\ttfamily off\+\_\+t f\+\_\+lseek (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{offset,  }\item[{int}]{whence }\end{DoxyParamCaption})}
+
+
+
+Reposition the file pointer for fd to the offset relative to whence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the file. \\
+\hline
+{\em offset} & Number of bytes the file pointer will be offset by. \\
+\hline
+{\em whence} & Whence will be performed (F\+\_\+\+SEEK\+\_\+\+SET, F\+\_\+\+SEEK\+\_\+\+CUR, F\+\_\+\+SEEK\+\_\+\+END). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current offset of the file. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system-calls_8h_a8afeb1df6501dddc22bc6bf7cad7f893}\label{system-calls_8h_a8afeb1df6501dddc22bc6bf7cad7f893}} 
+\index{system-\/calls.h@{system-\/calls.h}!f\_move@{f\_move}}
+\index{f\_move@{f\_move}!system-\/calls.h@{system-\/calls.h}}
+\doxysubsubsection{\texorpdfstring{f\_move()}{f\_move()}}
+{\footnotesize\ttfamily bool f\+\_\+move (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{files }\end{DoxyParamCaption})}
+
+
+
+Helper function that will copy the name of the source to the destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em files} & Char double pointer to the names of the source file and the destination file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success and false on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system-calls_8h_a0745360c39f692a210604e1108fade1c}\label{system-calls_8h_a0745360c39f692a210604e1108fade1c}} 
+\index{system-\/calls.h@{system-\/calls.h}!f\_open@{f\_open}}
+\index{f\_open@{f\_open}!system-\/calls.h@{system-\/calls.h}}
+\doxysubsubsection{\texorpdfstring{f\_open()}{f\_open()}}
+{\footnotesize\ttfamily int f\+\_\+open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname,  }\item[{int}]{mode }\end{DoxyParamCaption})}
+
+
+
+Open a file with the specified mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & Constant char pointer to the filename to be opened. \\
+\hline
+{\em mode} & Mode in which the file will be opened (F\+\_\+\+READ, F\+\_\+\+WRITE, F\+\_\+\+APPEND). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+File descriptor on success, or a negative value on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system-calls_8h_aad4a33343238e11c0fc0d20e09164e5f}\label{system-calls_8h_aad4a33343238e11c0fc0d20e09164e5f}} 
+\index{system-\/calls.h@{system-\/calls.h}!f\_read@{f\_read}}
+\index{f\_read@{f\_read}!system-\/calls.h@{system-\/calls.h}}
+\doxysubsubsection{\texorpdfstring{f\_read()}{f\_read()}}
+{\footnotesize\ttfamily int f\+\_\+read (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{n,  }\item[{char $\ast$}]{buf }\end{DoxyParamCaption})}
+
+
+
+Read n bytes from the file referenced by fd. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the file to read from. \\
+\hline
+{\em n} & Number of bytes to be read. \\
+\hline
+{\em buf} & Pointer to a buffer where the read bytes should be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of bytes read (0 if EOF, negative on error). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system-calls_8h_aa544525aeb0c6516d82cc6763f7f6985}\label{system-calls_8h_aa544525aeb0c6516d82cc6763f7f6985}} 
+\index{system-\/calls.h@{system-\/calls.h}!f\_touch@{f\_touch}}
+\index{f\_touch@{f\_touch}!system-\/calls.h@{system-\/calls.h}}
+\doxysubsubsection{\texorpdfstring{f\_touch()}{f\_touch()}}
+{\footnotesize\ttfamily int f\+\_\+touch (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Create or update a file\textquotesingle{}s timestamp. 
+
+If the file exists, the timestamp will be updated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & Pointer to the name of the file to be created/updated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, and -\/1 on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system-calls_8h_ab641e8e9e3ccd8e299c81ce9c24c0be4}\label{system-calls_8h_ab641e8e9e3ccd8e299c81ce9c24c0be4}} 
+\index{system-\/calls.h@{system-\/calls.h}!f\_unlink@{f\_unlink}}
+\index{f\_unlink@{f\_unlink}!system-\/calls.h@{system-\/calls.h}}
+\doxysubsubsection{\texorpdfstring{f\_unlink()}{f\_unlink()}}
+{\footnotesize\ttfamily int f\+\_\+unlink (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname }\end{DoxyParamCaption})}
+
+
+
+Remove a file, waiting if multiple processes are currently using it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & Pointer to the filename to be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system-calls_8h_a2108c5a353c3855dbe6a70fae48ba759}\label{system-calls_8h_a2108c5a353c3855dbe6a70fae48ba759}} 
+\index{system-\/calls.h@{system-\/calls.h}!f\_write@{f\_write}}
+\index{f\_write@{f\_write}!system-\/calls.h@{system-\/calls.h}}
+\doxysubsubsection{\texorpdfstring{f\_write()}{f\_write()}}
+{\footnotesize\ttfamily int f\+\_\+write (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{const char $\ast$}]{str,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Write n bytes of the string referenced by str to the file fd and increment the file pointer by n. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the file to write to. \\
+\hline
+{\em str} & Pointer to a buffer containing the bytes to be written. \\
+\hline
+{\em n} & Number of bytes to be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of bytes written, or a negative value on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system-calls_8h_a244f8f931216bcd3d6d7957c6975c210}\label{system-calls_8h_a244f8f931216bcd3d6d7957c6975c210}} 
+\index{system-\/calls.h@{system-\/calls.h}!mount@{mount}}
+\index{mount@{mount}!system-\/calls.h@{system-\/calls.h}}
+\doxysubsubsection{\texorpdfstring{mount()}{mount()}}
+{\footnotesize\ttfamily void mount (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+Mount the current filesystem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Pointer to the filename to be mounted. \\
+\hline
+\end{DoxyParams}

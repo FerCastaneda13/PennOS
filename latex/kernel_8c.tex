@@ -1,0 +1,106 @@
+\hypertarget{kernel_8c}{}\doxysection{src/kernel/kernel.c File Reference}
+\label{kernel_8c}\index{src/kernel/kernel.c@{src/kernel/kernel.c}}
+
+
+C file for kernel-\/level functions related to process management\+: \mbox{\hyperlink{kernel_8c_a3d9fc06630c2d6c0a671159e1761da37}{k\+\_\+process\+\_\+kill()}}, \mbox{\hyperlink{kernel_8c_a078e3681581c83f75664cbdc29af2c26}{k\+\_\+process\+\_\+cleanup()}}, \mbox{\hyperlink{kernel_8c_aae5c1eec5a8e85c2f9ecd1df60ebd005}{k\+\_\+process\+\_\+create()}}, \mbox{\hyperlink{kernel_8c_a4783d602558d3cf20b163b59dcabecd6}{set\+Stack()}}, \mbox{\hyperlink{kernel_8h_a5235c5fe53f56acc6e48b88506f30194}{cleanup\+\_\+context()}}.  
+
+
+{\ttfamily \#include \char`\"{}kernel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}PCB.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ucontext.\+h$>$}\newline
+{\ttfamily \#include $<$valgrind/valgrind.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../util/linked\+\_\+list.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}scheduler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/logger.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$regex.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../util/errno.\+h\char`\"{}}\newline
+Include dependency graph for kernel.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{kernel_8c_a6423a880df59733d2d9b509c7718d3a9}\label{kernel_8c_a6423a880df59733d2d9b509c7718d3a9}} 
+\#define {\bfseries STACK\+\_\+\+SIZE}~819200
+\item 
+\mbox{\Hypertarget{kernel_8c_aaca1cd6abef76b80fafe68488252185b}\label{kernel_8c_aaca1cd6abef76b80fafe68488252185b}} 
+\#define {\bfseries RNG\+\_\+A}~16807
+\item 
+\mbox{\Hypertarget{kernel_8c_a4067de5552803e9c1094bf646c39f105}\label{kernel_8c_a4067de5552803e9c1094bf646c39f105}} 
+\#define {\bfseries RNG\+\_\+B}~2147483647
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{kernel_8c_acfccfb9c08267d76cc2529cf96203099}\label{kernel_8c_acfccfb9c08267d76cc2529cf96203099}} 
+void \mbox{\hyperlink{kernel_8c_acfccfb9c08267d76cc2529cf96203099}{cleanup\+\_\+orphans}} (\mbox{\hyperlink{structLinkedList}{Linked\+List}} $\ast$children)
+\begin{DoxyCompactList}\small\item\em Cleans up orphans(children) after a process exits/terminates right before the process is cleaned up. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kernel_8c_a4783d602558d3cf20b163b59dcabecd6}{set\+Stack}} (stack\+\_\+t $\ast$stack)
+\begin{DoxyCompactList}\small\item\em Sets stack for a process\textquotesingle{}s context. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPCB}{PCB}} $\ast$ \mbox{\hyperlink{kernel_8c_aae5c1eec5a8e85c2f9ecd1df60ebd005}{k\+\_\+process\+\_\+create}} (\mbox{\hyperlink{structPCB}{PCB}} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Creates a Process/\+PCB with the given parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{kernel_8c_abac24c32c8fe6b28394bc8ca0a2d656a}\label{kernel_8c_abac24c32c8fe6b28394bc8ca0a2d656a}} 
+int \mbox{\hyperlink{kernel_8c_abac24c32c8fe6b28394bc8ca0a2d656a}{is\+\_\+sleep\+\_\+2}} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Checks whether a process is a sleep process based on its name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kernel_8c_a3d9fc06630c2d6c0a671159e1761da37}{k\+\_\+process\+\_\+kill}} (\mbox{\hyperlink{structPCB}{PCB}} $\ast$process, int \mbox{\hyperlink{structsignal}{signal}})
+\begin{DoxyCompactList}\small\item\em Sends/kills a process with the given signal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kernel_8c_a078e3681581c83f75664cbdc29af2c26}{k\+\_\+process\+\_\+cleanup}} (\mbox{\hyperlink{structPCB}{PCB}} $\ast$process)
+\begin{DoxyCompactList}\small\item\em Cleans up a process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{kernel_8c_a8cc31dc3f19a97466ce14f6140f8652d}\label{kernel_8c_a8cc31dc3f19a97466ce14f6140f8652d}} 
+int {\bfseries curr\+\_\+pid} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C file for kernel-\/level functions related to process management\+: \mbox{\hyperlink{kernel_8c_a3d9fc06630c2d6c0a671159e1761da37}{k\+\_\+process\+\_\+kill()}}, \mbox{\hyperlink{kernel_8c_a078e3681581c83f75664cbdc29af2c26}{k\+\_\+process\+\_\+cleanup()}}, \mbox{\hyperlink{kernel_8c_aae5c1eec5a8e85c2f9ecd1df60ebd005}{k\+\_\+process\+\_\+create()}}, \mbox{\hyperlink{kernel_8c_a4783d602558d3cf20b163b59dcabecd6}{set\+Stack()}}, \mbox{\hyperlink{kernel_8h_a5235c5fe53f56acc6e48b88506f30194}{cleanup\+\_\+context()}}. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{kernel_8c_a078e3681581c83f75664cbdc29af2c26}\label{kernel_8c_a078e3681581c83f75664cbdc29af2c26}} 
+\index{kernel.c@{kernel.c}!k\_process\_cleanup@{k\_process\_cleanup}}
+\index{k\_process\_cleanup@{k\_process\_cleanup}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_process\_cleanup()}{k\_process\_cleanup()}}
+{\footnotesize\ttfamily void k\+\_\+process\+\_\+cleanup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPCB}{PCB}} $\ast$}]{process }\end{DoxyParamCaption})}
+
+
+
+Cleans up a process. 
+
+Cleans up resources of a terminated/finished thread. \mbox{\Hypertarget{kernel_8c_aae5c1eec5a8e85c2f9ecd1df60ebd005}\label{kernel_8c_aae5c1eec5a8e85c2f9ecd1df60ebd005}} 
+\index{kernel.c@{kernel.c}!k\_process\_create@{k\_process\_create}}
+\index{k\_process\_create@{k\_process\_create}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_process\_create()}{k\_process\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPCB}{PCB}}$\ast$ k\+\_\+process\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPCB}{PCB}} $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+Creates a Process/\+PCB with the given parameters. 
+
+Creates a new child thread and associated \mbox{\hyperlink{structPCB}{PCB}}. \mbox{\Hypertarget{kernel_8c_a3d9fc06630c2d6c0a671159e1761da37}\label{kernel_8c_a3d9fc06630c2d6c0a671159e1761da37}} 
+\index{kernel.c@{kernel.c}!k\_process\_kill@{k\_process\_kill}}
+\index{k\_process\_kill@{k\_process\_kill}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_process\_kill()}{k\_process\_kill()}}
+{\footnotesize\ttfamily void k\+\_\+process\+\_\+kill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPCB}{PCB}} $\ast$}]{process,  }\item[{int}]{signal }\end{DoxyParamCaption})}
+
+
+
+Sends/kills a process with the given signal. 
+
+Kills the process referenced by {\ttfamily process} with the specified {\ttfamily signal}. \mbox{\Hypertarget{kernel_8c_a4783d602558d3cf20b163b59dcabecd6}\label{kernel_8c_a4783d602558d3cf20b163b59dcabecd6}} 
+\index{kernel.c@{kernel.c}!setStack@{setStack}}
+\index{setStack@{setStack}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{setStack()}{setStack()}}
+{\footnotesize\ttfamily void set\+Stack (\begin{DoxyParamCaption}\item[{stack\+\_\+t $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+Sets stack for a process\textquotesingle{}s context. 
+
+Sets the stack for a process. 

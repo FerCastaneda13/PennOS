@@ -1,0 +1,52 @@
+\hypertarget{logger_8c}{}\doxysection{src/util/logger.c File Reference}
+\label{logger_8c}\index{src/util/logger.c@{src/util/logger.c}}
+
+
+Implementation of logging functions for Penn\+OS.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}logger.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../kernel/scheduler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../util/errno.\+h\char`\"{}}\newline
+Include dependency graph for logger.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{logger_8c_a2d12ca13e4e54ff504ba45f9577ca9d3}\label{logger_8c_a2d12ca13e4e54ff504ba45f9577ca9d3}} 
+void \mbox{\hyperlink{logger_8c_a2d12ca13e4e54ff504ba45f9577ca9d3}{write\+\_\+log\+\_\+nice}} (logtype log\+\_\+type, pid\+\_\+t pid, int oldprio, int newprio, char $\ast$process\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Writes a \textquotesingle{}nice\textquotesingle{} log entry, logging priority changes. \end{DoxyCompactList}\item 
+FILE $\ast$ \mbox{\hyperlink{logger_8c_a650b5b56c052b4fb121d920727da1e83}{log\+\_\+file}} ()
+\begin{DoxyCompactList}\small\item\em Opens the log file for appending. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logger_8c_aed1b58d6031e6f7c1c96f944698bc45b}{write\+\_\+log}} (logtype log\+\_\+type, pid\+\_\+t pid, int priority, char $\ast$process\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Writes a general log entry based on the specified log type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of logging functions for Penn\+OS. 
+
+Created by Omar Ameen on 11/19/23. This file contains the implementation of logging functions defined in \mbox{\hyperlink{logger_8h_source}{logger.\+h}}. It includes functions to write different types of log entries to a log file. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{logger_8c_a650b5b56c052b4fb121d920727da1e83}\label{logger_8c_a650b5b56c052b4fb121d920727da1e83}} 
+\index{logger.c@{logger.c}!log\_file@{log\_file}}
+\index{log\_file@{log\_file}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{log\_file()}{log\_file()}}
+{\footnotesize\ttfamily FILE$\ast$ log\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Opens the log file for appending. 
+
+Opens the log file. \mbox{\Hypertarget{logger_8c_aed1b58d6031e6f7c1c96f944698bc45b}\label{logger_8c_aed1b58d6031e6f7c1c96f944698bc45b}} 
+\index{logger.c@{logger.c}!write\_log@{write\_log}}
+\index{write\_log@{write\_log}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{write\_log()}{write\_log()}}
+{\footnotesize\ttfamily void write\+\_\+log (\begin{DoxyParamCaption}\item[{logtype}]{log\+\_\+type,  }\item[{pid\+\_\+t}]{pid,  }\item[{int}]{priority,  }\item[{char $\ast$}]{process\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Writes a general log entry based on the specified log type. 
+
+Writes a log entry. 
